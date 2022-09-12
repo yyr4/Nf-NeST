@@ -1,0 +1,11 @@
+Sep-09 16:41:55.231 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --reads '../Downloads/Angola_pooled/*R1*.fastq.gz' '../Downloads/Angola_pooled/*R2*.fastq.gz' -with-docker dpatel89/nfnest_image
+Sep-09 16:41:55.299 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 20.07.1
+Sep-09 16:41:55.328 [main] DEBUG nextflow.cli.Launcher - Operation aborted
+nextflow.exception.AbortOperationException: Not a valid project name: main.nf
+	at nextflow.scm.AssetManager.resolveName(AssetManager.groovy:254)
+	at nextflow.scm.AssetManager.build(AssetManager.groovy:129)
+	at nextflow.scm.AssetManager.<init>(AssetManager.groovy:107)
+	at nextflow.cli.CmdRun.getScriptFile(CmdRun.groovy:332)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:246)
+	at nextflow.cli.Launcher.run(Launcher.groovy:466)
+	at nextflow.cli.Launcher.main(Launcher.groovy:648)
