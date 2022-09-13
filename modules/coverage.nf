@@ -28,7 +28,8 @@ process WT_cov {
     tag  { "WT_cov ${sample_id }"}
 
     input:
-      tuple  val(sample_id), path("${sample_id}_depth.txt")
+
+      tuple path(ref),path(bed), path(voi), val(sample_id), path("${sample_id}_depth.txt")
 
 
 
@@ -38,7 +39,7 @@ process WT_cov {
     script:
 
         """
-        Wt_cov.py -R $params.ref -B $params.bed -N '${sample_id}_depth.txt' -V $params.voi > ${sample_id}_coverage.csv
+        Wt_cov.py -R ${ref} -B ${bed} -N '${sample_id}_depth.txt' -V ${voi} > ${sample_id}_coverage.csv
 
         """
 }

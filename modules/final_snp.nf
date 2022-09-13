@@ -3,7 +3,8 @@ process Snpfilter {
     tag  { "Snpfilter ${sample_id }"}
 
     input:
-      tuple  val(sample_id), path ("${sample_id}_merge.csv"), path("${sample_id}_coverage.csv")
+
+      tuple path(voi), val(sample_id), path ("${sample_id}_merge.csv"), path("${sample_id}_coverage.csv")
 
 
     output:
@@ -14,7 +15,7 @@ process Snpfilter {
 
 
        """
-       final_snpfilter.py  -A ${sample_id}_merge.csv -C ${sample_id}_coverage.csv -V $params.voi > ${sample_id}_final_snp.csv
+       final_snpfilter.py  -A ${sample_id}_merge.csv -C ${sample_id}_coverage.csv -V ${voi} > ${sample_id}_final_snp.csv
 
 
        """

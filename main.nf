@@ -5,6 +5,16 @@ nextflow.enable.dsl=2
  * Params are stored in the params.config file
  */
 
+ params.ref = "$HOME/Nf-Nest/Ref/mars_pf_ref.fasta"
+ params.reads = "$HOME/Nf-Nest/Test/*{R1,R2}*.fastq.gz"
+ params.adapter = "$HOME/Nf-Nest/Ref/adapters.fa"
+ params.out = "output"
+ params.snpeff_config = "$HOME/Nf-Nest/6Genes_ref"
+ params.pyscripts = "$HOME/Nf-Nest/pyscripts"
+ params.bed = "$HOME/Nf-Nest/Ref/mars_pf.bed"
+ params.voi = "$HOME/Nf-Nest/Ref/voinew3.csv"
+ params.memory = "8g"
+ params.cpus = 1
 
 
 // import modules
@@ -29,7 +39,9 @@ workflow {
     read_ch = Channel.fromFilePairs(params.reads, checkIfExists: true, size: -1)
     adapter_ch = Channel.fromPath(params.adapter, checkIfExists: true)
     snpeff_ch = Channel.fromPath(params.snpeff_config, checkIfExists: true)
-    // pyscripts = Channel.fromPath(params.pyscripts, checkIfExists: true)
+    bed_ch = Channel.fromPath( params.bed, checkIfExists: true )
+    voi_ch = Channel.fromPath( params.voi, checkIfExists: true )
+
 
     PreFastqC(read_ch)
     Trim_reads(adapter_ch.combine(read_ch))
@@ -44,7 +56,7 @@ workflow {
     vcf_to_DF(vartype.out.vartype_annotation)
     csv_merge(vcf_to_DF.out.csv_annotate)
     getcoverage(Picard_add_read.out.Picard_out_bam)
-    WT_cov(getcoverage.out.samtools_depth)
-    Snpfilter(csv_merge.out.CSV_merge.join(WT_cov.out.WT_coverage))
+    WT_cov(ref_ch.combine(bed_ch).combine(voi_ch).combine(getcoverage.out.samtools_depth))
+    Snpfilter(voi_ch.combine(csv_merge.out.CSV_merge.join(WT_cov.out.WT_coverage)))
 
   }
