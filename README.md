@@ -18,6 +18,7 @@ git clone https://github.com/yyr4/Nf-NeST.git
 2. Install Nextflow (version 20.07.x or higher):
 
 ```
+cd Nf-NeST
 curl -s https://get.nextflow.io | bash
 chmod +x nextflow
 
@@ -27,14 +28,15 @@ chmod +x nextflow
      - Docker Nf-NeST comes with a Doker image that can be run pipeline with virtual environment. To setup up Docker image, run the following command from the Nf-NeST directory.
 
 ```
-cd Nf-NeST
+
 docker pull dpatel89/nfnest_image:latest
  
 ```
 4. Launch the pipeline execution:
 
 ```
-nextflow run main.nf -with-docker dpatel89/nfnest_image
+
+./nextflow run yyr4/Nf-NeST -profile docker
 
 ```
 
@@ -43,7 +45,7 @@ nextflow run main.nf -with-docker dpatel89/nfnest_image
 - Input raw data are fastq Paired reads separated by R1 and R2. Example test data are given in the folder test. User can run their own analysis by Specifies the location of the  reads FASTQ file (--reads option)
   
 ```
-nextflow run main.nf --reads '/home/dataset/*{R1,R2}*.fastq.gz' -with-docker dpatel89/nfnest_image
+./nextflow run main.nf --reads '/home/dataset/*{R1,R2}*.fastq.gz' -with-docker dpatel89/nfnest_image
 
 ```
 - Referance fasta file of targeted gene amplicones.(mars_pf_ref.fasta)
