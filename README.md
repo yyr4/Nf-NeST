@@ -37,7 +37,11 @@ curl -s https://get.nextflow.io | bash
 - Input raw data are fastq Paired reads separated by R1 and R2. Example test data are given in the folder test. User can run their own analysis by Specifies the location of the  reads FASTQ file (--reads option)
 
 ```
+<<<<<<< HEAD
 ./nextflow run main.nf --reads '/home/dataset/*{R1,R2}*.fastq.gz' -profile docker
+=======
+./nextflow run yyr4/Nf-NeST --reads '/home/dataset/*{R1,R2}*.fastq.gz' -profile docker
+>>>>>>> 2e53b9b985528d22a7c41ec11d524deaca083a39
 
 ```
 - Referance fasta file of targeted gene amplicones.(mars_pf_ref.fasta)
