@@ -20,7 +20,6 @@ git clone https://github.com/yyr4/Nf-NeST.git
 ```
 cd Nf-NeST
 curl -s https://get.nextflow.io | bash
-chmod +x nextflow
 
 ```
 3. If you don't have it already install Docker in your computer, download and install from [here](https://docs.docker.com/).  
