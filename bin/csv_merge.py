@@ -50,7 +50,7 @@ Merge_df_2 = Merge_df.groupby(["#CHROM","POS",'AA_change']).agg({'AA_change': 'c
 Merge_df_2.columns = ['Confidence', 'AVG_VAF', 'AVG_COV']
 Merge_df_2 = Merge_df_2.reset_index()
 #drop the
-Merge_df = Merge_df.drop(['Source','QUAL','Unnamed: 0','AD','DP','AF','DP4','VAF','Annotation_Impact','Gene_ID'], axis=1)
+Merge_df = Merge_df.drop(['Source','QUAL','Unnamed: 0','AD','DP','AF','DP4','VAF','Annotation_Impact'], axis=1)
 Merge_df = Merge_df.drop_duplicates()
 
 ###################

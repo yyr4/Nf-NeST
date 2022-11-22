@@ -35,9 +35,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get autoclean
 
-RUN apt-get update && \
-	apt-get install -y openjdk-11-jre && \
-	rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt
 RUN wget --progress=dot:giga https://github.com/samtools/samtools/releases/download/${SAMTOOLSVER}/samtools-${SAMTOOLSVER}.tar.bz2 && \
@@ -65,7 +62,7 @@ RUN wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v${FAS
 RUN apt-get update && apt-get install -y bowtie2
 RUN apt-get update && apt-get install -y freebayes
 RUN apt-get update && apt-get install -y bwa
-RUN apt-get install -y libvcflib-tools libvcflib-dev
+
 
 
 RUN wget https://github.com/samtools/bcftools/releases/download/1.9/bcftools-1.9.tar.bz2 && \

@@ -1,5 +1,6 @@
 // Adapter and quality trimming
 process Trim_reads {
+    errorStrategy 'ignore'
 
     tag { "Trim_reads${sample_id}"}
 
@@ -15,7 +16,10 @@ process Trim_reads {
     tuple val(sample_id), path("*.bbduk.fastq"), emit: Trimmed_fastq
     file "${sample_id}.stats.txt"
 
+
+
     script:
+
 
      """
 

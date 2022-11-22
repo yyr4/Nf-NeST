@@ -20,6 +20,7 @@ git clone https://github.com/yyr4/Nf-NeST.git
 ```
 cd Nf-NeST
 curl -s https://get.nextflow.io | bash
+sudo mv nextflow /usr/local/bin
 
 ```
 3. If you don't have it already install Docker in your computer, download and install from [here](https://docs.docker.com/).  
@@ -48,4 +49,4 @@ curl -s https://get.nextflow.io | bash
 
 # Output
 
-- Output folder will be created under Nf-NeST. The results can be found under **output/Snpfilter/** folder. Separate folder for each samples will be created with reportable and novel mutations csv file.  
+- Output folder will be created under Nf-NeST. The results can be found under **output/Summary/** folder. 

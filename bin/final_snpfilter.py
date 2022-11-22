@@ -78,12 +78,13 @@ output1["SNP_Report"] = np.where(output1["VOI"].isin(voi_list), "Reportable" , "
 output1 = output1[['Sample_name', 'CHROM', 'POS', 'AA_change', 'AVG_VAF', 'AVG_COV', 'REF', 'ALT','VARTYPE', 'Annotation', 'VarCal'
                      ,'Confidence', 'VOI', 'Type', 'SNP_Report'  ]]
 # final output in csv
-output1.to_csv(Sample_out+'_final_snp.csv')
+output1.to_csv(Sample_out+'_final_snp.csv', index=False)
 
 # separte reportable and novel mutations
-
+'''
 Reportable = output1[output1['SNP_Report'] == 'Reportable']
 Novel = output1[output1['SNP_Report'] == 'Novel']
 
-Reportable.to_csv(Sample_out+'_Reportable.csv', index=False)
-Novel.to_csv(Sample_out+'_Novel.csv', index=False)
+Reportable.to_csv(Sample_out+'_Reportable.csv', index=True)
+Novel.to_csv(Sample_out+'_Novel.csv', index=True)
+'''

@@ -11,6 +11,11 @@ import argparse
 import sys
 import warnings
 
+'''
+This script process each vcf files Separately from each sample, extract the metadata  and annotation using the pandas dataframe.
+The output will be csv file with
+'''
+
 
 #
 parser = argparse.ArgumentParser(description='filename')
@@ -20,32 +25,28 @@ args = parser.parse_args()
 filename=args.filename
 
 
-## get sample name from filename
-Sample_name = filename.split("/")[-1].split("_")[0]
-Sample_out = ("_".join(filename.split("/")[-1].split("_vartype.vcf")[0:-1]))
-
-
 header = ''
 informations = ''
 
 
+##  If vcf file is not empty, split the file based on header and varinats information by tab Separated
+##  If vcf file is empty, create an empty file and add header.
+
 with open(filename, "r") as f:
-          lines = f.readlines()
-          if len(lines) > 0:
-               chrom_index = [i for i, line in enumerate(lines) if line.strip().startswith("#CHROM")]
-               data = lines[chrom_index[0]:]
+            lines = f.readlines()
 
-               header = (data[0].strip().split("\t"))
+            if len(lines) > 0:
+                chrom_index = [i for i, line in enumerate(lines) if line.strip().startswith("#CHROM")]
+                data = lines[chrom_index[0]:]
+                header = (data[0].strip().split("\t"))
+                informations = [d.strip().split("\t") for d in data[1:]]
 
-               informations = [d.strip().split("\t") for d in data[1:]]
-
-          else:
-              file = ("_".join(filename.split("/")[-1].split("_vartype.vcf")[0:-1]))+'.csv'
-
-              fb = open(file, "a")
-              fb.write(",#CHROM,POS,REF,ALT,QUAL,Sample_name,Source,AD,DP,AF,DP4,VARTYPE,Annotation,Annotation_Impact,Rank,Gene_ID,HGVS.c,HGVS.p,CDS.length,AA.length,AA_change,VAF")
-              fb.close()
-              sys.exit()
+            else:
+                file = ("_".join(filename.split("/")[-1].split("_vartype.vcf")[0:-1]))+'.csv'
+                fb = open(file, "a")
+                fb.write(",#CHROM,POS,REF,ALT,QUAL,Sample_name,Source,AD,DP,AF,DP4,VARTYPE,Annotation,Annotation_Impact,AA_change,VAF")
+                fb.close()
+                sys.exit()
 
 ## get source info from vcf file
 for l in lines:
@@ -56,84 +57,76 @@ for l in lines:
     else:
         Source = "Samtools"
 
-vcf = pd.DataFrame(informations, columns=header)
+## get sample name from filename
+Sample_name = filename.split("/")[-1].split("_")[0]
+Sample_out = ("_".join(filename.split("/")[-1].split("_vartype.vcf")[0:-1]))
+
+
+vcf = pd.DataFrame(informations, columns=header)                            # create a dataframe called vcf with information and header
 vcf = vcf.set_axis([*vcf.columns[:-1], 'Genotype'], axis=1, inplace=False)  # rename last column name to Genotype
 
-## filter dataframe based on vartype.
-df_col = vcf.loc[:,['#CHROM', 'POS', 'REF', 'ALT', 'QUAL', 'INFO', 'FORMAT', 'Genotype']]
+## filter dataframe based on vartype
 
-#vartype = ["VARTYPE=SNP", "VARTYPE=DEL", 'VARTYPE=INS', 'VARTYPE=MNP']
-vartype = ["VARTYPE=SNP", 'VARTYPE=MNP']
-df_rows = df_col[df_col['INFO'].str.contains('|'.join(vartype))]   ## filter datafrma based on vartype = snp
-df_rows = df_rows.reset_index(drop=True)
-df_rows['Sample_name'] = Sample_name  # add column name sample name and source
-df_rows['Source'] = Source
+df_col = vcf.loc[:,['#CHROM', 'POS', 'REF', 'ALT', 'QUAL', 'INFO', 'FORMAT', 'Genotype']]    # Only select the columns of Interest exclude column ID and Filter
+vartype = ["VARTYPE=SNP"]
+df_rows = df_col[df_col['INFO'].str.contains('|'.join(vartype))]            # filter datafrma based on vartype = snp, MNP
+df_rows = df_rows.reset_index(drop=True)                                    # reindex dataframe
+df_rows['Sample_name'] = filename.split("/")[-1].split("_")[0]  # add column name sample name
+df_rows['Source'] = Source            # add column name as Source
 
-# check if vcf file does not contains vartype snp/MNP, then creat a empty file with header
+## Check for Empty File
+## Check if vcf file does not contains vartype snp/MNP, then create an empty file with only header
 
 if df_rows.empty:
-        file = ("_".join(filename.split("/")[-1].split("_vartype.vcf")[0:-1]))+'.csv'
+        file = ("_".join(filename.split("/")[-1].split("_vartype.vcf")[0:-1]))+'.csv'        # Create an empty file
         fb = open(file, "a")
-        fb.write(",#CHROM,POS,REF,ALT,QUAL,Sample_name,Source,AD,DP,AF,DP4,VARTYPE,Annotation,Annotation_Impact,Rank,Gene_ID,HGVS.c,HGVS.p,CDS.length,AA.pos,AA.length,AA_change,VAF")
+        fb.write(",#CHROM,POS,REF,ALT,QUAL,Sample_name,Source,AD,DP,AF,DP4,VARTYPE,Annotation,Annotation_Impact,AA_change,VAF")     # Add header
         fb.close()
         warnings.filterwarnings("ignore")
         sys.exit()
 
-## process genotype data to get AD
+## process genotype data to get AD (Number of observation for each allele)
+
 Genotype_1 =  df_rows['Genotype'].str.split(':', expand=True)
 Genotype_1.columns = df_rows['FORMAT'].str.split(':', expand=True).iloc[0]
 
+## Merge two dataframe
 df_rows  = pd.merge(df_rows, Genotype_1, left_index=True, right_index=True)
 df_rows["AD"] =np.nan if 'AD' not in df_rows.columns else df_rows['AD']
 
-## filert INFO colm based on annotation
+## filter the  INFO column to get the  annotation data
 ##'Allele | Annotation | Annotation_Impact | Gene_Name | Gene_ID | Feature_Type | Feature_ID | Transcript_BioType | Rank | HGVS.c | HGVS.p | cDNA.pos / cDNA.length | CDS.pos / CDS.length | AA.pos / AA.length |
 
-dict_info = {}
-dict_ANN = {}
+dict_info = {} # Create an empthy dictionary for 'INFO' data
+dict_ANN = {}  # Create an empthy dictionary for Snpeff annotation  data
 dict_info_merge = []
 
-
+# Separate InFO by ';' and save in dictionary dict_info
 for index, row in df_rows.iterrows():
-    #print (index, row)
-
     info_array = row["INFO"]
     for i in info_array.split(";"):
         if "=" in i:
             key = i.split("=")[0]
             value = i.split("=")[1]
             dict_info[key]=value
-    my_Ann = dict_info["ANN"]
 
-# creat a dcitonary for annotation info
+    # create a dictionary for annotation info
+    my_Ann = dict_info["ANN"]
     keys = [ 'Allele' , 'Annotation' , 'Annotation_Impact',  'Gene_Name', 'Gene_ID' , 'Feature_Type' , 'Feature_ID' , 'Transcript_BioType' , 'Rank' , 'HGVS.c' , 'HGVS.p' , 'cDNA.pos/cDNA.length' , 'CDS.pos/CDS.length' , 'AA.pos/AA.length']
     values = my_Ann.split("|")[0:14]
 
     for i in range(len(keys)):
         dict_ANN[keys[i]] = values[i]
 
-## grap nucleoptide position from ANN
-    val = my_Ann.split("|")
-
-    r = re.compile("^c.[0-9]*[A-Z]{1}>[A-Z]{1}")
-    newlist = list(filter(r.match,val))
-
-    POS_ANN = [pos[2:-3] for pos in newlist]
-    POS_ANN = (", ".join(POS_ANN))
-    dict_ANN["POS_ANN"] = POS_ANN
-
-
-# copy the content of dict_info to new dict so that we can remove annotation and merge the two dictonary
+    # copy the content of dict_info to new dict so that we can remove annotation and merge the two dictonary
     New_info = dict_info
     New_info.pop("ANN")
 
     dict_merge = {**New_info, **dict_ANN}
     dict_info_merge.append(dict_merge)
 
-
-
+# Create a new dataframe from Previous two merge list
 df1 = pd.DataFrame(dict_info_merge)
-
 # check if column exits or not: put NAN if column not exits
 df1["POS"] = df_rows['POS']
 df1["AF"] =np.nan if 'AF' not in df1.columns else df1['AF']
@@ -141,12 +134,11 @@ df1["DP4"] =np.nan if 'DP4' not in df1.columns else df1['DP4']
 
 
 df1['Gene_Name'] = df1['Gene_Name'].replace(['DHFR-TS','DHPS','CYTB'],['DHFR','DHPS_437Corrected','mitochondrial_genome_-_CYTB_CDS'])
-
 df1 = df1.rename({'Gene_Name': '#CHROM'}, axis=1)
-
 df1['AA_change'] = [i[2:] for i in df1['HGVS.p']]
 
-ANN_info = df1.loc[:,['DP',"AF",'DP4', 'VARTYPE','Annotation', 'Annotation_Impact', '#CHROM', 'Gene_ID',
+
+ANN_info = df1.loc[:,['DP',"AF",'DP4', 'VARTYPE','Annotation', 'Annotation_Impact', '#CHROM',
                       'POS','AA_change'] ]
 
 VCF_info = df_rows.loc[:,['#CHROM', 'POS', 'REF', 'ALT', 'QUAL','Sample_name', 'Source','AD']]
@@ -171,6 +163,24 @@ except:
 
 result["VAF"] = VAF
 result = result.replace(r'^\s*$', np.nan, regex=True)
-print(result)
 
-result.to_csv(Sample_out+'.csv')
+## Change the value of Pfcrt 75 codon to correcly annotate
+
+# If #chrom = pfcrt, POS = 495 and AA_change = N75D; Then change the REF = AAT, ALT = GAT and AA_change= N75E
+
+df_1 = result.loc[(result['#CHROM']=="PfCRT")&(result['POS']==495)|(result['AA_change']=='N75D')]
+
+#df_1 = result[result['AA_change'].str.contains('N75D')]
+df_1.replace({'AA_change':{'N75D' :'N75E'}, 'REF': {'A':'AAT'}, 'ALT': {'G':'GAT'}},inplace= True)
+
+
+# If  #chrom = pfcrt, POS = 497 and AA_change = N75K : Then remove this row
+result = result[(result.POS != 497) & (result.AA_change != 'N75K')  ]
+result = result[(result.POS != 495) & (result.AA_change != 'N75D')  ]
+result = result.reset_index(drop=True)
+
+
+# COncat two df to get final dataframe and sort the POS value based on chrom and POS
+dat1 = pd.concat([result, df_1], axis=0)
+dat1.sort_values(by=['#CHROM','POS'],inplace=True)
+dat1.to_csv(Sample_out+'.csv')

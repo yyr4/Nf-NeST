@@ -71,10 +71,15 @@ process VCF_call {
   script:
 
     """
+    # Samtools
     bcftools mpileup -O b -o ${sample_id}.mpileup -f ${ref} ${sample_id}_picard_readgroup.bam
     bcftools call --ploidy 1 -m -v -o ${sample_id}_bcf.vcf ${sample_id}.mpileup
     vcfutils.pl varFilter ${sample_id}_bcf.vcf > ${sample_id}_samtools.vcf
-    freebayes -f  ${ref} -F 0.01 -E 3 --report-all-haplotype-alleles --haplotype-length -1 ${sample_id}_picard_readgroup.bam | vcffilter -f "QUAL > 20" > ${sample_id}_Freebayes.vcf
+
+    # freebayes
+    freebayes -f  ${ref} -F 0.01 -E 3 --report-all-haplotype-alleles --haplotype-length -1 ${sample_id}_picard_readgroup.bam | bcftools filter -i 'QUAL>5' > ${sample_id}_Freebayes.vcf
+
+    # GATK
     gatk HaplotypeCaller --native-pair-hmm-threads 8 -R ${ref} -I ${sample_id}_picard_readgroup.bam  --min-base-quality-score 0 -O ${sample_id}_gatk.vcf
     """
 

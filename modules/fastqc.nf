@@ -34,7 +34,7 @@ process PostFastqC{
 
     script:
     """
-    echo ${sample_id}
+  
     fastqc ${reads}
 
     """

@@ -28,7 +28,7 @@ include {Sam_sort; Picard_add_read; VCF_call} from './modules/vcf_call'
 include {annotation; vartype  } from './modules/annotation'
 include {vcf_to_DF; csv_merge} from './modules/csv_merge'
 include {getcoverage; WT_cov  } from './modules/coverage'
-include {Snpfilter} from './modules/final_snp'
+include {Snpfilter; Summary_merge; Summary} from './modules/final_snp'
 
 
 
@@ -36,7 +36,7 @@ workflow {
 
     // cerate a channel for ref and reads
     ref_ch =  Channel.fromPath(params.ref, checkIfExists: true)
-    read_ch = Channel.fromFilePairs(params.reads, checkIfExists: true, size: -1)
+    read_ch = Channel.fromFilePairs(params.reads, checkIfExists: true).filter{ it.size()>0 }
     adapter_ch = Channel.fromPath(params.adapter, checkIfExists: true)
     snpeff_ch = Channel.fromPath(params.snpeff_config, checkIfExists: true)
     bed_ch = Channel.fromPath( params.bed, checkIfExists: true )
@@ -58,5 +58,6 @@ workflow {
     getcoverage(Picard_add_read.out.Picard_out_bam)
     WT_cov(ref_ch.combine(bed_ch).combine(voi_ch).combine(getcoverage.out.samtools_depth))
     Snpfilter(voi_ch.combine(csv_merge.out.CSV_merge.join(WT_cov.out.WT_coverage)))
-
+    Summary_merge(Snpfilter.out.snp_report.collect())
+    Summary(Summary_merge.out)
   }
