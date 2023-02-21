@@ -18,7 +18,7 @@ WT_cov = args.WT_coverage
 vcf_merge = args.vcf_merge
 VOI_file = args.VOI
 
-Sample_out = ("_".join(vcf_merge.split("/")[-1].split("_")[0:3]))
+Sample_out = ("_".join(vcf_merge.split("/")[-1].split("_")[0:-1]))
 
 # reading two csv files
 # if coverage .csv file is empty, skip the code and exit
@@ -40,7 +40,7 @@ data2["AVG_VAF"] = (100 * data2["AVG_VAF"]).round(1)
 data2["VOI"] = data2["AA_change"]
 
 # drop the rows where avg_vcf is less than 1%
-data2 = data2[data2.AVG_VAF >= 1]
+data2 = data2[data2.AVG_VAF > 5]
 data2["AVG_VAF"] = data2["AVG_VAF"].astype(str) + '%'
 
 # merge two datafrme (snp output and WT coverage out)
@@ -72,11 +72,23 @@ df_voi = df_voi.rename({'Gene':'CHROM'},axis=1)
 voi_list=df_voi["VOI"].tolist()
 
 #create a column snp_report if snps is present in voi file list, call it reportable snp otherwise novel
-output1["SNP_Report"] = np.where(output1["VOI"].isin(voi_list), "Reportable" , "Novel")
+def snp_report(output1):
+
+    if (output1["AVG_COV"] == 0):
+        return "No coverage"
+    elif (output1["AVG_COV"] != 0) and (output1["VOI"] in(voi_list)):
+        return 'Reportable SNP'
+    elif (output1["AVG_COV"] != 0) and (output1["VOI"] not in (voi_list)):
+        return 'Novel SNP'
+
+
+output1["SNP_Report"] = output1.apply(snp_report, axis = 1)
+
 
 #Reorder the columns
 output1 = output1[['Sample_name', 'CHROM', 'POS', 'AA_change', 'AVG_VAF', 'AVG_COV', 'REF', 'ALT','VARTYPE', 'Annotation', 'VarCal'
-                     ,'Confidence', 'VOI', 'Type', 'SNP_Report'  ]]
+                     ,'Confidence', 'VOI', 'Type', 'SNP_Report']]
+
 # final output in csv
 output1.to_csv(Sample_out+'_final_snp.csv', index=False)
 
