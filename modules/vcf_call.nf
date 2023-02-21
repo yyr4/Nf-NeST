@@ -77,7 +77,7 @@ process VCF_call {
     vcfutils.pl varFilter ${sample_id}_bcf.vcf > ${sample_id}_samtools.vcf
 
     # freebayes
-    freebayes -f  ${ref} -F 0.01 -E 3 --report-all-haplotype-alleles --haplotype-length -1 ${sample_id}_picard_readgroup.bam | bcftools filter -i 'QUAL>5' > ${sample_id}_Freebayes.vcf
+    freebayes -f  ${ref} -F 0.01 -E 3 --report-all-haplotype-alleles --haplotype-length -1 ${sample_id}_picard_readgroup.bam > ${sample_id}_Freebayes.vcf
 
     # GATK
     gatk HaplotypeCaller --native-pair-hmm-threads 8 -R ${ref} -I ${sample_id}_picard_readgroup.bam  --min-base-quality-score 0 -O ${sample_id}_gatk.vcf

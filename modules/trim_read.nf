@@ -1,6 +1,6 @@
 // Adapter and quality trimming
 process Trim_reads {
-    errorStrategy 'ignore'
+    // errorStrategy 'ignore'
 
     tag { "Trim_reads${sample_id}"}
 
