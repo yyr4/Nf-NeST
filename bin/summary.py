@@ -37,4 +37,5 @@ def year(row):  ##Set up a function for Year  based on the values in the Sample_
 df[['TREATMENT_DAY', "POOLED","YEAR"]] = df.apply([TreatmentDay,POOLED,year], axis=1)
 
 
+
 df.to_csv('All_final_snp.csv',index=False)

@@ -28,7 +28,7 @@ Bed_file = args.Bed_file
 VOI_file = args.VOI
 
 Sample_name = Cov_file.split("/")[-1].split("_")[0]
-Sample_out = ("_".join(Cov_file.split("/")[-1].split("_")[0:3]))
+Sample_out = ("_".join(Cov_file.split("/")[-1].split("_")[0:-1]))
 
 
 

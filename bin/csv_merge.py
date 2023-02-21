@@ -20,24 +20,24 @@ parser.add_argument('-v3', '--vcf3', dest='vcf_path3', type=str,
 args = parser.parse_args()
 files =args.vcf_path1, args.vcf_path2, args.vcf_path3
 
-
 samp_files = list(files)
 
 
 sample_name = []
 for i in samp_files:
-    i = "_".join(i.split("/")[-1].split("_")[0:3])
+    i = "_".join(i.split("/")[-1].split("_")[0:-1])
     if i not in sample_name:
         sample_name.append(i)
+#print(sample_name)
 Sample_name = sample_name[0]
-
 
 # joining files with concat and read_csv
 Merge_df = pd.concat(map(pd.read_csv, files), ignore_index=True)
 Merge_df = Merge_df.reset_index(drop=True)
 
 df = Merge_df.replace(r'^\s*$', np.nan, regex=True)
-
+df.to_csv('file_merge.csv')
+#print(df.columns)
 ####################
 
 Merge_df['VarCal'] = Merge_df.groupby(["#CHROM","POS",'AA_change'])['Source'].transform(
