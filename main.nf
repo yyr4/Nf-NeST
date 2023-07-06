@@ -27,8 +27,8 @@ include {BWA_align} from './modules/align'
 include {Sam_sort; Picard_add_read; VCF_call} from './modules/vcf_call'
 include {annotation; vartype  } from './modules/annotation'
 include {vcf_to_DF; csv_merge} from './modules/csv_merge'
-include {getcoverage; WT_cov  } from './modules/coverage'
-include {Snpfilter; Summary_merge; Summary} from './modules/final_snp'
+include {getcoverage; WT_cov } from './modules/coverage'
+include {Snpfilter; Summary_merge; Summary; Dataviz_Reportable_snps; DataViz_Novel_snps } from './modules/final_snp'
 
 
 
@@ -60,4 +60,8 @@ workflow {
     Snpfilter(voi_ch.combine(csv_merge.out.CSV_merge.join(WT_cov.out.WT_coverage)))
     Summary_merge(Snpfilter.out.snp_report.collect())
     Summary(Summary_merge.out)
+    Dataviz_Reportable_snps(Summary.out.Reportable_snps)
+    DataViz_Novel_snps(Summary.out.Novel_snps)
+
+
   }
