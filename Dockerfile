@@ -117,5 +117,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
   RUN pip3 install pysam
   RUN pip3 install xlrd==1.2.0
   RUN pip3 install pyfaidx
+  RUN pip3 install seaborn
+
 
  ENV PATH="/opt/gatk-4.1.4.1/:${PATH}"
