@@ -63,7 +63,7 @@ Sample_out = ("_".join(filename.split("/")[-1].split("_vartype.vcf")[0:-1]))
 
 
 vcf = pd.DataFrame(informations, columns=header)                            # create a dataframe called vcf with information and header
-vcf = vcf.set_axis([*vcf.columns[:-1], 'Genotype'], axis=1, inplace=False)  # rename last column name to Genotype
+vcf.columns = [*vcf.columns[:-1], 'Genotype']                               # rename last column name to Genotype
 
 ## filter dataframe based on vartype
 

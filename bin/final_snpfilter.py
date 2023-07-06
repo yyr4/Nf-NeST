@@ -91,12 +91,3 @@ output1 = output1[['Sample_name', 'CHROM', 'POS', 'AA_change', 'AVG_VAF', 'AVG_C
 
 # final output in csv
 output1.to_csv(Sample_out+'_final_snp.csv', index=False)
-
-# separte reportable and novel mutations
-'''
-Reportable = output1[output1['SNP_Report'] == 'Reportable']
-Novel = output1[output1['SNP_Report'] == 'Novel']
-
-Reportable.to_csv(Sample_out+'_Reportable.csv', index=True)
-Novel.to_csv(Sample_out+'_Novel.csv', index=True)
-'''
