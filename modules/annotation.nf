@@ -1,6 +1,6 @@
 process annotation {
       tag  { "annotation ${sample_id }"}
-      publishDir "${params.out}/snpEff_annotation", mode:'copy'
+      // publishDir "${params.out}/snpEff_annotation", mode:'copy'
 
 
       input:

@@ -4,7 +4,7 @@ process Trim_reads {
 
     tag { "Trim_reads${sample_id}"}
 
-    publishDir "${params.out}/Trimmed_Fastq/${sample_id}", pattern: "*.fastq", mode : "copy"
+    // publishDir "${params.out}/Trimmed_Fastq/${sample_id}", pattern: "*.fastq", mode : "copy"
     publishDir "${params.out}/Trimmed_Fastq/${sample_id}/Stats", pattern: "*.txt", mode : "copy"
 
     input:

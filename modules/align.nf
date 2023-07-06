@@ -1,7 +1,7 @@
 process BWA_align{
 
     tag { "BWA_align ${sample_id}"}
-    publishDir "${params.out}/bwa_align", pattern: "*.sam",  mode:'copy'
+    // publishDir "${params.out}/bwa_align", pattern: "*.sam",  mode:'copy'
 
     // input is reads and refenace
     input:

@@ -1,7 +1,7 @@
 process Sam_sort {
 
     tag { "Sam_sort ${sample_id}"}
-    publishDir "${params.out}/bam_out", mode:'copy'
+    // publishDir "${params.out}/bam_out", mode:'copy'
 
     // input is reads and refenace
     input:
@@ -28,7 +28,7 @@ process Sam_sort {
 process Picard_add_read{
 
     tag { "Picard_add_read${sample_id}"}
-    publishDir "${params.out}/picard_out", mode:'copy'
+    // publishDir "${params.out}/picard_out", mode:'copy'
 
 
     input:
@@ -43,8 +43,11 @@ process Picard_add_read{
 
     """
 
-    java -jar /usr/local/bin/picard/picard.jar AddOrReplaceReadGroups  I=${sample_id}_align.sam O=${sample_id}_picard_readgroup.bam \\
-    SORT_ORDER=coordinate RGLB=ExomeSeq  RGPL=Illumina RGPU=Miseq  RGSM=${sample_id} CREATE_INDEX=True
+    #picard AddOrReplaceReadGroups I=${sample_id}_align.sam O=${sample_id}_picard_readgroup.bam \\
+    SORT_ORDER=coordinate RGLB=ExomeSeq  RGPL=Illumina RGPU=NextSeq  RGSM=${sample_id} CREATE_INDEX=True
+
+    java -jar /usr/local/bin/picard/picard.jar AddOrReplaceReadGroups I=${sample_id}_align.sam O=${sample_id}_picard_readgroup.bam \\
+    SORT_ORDER=coordinate RGLB=ExomeSeq  RGPL=Illumina RGPU=NextSeq  RGSM=${sample_id} CREATE_INDEX=True
 
 
     """

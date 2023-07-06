@@ -15,8 +15,10 @@ process BWA_index {
     script:
     """
     bwa index ${ref} > ref.index
-    java -jar /usr/local/bin/picard/picard.jar CreateSequenceDictionary R=${ref}
+    # picard CreateSequenceDictionary -R ${ref} -O mars_pf_ref.dict
     samtools faidx ${ref}
+    java -jar /usr/local/bin/picard/picard.jar CreateSequenceDictionary R=${ref}
+
 
     """
 

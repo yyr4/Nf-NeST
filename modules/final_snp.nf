@@ -33,7 +33,7 @@ process Summary_merge{
 
     output:
 
-      file("merged_final_snp.csv")
+      file ("merged_final_snp.csv")
 
 
      script:
@@ -51,21 +51,69 @@ process Summary {
 
     input:
 
-      file ("merged_final_snp.csv")
+      path "merged_final_snp.csv"
 
 
     output:
 
-     file("All_final_snp.csv")
+     path "All_final_snp.csv", emit: Summary_Snp
+     path "Reportable_snps.csv", emit: Reportable_snps
+     path "Novel_snps.csv", emit: Novel_snps
 
     script:
 
 
        """
 
-       summary.py -f merged_final_snp.csv > All_final_snp.csv
+       summary.py -f merged_final_snp.csv
 
        """
 
+
+}
+
+
+process Dataviz_Reportable_snps {
+    publishDir "${params.out}/Summary/", mode : "copy"
+
+
+    input:
+
+      path x
+
+
+    output:
+
+      file ('Reportable_Per_SNP_depth.pdf')
+      file ('SNPs-Reportable.pdf')
+
+
+    script:
+
+
+       """
+        Dataviz_Reportable_snps.py -r $x
+
+       """
+
+}
+process DataViz_Novel_snps {
+    publishDir "${params.out}/Summary/", mode : "copy"
+
+
+    input:
+      path y
+
+    output:
+
+      file ('SNPs-Novel-missense.pdf')
+      file ('SNPs-Novel-synonymous.pdf')
+
+    script:
+
+
+       """
+        Dataviz_Novel_snps.py -n $y
+       """
 
 }
