@@ -75,7 +75,7 @@ process Summary {
 
 process Dataviz_Reportable_snps {
     publishDir "${params.out}/Summary/", mode : "copy"
-
+    errorStrategy 'ignore'
 
     input:
 
@@ -99,7 +99,7 @@ process Dataviz_Reportable_snps {
 }
 process DataViz_Novel_snps {
     publishDir "${params.out}/Summary/", mode : "copy"
-
+    errorStrategy 'ignore'
 
     input:
       path y

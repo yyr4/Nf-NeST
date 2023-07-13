@@ -14,8 +14,8 @@ process Trim_reads {
 
     output:
     tuple val(sample_id), path("*.bbduk.fastq"), emit: Trimmed_fastq
-    file "${sample_id}.stats.txt"
-
+    // file "${sample_id}.stats.txt"
+    tuple val(sample_id), path("${sample_id}.stats.txt"), emit: Trimmed_stats
 
 
     script:
