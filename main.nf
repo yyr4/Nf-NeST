@@ -13,21 +13,19 @@ nextflow.enable.dsl=2
  params.pyscripts = "$HOME/Nf-Nest/pyscripts"
  params.bed = "$HOME/Nf-Nest/Ref/mars_pf.bed"
  params.voi = "$HOME/Nf-Nest/Ref/voinew3.csv"
- params.memory = "8g"
- params.cpus = 1
 
 
 // import modules
 
 include { PreFastqC} from './modules/fastqc'
-include { Trim_reads } from './modules/trim_read'
+include { Trim_reads; } from './modules/trim_read'
 include { PostFastqC} from './modules/fastqc'
 include {BWA_index} from './modules/index'
 include {BWA_align} from './modules/align'
 include {Sam_sort; Picard_add_read; VCF_call} from './modules/vcf_call'
 include {annotation; vartype  } from './modules/annotation'
 include {vcf_to_DF; csv_merge} from './modules/csv_merge'
-include {getcoverage; WT_cov } from './modules/coverage'
+include {getcoverage; WT_cov ; Trim_Stats; Reads_merge} from './modules/coverage'
 include {Snpfilter; Summary_merge; Summary; Dataviz_Reportable_snps; DataViz_Novel_snps } from './modules/final_snp'
 
 
@@ -56,12 +54,13 @@ workflow {
     vcf_to_DF(vartype.out.vartype_annotation)
     csv_merge(vcf_to_DF.out.csv_annotate)
     getcoverage(Picard_add_read.out.Picard_out_bam)
+    Trim_Stats(Trim_reads.out.Trimmed_stats.join(getcoverage.out.Samtools_coverage))
     WT_cov(ref_ch.combine(bed_ch).combine(voi_ch).combine(getcoverage.out.samtools_depth))
     Snpfilter(voi_ch.combine(csv_merge.out.CSV_merge.join(WT_cov.out.WT_coverage)))
     Summary_merge(Snpfilter.out.snp_report.collect())
     Summary(Summary_merge.out)
     Dataviz_Reportable_snps(Summary.out.Reportable_snps)
     DataViz_Novel_snps(Summary.out.Novel_snps)
-
+    Reads_merge(Trim_Stats.out.Reads_cov.collect())
 
   }
