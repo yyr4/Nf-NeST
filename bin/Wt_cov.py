@@ -46,6 +46,8 @@ with Fasta(ref) as fasta:     ## fasta file with each genes
             nucleotides.seek(0) # Ensure you're at the start of the file..
             first_char = nucleotides.read(1) # Get the first character
             if not first_char:
+                raise Exception(Sample_out, "is empty!")
+
                 sys.exit()
             else:
                 nucleotides.seek(0) # The first character wasn't empty. Return to the start of the file.
