@@ -22,6 +22,54 @@ except pd.errors.EmptyDataError:
     print("Reportable SNPs are empty")
     sys.exit()
 
+#######################  DMS EPI Report:
+
+df_epi = DF[['Sample_name','CHROM','VOI','Type']]
+def func(row):
+    if row['Type'] == 'Mutant':
+        return '1'
+    elif row['Type'] =='Mixed':
+        return '1'
+    else:
+        return '0'
+
+df_epi['Total Mutation'] = df_epi.apply(func, axis=1).astype(int)
+
+df_epi['codon'] = df_epi['VOI'].str[1:-1].astype(int)
+
+#df = df.sort_values(by=['Sample_name','CHROM', 'codon']).reset_index()
+##print(df)
+df_epi['codon'] = df_epi['codon'].astype(str)
+df_epi['Gene-Variants'] =  df_epi['CHROM']  +"(" +df_epi['VOI'] + ")"
+
+
+df2_epi =df_epi.groupby(['Sample_name','CHROM'])['Total Mutation'].sum().reset_index()
+
+pivot_table_2 = df2_epi.pivot_table(index=['Sample_name'], columns=['CHROM'], values='Total Mutation').reset_index()
+
+pivot_table_2 = pivot_table_2.add_suffix(' #Drug_resistant_mutations')
+pivot_table_2 = pivot_table_2.rename(columns={"Sample_name #Drug_resistant_mutations": "Sample_name"})
+#print(pivot_table_2)
+
+
+pivot_table_1 = df_epi.pivot_table(index=['Sample_name'], columns=['Gene-Variants'], values='Type',sort=False , aggfunc=lambda x: ' '.join(str(v) for v in x),fill_value='NA')
+
+Merge_pivot = (pd.merge(pivot_table_2, pivot_table_1, how="outer", on=["Sample_name"])
+            .set_index("Sample_name")
+            .sort_index(axis=1)
+            .reset_index()
+
+      )
+
+
+Merge_pivot.insert(loc=1, column='CaseID', value='NA' )
+Merge_pivot.insert(loc=2, column='Travel_History', value='NA')
+Merge_pivot = Merge_pivot.replace(['Wildtype', 'Mutant','Mixed'], ['WT', 'MT', 'MIX'])
+
+
+Merge_pivot.to_csv("DMS_EPI_report.csv", sep=',')
+
+
 ##########  Reportable_Per_SNP_depth
 df1 = DF[['CHROM', 'VOI', 'AVG_COV']]
 
