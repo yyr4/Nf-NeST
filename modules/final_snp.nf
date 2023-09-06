@@ -44,6 +44,27 @@ process Summary_merge{
        """
 }
 
+process Introns_merge{
+    publishDir "${params.out}/Summary/", mode : "copy"
+
+
+    input:
+
+      file("*")
+
+    output:
+
+      file ("Introns_final_snp.csv")
+
+
+     script:
+
+
+       """
+       awk 'FNR==1 && NR!=1{next;}{print}' *.csv > Introns_final_snp.csv
+       """
+}
+
 
 process Summary {
     publishDir "${params.out}/Summary/", mode : "copy"
@@ -83,7 +104,7 @@ process Dataviz_Reportable_snps {
 
 
     output:
-
+      file('DMS_EPI_report.csv')
       file ('Reportable_Per_SNP_depth.pdf')
       file ('SNPs-Reportable.pdf')
 
