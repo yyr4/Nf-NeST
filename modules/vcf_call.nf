@@ -1,13 +1,11 @@
 process Sam_sort {
 
     tag { "Sam_sort ${sample_id}"}
-    // publishDir "${params.out}/bam_out", mode:'copy'
+    publishDir "${params.out}/bam_out", mode:'copy'
 
     // input is reads and refenace
     input:
-
     tuple val(sample_id), path(sam)
-
 
     // output is samfile
     output:
@@ -28,7 +26,7 @@ process Sam_sort {
 process Picard_add_read{
 
     tag { "Picard_add_read${sample_id}"}
-    // publishDir "${params.out}/picard_out", mode:'copy'
+    publishDir "${params.out}/picard_out", mode:'copy'
 
 
     input:
@@ -36,7 +34,6 @@ process Picard_add_read{
 
     output:
     tuple val (sample_id) ,path("${sample_id}_picard_readgroup.bam"), emit: Picard_out_bam
-
 
 
     script:
@@ -62,28 +59,39 @@ process VCF_call {
 
 
   input:
-    tuple path(ref), path("*"), val (sample_id), path("${sample_id}_picard_readgroup.bam")
+    tuple path(ref), path("*"), path(bed), val (sample_id), path("${sample_id}_picard_readgroup.bam")
 
   output:
     //tuple val (sample_id) ,path("${sample_id}.mpileup"),      emit: BCF_out
     //tuple val (sample_id) ,path("${sample_id}_bcf.vcf"),      emit: Variants_out
-    tuple val (sample_id) ,path("${sample_id}_samtools.vcf"),path("${sample_id}_Freebayes.vcf"),  path("${sample_id}_gatk.vcf") , emit: variants
+    tuple val (sample_id) ,path("${sample_id}_samtools.vcf"),path("${sample_id}_Freebayes.vcf"),  path("${sample_id}_gatk.vcf"), path("${sample_id}_vardict.vcf") , emit: variants
 
 
 
   script:
 
     """
+
+    samtools index ${sample_id}_picard_readgroup.bam
+
+    
+
     # Samtools
     bcftools mpileup -O b -o ${sample_id}.mpileup -f ${ref} ${sample_id}_picard_readgroup.bam
     bcftools call --ploidy 1 -m -v -o ${sample_id}_bcf.vcf ${sample_id}.mpileup
     vcfutils.pl varFilter ${sample_id}_bcf.vcf > ${sample_id}_samtools.vcf
 
-    # freebayes
-    freebayes -f  ${ref} -F 0.01 -E 3 --report-all-haplotype-alleles --haplotype-length -1 ${sample_id}_picard_readgroup.bam > ${sample_id}_Freebayes.vcf
+    # freebayes (calls mnps and snps)
+    #freebayes -f  ${ref} -F 0.05 -E 3 --report-all-haplotype-alleles --haplotype-length -1 ${sample_id}_picard_readgroup.bam > ${sample_id}_Freebayes.vcf
+    freebayes -f  ${ref} -F 0.05 -E 3 --report-all-haplotype-alleles ${sample_id}_picard_readgroup.bam > ${sample_id}_Freebayes.vcf
 
     # GATK
     gatk HaplotypeCaller --native-pair-hmm-threads 8 -R ${ref} -I ${sample_id}_picard_readgroup.bam  --min-base-quality-score 0 -O ${sample_id}_gatk.vcf
+
+    # vardict
+    vardict -G ${ref}  -f 0.05 -N ${sample_id} -b ${sample_id}_picard_readgroup.bam -c 1 -S 2 -E 3 -g 4 ${bed} | var2vcf_valid.pl -N ${sample_id} -E -f 0.05 >  ${sample_id}_vardict.vcf
+
+
     """
 
 }
