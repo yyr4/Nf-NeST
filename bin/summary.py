@@ -19,6 +19,7 @@ filename=args.merged_csv
 csv.field_size_limit(sys.maxsize)                                                                                                         ##Maximize the csv file input size
 DF_1=pd.read_csv(filename)
 
+'''
 def TreatmentDay(row): ##Set up a function for assigning TreatmentDay based on the values in the Sample_name column
     if row['Sample_name'][6:8]=="00":
           return '0'
@@ -35,6 +36,7 @@ def year(row):  ##Set up a function for Year  based on the values in the Sample_
     return row['Sample_name'][0:2]
 
 DF_1[['TREATMENT_DAY', "POOLED","YEAR"]] = DF_1.apply([TreatmentDay,POOLED,year], axis=1)
+'''
 
 DF_1[['AVG_COV']] = DF_1[['AVG_COV']].astype(float)
 
@@ -67,14 +69,14 @@ DF_1.to_csv('All_final_snp.csv',index=False)
 ###### Repportable SNP
 Reportable = DF_1.loc[DF_1['SNP_Report'] == "Reportable SNP"]
 
-Reportable.drop(Reportable[Reportable.AVG_COV < 2 ].index)
+Reportable.drop(Reportable[Reportable.AVG_COV < 10 ].index)
 Reportable.to_csv("Reportable_snps.csv", index=False)
 
 ######
 
 Novel = DF_1.loc[DF_1['SNP_Report'] == "Novel SNP"]
 
-Novel = Novel.drop(Novel[Novel.AVG_COV < 5 ].index)
+Novel = Novel.drop(Novel[Novel.AVG_COV < 10 ].index)
 Novel = Novel.drop(Novel[Novel.Confidence < 2 ].index)
 
 Novel.to_csv("Novel_snps.csv", sep=',', index=False)

@@ -44,7 +44,7 @@ with open(filename, "r") as f:
             else:
                 file = ("_".join(filename.split("/")[-1].split("_vartype.vcf")[0:-1]))+'.csv'
                 fb = open(file, "a")
-                fb.write(",#CHROM,POS,REF,ALT,QUAL,Sample_name,Source,AD,DP,AF,DP4,VARTYPE,Annotation,Annotation_Impact,AA_change,VAF")
+                fb.write(",#CHROM,POS,REF,ALT,QUAL,Sample_name,Source,AD,DP,AF,DP4,VARTYPE,Annotation,Annotation_Impact,AA_change,VAF,HGVS.c,HGVS.p")
                 fb.close()
                 sys.exit()
 
@@ -68,7 +68,7 @@ vcf.columns = [*vcf.columns[:-1], 'Genotype']                               # re
 ## filter dataframe based on vartype
 
 df_col = vcf.loc[:,['#CHROM', 'POS', 'REF', 'ALT', 'QUAL', 'INFO', 'FORMAT', 'Genotype']]    # Only select the columns of Interest exclude column ID and Filter
-vartype = ["VARTYPE=SNP"]
+vartype = ["VARTYPE=SNP", "VARTYPE=MNP"]
 df_rows = df_col[df_col['INFO'].str.contains('|'.join(vartype))]            # filter datafrma based on vartype = snp, MNP
 df_rows = df_rows.reset_index(drop=True)                                    # reindex dataframe
 df_rows['Sample_name'] = filename.split("/")[-1].split("_")[0]  # add column name sample name
@@ -131,15 +131,15 @@ df1 = pd.DataFrame(dict_info_merge)
 df1["POS"] = df_rows['POS']
 df1["AF"] =np.nan if 'AF' not in df1.columns else df1['AF']
 df1["DP4"] =np.nan if 'DP4' not in df1.columns else df1['DP4']
+df1["#CHROM"] = df_rows['#CHROM']
 
-
-df1['Gene_Name'] = df1['Gene_Name'].replace(['DHFR-TS','DHPS','CYTB'],['DHFR','DHPS_437Corrected','mitochondrial_genome_-_CYTB_CDS'])
-df1 = df1.rename({'Gene_Name': '#CHROM'}, axis=1)
+#df1['Gene_Name'] = df1['Gene_Name'].replace(['DHFR-TS','DHPS','CYTB'],['DHFR','DHPS_437Corrected','mitochondrial_genome_-_CYTB_CDS'])
+#df1 = df1.rename({'Gene_Name': '#CHROM'}, axis=1)
 df1['AA_change'] = [i[2:] for i in df1['HGVS.p']]
 
 
 ANN_info = df1.loc[:,['DP',"AF",'DP4', 'VARTYPE','Annotation', 'Annotation_Impact', '#CHROM',
-                      'POS','AA_change'] ]
+                      'POS','AA_change','HGVS.c' , 'HGVS.p'] ]
 
 VCF_info = df_rows.loc[:,['#CHROM', 'POS', 'REF', 'ALT', 'QUAL','Sample_name', 'Source','AD']]
 
@@ -148,14 +148,18 @@ result = pd.merge(VCF_info, ANN_info, on=["#CHROM","POS"])
 
 VAF = []
 try:
-    for i in result['AD'].str.split(","):
-        alt =  int(i[1])
-        total = int(i[0])+ int(i[1])
-        alfreq = round(alt/float(total),2)
+    for i in result['AD'].astype(str).str.split(","):
+
+        alt =  float(i[1])
+        total = float(i[0])+ float(i[1])
+        if total == 0:
+            alfreq = 0.0
+        else:
+            alfreq = round(alt/float(total),2)
         VAF.append(alfreq)
 
 except:
-    for i in result['DP4'].str.split(","):
+    for i in result['DP4'].astype(str).str.split(","):
         alt = int(i[2])+ int(i[3])
         total = int(i[0])+ int(i[1])+int(i[2])+ int(i[3])
         alfreq = round(alt/float(total),2)
