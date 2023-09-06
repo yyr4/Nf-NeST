@@ -64,6 +64,10 @@ RUN apt-get update && apt-get install -y freebayes
 RUN apt-get update && apt-get install -y bwa
 
 
+RUN wget https://github.com/AstraZeneca-NGS/VarDict/archive/refs/heads/master.zip && \
+   unzip master.zip && \
+   chmod 755 VarDict-master/* && \
+   ln -s /opt/VarDict-master/* /usr/local/bin/
 
 RUN wget https://github.com/samtools/bcftools/releases/download/1.9/bcftools-1.9.tar.bz2 && \
 	tar jxf bcftools-1.9.tar.bz2 && \
@@ -71,7 +75,6 @@ RUN wget https://github.com/samtools/bcftools/releases/download/1.9/bcftools-1.9
 	cd bcftools-1.9 && \
 	make install
 
-COPY ./6Genes_ref/ /opt/data/6Genes_ref
 
 RUN wget https://snpeff.blob.core.windows.net/versions/snpEff_latest_core.zip && \
      unzip snpEff_latest_core.zip && rm -r snpEff_latest_core.zip && \
@@ -104,20 +107,20 @@ RUN apt-get update && \
 
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
- RUN wget https://github.com/broadinstitute/gatk/releases/download/4.1.4.1/gatk-4.1.4.1.zip \
+RUN wget https://github.com/broadinstitute/gatk/releases/download/4.1.4.1/gatk-4.1.4.1.zip \
  	&& unzip gatk-4.1.4.1.zip \
  	&& rm gatk-4.1.4.1.zip -f \
  	&& cd gatk-4.1.4.1 \
  	&& ./gatk --list
 
 
-  RUN pip3 install -U pip setuptools
-  RUN pip3 install pandas
-  RUN pip3 install matplotlib
-  RUN pip3 install pysam
-  RUN pip3 install xlrd==1.2.0
-  RUN pip3 install pyfaidx
-  RUN pip3 install seaborn
+RUN pip3 install -U pip setuptools
+RUN pip3 install pandas
+RUN pip3 install matplotlib
+RUN pip3 install pysam
+RUN pip3 install xlrd==1.2.0
+RUN pip3 install pyfaidx
+RUN pip3 install seaborn
+RUN apt-get update && apt-get install -y VarDict
 
-
- ENV PATH="/opt/gatk-4.1.4.1/:${PATH}"
+ENV PATH="/opt/gatk-4.1.4.1/:${PATH}"
