@@ -53,7 +53,7 @@ AllTogether.columns = ['Snps','Minor: AF < 95%', 'Major: AF >= 95%']
 df_table_SNP=AllTogether.sort_values(by=['Snps'])
 
 df_table_SNP["index"]=df_table_SNP.Snps.str.split(":").str[1].str[1:-1]
-df_table_SNP["index"]=df_table_SNP["index"].astype(int)
+df_table_SNP["index"] = df_table_SNP["index"].str.extract('(\d+)').astype(int)
 df_table_SNP["index2"]=df_table_SNP.Snps.str.split(":").str[0]
 
 plot = df_table_SNP.sort_values(by = ['index2', 'index'],ascending=False)[['Snps',  'Minor: AF < 95%','Major: AF >= 95%']].plot(x='Snps', kind='barh', stacked=True, title='Novel missense Mutations', figsize=(20,20), color={"Minor: AF < 95%": "#F3ABA8", "Major: AF >= 95%": "#98DAA7"})
@@ -87,7 +87,7 @@ AllTogether.columns = ['Snps','Minor: AF < 95%', 'Major: AF >= 95%']
 df_table_SNP=AllTogether.sort_values(by=['Snps'])
 
 df_table_SNP["index"]=df_table_SNP.Snps.str.split(":").str[1].str[1:-1]
-df_table_SNP["index"]=df_table_SNP["index"].astype(int)
+df_table_SNP["index"] = df_table_SNP["index"].str.extract('(\d+)').astype(int)
 df_table_SNP["index2"]=df_table_SNP.Snps.str.split(":").str[0]
 
 plot = df_table_SNP.sort_values(by = ['index2', 'index'],ascending=False)[['Snps', 'Minor: AF < 95%','Major: AF >= 95%']].plot(x='Snps', kind='barh', stacked=True, title='Novel synonymous Mutations', figsize=(20,20), color={"Minor: AF < 95%": "#F3ABA8", "Major: AF >= 95%": "#98DAA7"})

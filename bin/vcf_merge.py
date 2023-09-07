@@ -68,7 +68,8 @@ vcf.columns = [*vcf.columns[:-1], 'Genotype']                               # re
 ## filter dataframe based on vartype
 
 df_col = vcf.loc[:,['#CHROM', 'POS', 'REF', 'ALT', 'QUAL', 'INFO', 'FORMAT', 'Genotype']]    # Only select the columns of Interest exclude column ID and Filter
-vartype = ["VARTYPE=SNP", "VARTYPE=MNP"]
+#vartype = ["VARTYPE=SNP", "VARTYPE=MNP"]
+vartype = ["VARTYPE=SNP"]
 df_rows = df_col[df_col['INFO'].str.contains('|'.join(vartype))]            # filter datafrma based on vartype = snp, MNP
 df_rows = df_rows.reset_index(drop=True)                                    # reindex dataframe
 df_rows['Sample_name'] = filename.split("/")[-1].split("_")[0]  # add column name sample name
