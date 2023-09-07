@@ -29,7 +29,7 @@ sudo mv nextflow /usr/local/bin
 
 ```
 
-./nextflow run yyr4/Nf-NeST -profile docker
+nextflow run yyr4/Nf-NeST -profile docker
 
 ```
 
@@ -39,14 +39,16 @@ sudo mv nextflow /usr/local/bin
 
 ```
 
-./nextflow run yyr4/Nf-NeST --reads '/home/dataset/*{R1,R2}*.fastq.gz' -profile docker
+nextflow run main.nf --reads '/home/dataset/*{R1,R2}*.fastq.gz' -profile docker
 
 ```
 - Referance fasta file of targeted gene amplicones.(mars_pf_ref.fasta)
 - Bed file is a tab delimited text file which contains genomics coordinates and associated annotations (mars_pf.bed)
 - Variant of Interest file from WHO reported known snps(voinew3.csv)
+- SNPEff custom annotation database files in genebank format(6Genes_ref/genes.gbk)
+- SNPEff's config file (6Genes_ref/snpEff.config)
 
 
 # Output
 
-- Output folder will be created under Nf-NeST. The results can be found under **output/Summary/** folder. 
+- Output folder will be created under Nf-NeST. The results can be found under **output/Summary/** folder.
