@@ -61,7 +61,7 @@ plot = df_table_SNP.sort_values(by = ['index2', 'index'],ascending=False)[['Snps
 plot.legend(ncol = 2, loc = 'lower right')
 plot.set(ylabel="SNPs")
 plot.set(xlabel="SNP ratio")
-plot.legend(loc=(1.04,0))
+plot.legend(loc=(1,0))
 plt.savefig('SNPs-Novel-missense.pdf')
 
 
@@ -97,5 +97,5 @@ plot.legend(ncol = 2, loc = 'lower right')
 #sns.despine(left = True, bottom = True)
 plot.set(ylabel="SNPs")
 plot.set(xlabel="SNP ratio")
-plot.legend(loc=(1.04,0))
+plot.legend(loc=(1,0))
 plt.savefig('SNPs-Novel-synonymous.pdf')
