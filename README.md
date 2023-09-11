@@ -25,13 +25,7 @@ sudo mv nextflow /usr/local/bin
 ```
 3. If you don't have it already install Docker in your computer, download and install from [here](https://docs.docker.com/).  
 
-4. Launch the pipeline execution:
 
-```
-
-nextflow run yyr4/Nf-NeST -profile docker
-
-```
 
 # Input
 
