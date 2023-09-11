@@ -42,9 +42,9 @@ workflow {
     voi_ch = Channel.fromPath( params.voi, checkIfExists: true )
 
     buildsnpeff_db()
-    // PreFastqC(read_ch)
+    PreFastqC(read_ch)
     Trim_reads(adapter_ch.combine(read_ch))
-    // PostFastqC(Trim_reads.out.Trimmed_fastq)
+    PostFastqC(Trim_reads.out.Trimmed_fastq)
     BWA_index(ref_ch)
     BWA_align(BWA_index.out.collect().combine(Trim_reads.out.Trimmed_fastq))
     Sam_sort(BWA_align.out.Bwa_samfile)
