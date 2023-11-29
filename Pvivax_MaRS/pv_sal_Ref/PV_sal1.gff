@@ -1,0 +1,60 @@
+##gff-version 3
+##source-version geneious 2023.1.1
+##sequence-region	NC_009910.1	1	1880
+NC_009910.1	Geneious	source	1	1880	.	+	.	Name=source Plasmodium vivax
+NC_009910.1	Geneious	gene	1	1880	.	+	.
+NC_009910.1	Geneious	mRNA	1	1880	.	+	.	Name=bifunctional dihydrofolate reductase-thymidylatesynthase 1%2C putative mRNA
+NC_009910.1	Geneious	CDS	1	1875	.	+	0	Name=bifunctional dihydrofolate reductase-thymidylatesynthase 1%2C putative CDS
+##sequence-region	NC_009915.1	1	4606
+NC_009915.1	Geneious	source	1	4606	.	+	.	Name=source Plasmodium vivax
+NC_009915.1	Geneious	gene	1	4606	.	+	.
+NC_009915.1	Geneious	mRNA	1	4606	.	+	.	Name=multidrug resistance protein (mdr1) mRNA
+NC_009915.1	Geneious	CDS	1	4395	.	+	0	Name=multidrug resistance protein (mdr1) CDS
+NC_009915.1	Geneious	repeat_region	3579	3606	.	-	.	Name=repeat region
+NC_009915.1	Geneious	repeat_region	3660	3694	.	-	.	Name=repeat region
+##sequence-region	NC_009919.1	1	2881
+NC_009919.1	Geneious	source	1	2881	.	+	.	Name=source Plasmodium vivax
+NC_009919.1	Geneious	gene	1	2881	.	+	.
+NC_009919.1	Geneious	mRNA	1	459	.	+	.	Name=hydroxymethylpterin pyrophosphokinase-dihydropteroate synthetase%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428670.0
+NC_009919.1	Geneious	mRNA	706	2616	.	+	.	Name=hydroxymethylpterin pyrophosphokinase-dihydropteroate synthetase%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428670.0
+NC_009919.1	Geneious	mRNA	2766	2881	.	+	.	Name=hydroxymethylpterin pyrophosphokinase-dihydropteroate synthetase%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428670.0
+NC_009919.1	Geneious	CDS	333	459	.	+	0	Name=hydroxymethylpterin pyrophosphokinase-dihydropteroate synthetase%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428675.1
+NC_009919.1	Geneious	CDS	706	2616	.	+	0	Name=hydroxymethylpterin pyrophosphokinase-dihydropteroate synthetase%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428675.1
+NC_009919.1	Geneious	CDS	2766	2881	.	+	0	Name=hydroxymethylpterin pyrophosphokinase-dihydropteroate synthetase%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428675.1
+NC_009919.1	Geneious	repeat_region	624	646	.	-	.	Name=repeat region
+NC_009919.1	Geneious	repeat_region	1859	1897	.	-	.	Name=repeat region
+NC_009919.1	Geneious	repeat_region	2416	2454	.	-	.	Name=repeat region
+NC_009919.1	Geneious	repeat_region	2593	2615	.	-	.	Name=repeat region
+NC_009919.1	Geneious	repeat_region	2739	2767	.	-	.	Name=repeat region
+##sequence-region	NC_009906.1	1	4281
+NC_009906.1	Geneious	source	1	4281	.	+	.	Name=source Plasmodium vivax
+NC_009906.1	Geneious	gene	1	4281	.	+	.
+NC_009906.1	Geneious	mRNA	1	798	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	964	1229	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	1459	1537	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	1661	1754	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	1930	2062	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	2212	2283	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	2413	2488	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	2627	2709	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	2846	2896	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	3392	3448	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	3625	3717	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	3832	3876	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	4009	4063	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	mRNA	4202	4281	.	+	.	Name=chloroquine resistance transporter%2C putative mRNA;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428676.2
+NC_009906.1	Geneious	repeat_region	309	341	.	+	.	Name=repeat region
+NC_009906.1	Geneious	CDS	708	798	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	964	1229	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	1459	1537	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	1661	1754	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	1930	2062	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	2212	2283	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	2413	2488	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	2627	2709	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	2846	2896	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	3392	3448	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	3625	3717	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	3832	3876	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	4009	4063	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3
+NC_009906.1	Geneious	CDS	4202	4281	.	+	0	Name=chloroquine resistance transporter%2C putative CDS;ID=NXsH0GrXONZuttuVW7KW6CNalJk.1695659428677.3

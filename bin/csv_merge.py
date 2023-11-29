@@ -68,7 +68,7 @@ result_1 = result_1.rename({'#CHROM' : 'CHROM'}, axis=1)
 # drop duplicates while caling mnps and snps
 #add new confidence
 
-result_1.AVG_VAF = result_1.AVG_VAF.round(1)
+result_1.AVG_VAF = result_1.AVG_VAF.round(2)
 
 df1 = result_1[result_1.duplicated(subset=['Sample_name','CHROM','POS','AVG_VAF'],keep=False)]
 

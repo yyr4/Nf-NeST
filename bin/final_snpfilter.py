@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 import argparse
 import sys
+min_cov = 5
+min_VAF = 5
 
 parser = argparse.ArgumentParser(description='snpfilter')
 
@@ -28,11 +30,14 @@ except pd.errors.EmptyDataError:
     sys.exit()
 
 # read the merged vcf file
-data2 = pd.read_csv(vcf_merge)
 
-# Replace DHPS_437Corrected to DHPS and rename chrom to CHROM
-data1 = data1.replace({'DHPS_437Corrected': 'DHPS'})
-data2 = data2.replace({'DHPS_437Corrected': 'DHPS'})
+try:
+    data2 = pd.read_csv(vcf_merge)
+except pd.errors.EmptyDataError:
+    sys.exit()
+
+# rename chrom to CHROM
+
 data1 = data1.rename({'Chrom': 'CHROM'}, axis=1)
 
 # convert avg variant frequancy to percentage
@@ -41,18 +46,45 @@ data2["VOI"] = data2["AA_change"]
 
 # drop the rows where avg_vcf is less than 1%
 data2 = data2[data2.AVG_VAF > 5]
-data2["AVG_VAF"] = data2["AVG_VAF"].astype(str) + '%'
 
 # merge two datafrme (snp output and WT coverage out)
 output1 = pd.concat([data2, data1])
 
+output1 = output1[~output1["Annotation"].str.contains("stop", na=False)]
+output1 = output1[~output1["Annotation"].str.contains("splice", na=False)]
+
+
+#output1 = output1.astype({"AVG_COV":'int'})
+output1['AVG_VAF'] = output1['AVG_VAF'].fillna(0)
+
+
+
+output1[['AVG_COV']] = output1[['AVG_COV']].astype(float).round(0)
+
+
+#output1['AVG_VAF'] = output1['AVG_VAF'].str.replace(r'%', '')
+output1['AVG_VAF'] = output1['AVG_VAF'].astype(float)
+
+
+
 # Creat a new column for mutation and wildtype
-output1['Type'] = np.where(output1['AVG_VAF'].notnull(), "Mutation" , "WildType")
+#output1['Type'] = np.where(output1['AVG_VAF'].notnull(), "Mutation" , "WildType")
+def snp_type(output1):
 
-# covert coverge into integer
-output1 = output1.astype({"AVG_COV":'int'})
+    if (output1["AVG_COV"] <= 2):
+        return "No coverage"
+    elif (output1["AVG_COV"] > 2) and (output1['AVG_VAF'] >= 95):
+        return 'Mutant'
+    elif (output1["AVG_COV"] > 2) and (1 < output1['AVG_VAF'] < 95):
+        return 'Mixed'
+    elif (output1["AVG_COV"] > 2) and (output1['AVG_VAF'] == 0.0):
+        return "Wildtype"
+    else:
+        return None
 
+output1["Type"] = output1.apply(snp_type, axis = 1)
 
+output1['AVG_VAF'] = output1['AVG_VAF'].astype(str) + '%'
 ##Drop duplicates meaning if the values are already in variants then drop it from the wildtypes
 output1=output1.drop_duplicates(subset =["Sample_name", "VOI"] )
 
@@ -68,26 +100,33 @@ output1.replace(r'^\s*$', np.nan, regex=True)
 #Filter the snps based on VOI files creat a list
 df_voi=pd.read_csv(VOI_file)
 df_voi["VOI"]=df_voi["RefAA"]+df_voi["AAPos"].astype(str)+df_voi["AltAA"]
-df_voi = df_voi.rename({'Gene':'CHROM'},axis=1)
+
+df_voi["AA_change"]=df_voi["RefAA"]+df_voi["AAPos"].astype(str)
+df_voi = df_voi.rename({'Chr':'CHROM'},axis=1)
 voi_list=df_voi["VOI"].tolist()
 
+
 #create a column snp_report if snps is present in voi file list, call it reportable snp otherwise novel
+
 def snp_report(output1):
 
-    if (output1["AVG_COV"] == 0):
-        return "No coverage"
-    elif (output1["AVG_COV"] != 0) and (output1["VOI"] in(voi_list)):
+    if (output1["AVG_COV"] != 0) and (output1["VOI"] in(voi_list)):
         return 'Reportable SNP'
     elif (output1["AVG_COV"] != 0) and (output1["VOI"] not in (voi_list)):
         return 'Novel SNP'
 
+output1["SNP_Status"] = output1.apply(snp_report, axis = 1)
 
-output1["SNP_Report"] = output1.apply(snp_report, axis = 1)
 
+merge_df = pd.merge(output1, df_voi, on=['CHROM','VOI'], how="outer")
+
+merge_df['SNP_REPORT'] = np.where(merge_df['snp_Report'].notnull(), merge_df['snp_Report'], merge_df['SNP_Status'])
+
+merge_df = merge_df.rename({'AA_change_x': 'AA_change'}, axis=1)
 
 #Reorder the columns
-output1 = output1[['Sample_name', 'CHROM', 'POS', 'AA_change', 'AVG_VAF', 'AVG_COV', 'REF', 'ALT','VARTYPE', 'Annotation', 'VarCal'
-                     ,'Confidence', 'VOI', 'Type', 'SNP_Report']]
+merge_df = merge_df[['Sample_name', 'CHROM', 'POS', 'AA_change', 'AVG_VAF', 'AVG_COV', 'REF', 'ALT','VARTYPE', 'Annotation', 'VarCal'
+                    ,'Confidence', 'VOI', 'Type', 'SNP_REPORT']]
 
 # final output in csv
-output1.to_csv(Sample_out+'_final_snp.csv', index=False)
+merge_df.to_csv(Sample_out+'_final_snp.csv', index=False)

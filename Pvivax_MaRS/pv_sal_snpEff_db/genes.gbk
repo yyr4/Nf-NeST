@@ -1,0 +1,606 @@
+LOCUS       NC_009910               1880 bp    DNA     linear   CON 17-APR-2018
+DEFINITION  Plasmodium vivax chromosome 5, whole genome shotgun sequence.
+ACCESSION   NC_009910 REGION: 964590..966469
+VERSION     NC_009910.1
+DBLINK      BioProject: PRJNA20431
+            BioSample: SAMN02953638
+            Assembly: GCF_000002415.2
+KEYWORDS    WGS; RefSeq.
+SOURCE      Plasmodium vivax (malaria parasite P. vivax)
+  ORGANISM  Plasmodium vivax
+            Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;
+            Plasmodiidae; Plasmodium; Plasmodium (Plasmodium).
+REFERENCE   1  (bases 1 to 1880)
+  AUTHORS   Carlton,J.M., Adams,J.H., Silva,J.C., Bidwell,S.L., Lorenzi,H.,
+            Caler,E., Crabtree,J., Angiuoli,S.V., Merino,E.F., Amedeo,P.,
+            Cheng,Q., Coulson,R.M., Crabb,B.S., Del Portillo,H.A., Essien,K.,
+            Feldblyum,T.V., Fernandez-Becerra,C., Gilson,P.R., Gueye,A.H.,
+            Guo,X., Kang'a,S., Kooij,T.W., Korsinczky,M., Meyer,E.V., Nene,V.,
+            Paulsen,I., White,O., Ralph,S.A., Ren,Q., Sargeant,T.J.,
+            Salzberg,S.L., Stoeckert,C.J., Sullivan,S.A., Yamamoto,M.M.,
+            Hoffman,S.L., Wortman,J.R., Gardner,M.J., Galinski,M.R.,
+            Barnwell,J.W. and Fraser-Liggett,C.M.
+  TITLE     Comparative genomics of the neglected human malaria parasite
+            Plasmodium vivax
+  JOURNAL   Nature 455 (7214), 757-763 (2008)
+   PUBMED   18843361
+REFERENCE   2  (bases 1 to 1880)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-APR-2018) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 1880)
+  AUTHORS   Amedeo,P., Wortman,J. and Carlton,J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2006) The Institute for Genomic Research, 9712
+            Medical Center Drive, Rockville, MD 20850, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to CM000446.
+
+            ##Genome-Annotation-Data-START##
+            Annotation Provider :: INSDC submitter
+            Annotation Status   :: Full annotation
+            Annotation Pipeline :: Eukaryotic Annotation Propagation Pipeline
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1880
+                     /organism="Plasmodium vivax"
+                     /mol_type="genomic DNA"
+                     /strain="Salvador I"
+                     /db_xref="taxon:5855"
+                     /chromosome="5"
+     gene            <1..1880
+                     /locus_tag="PVX_089950"
+                     /db_xref="GeneID:5474373"
+     mRNA            <1..1880
+                     /locus_tag="PVX_089950"
+                     /product="bifunctional dihydrofolate reductase-thymidylate
+                     synthase 1, putative"
+                     /note="transcript PVX_089950A"
+                     /transcript_id="XM_001615032.1"
+                     /db_xref="GeneID:5474373"
+     CDS             1..1875
+                     /locus_tag="PVX_089950"
+                     /note="encoded by transcript PVX_089950A"
+                     /codon_start=1
+                     /product="bifunctional dihydrofolate reductase-thymidylate
+                     synthase 1, putative"
+                     /protein_id="XP_001615082.1"
+                     /db_xref="GeneID:5474373"
+                     /translation="MEDLSDVFDIYAICACCKVAPTSEGTKNEPFSPRTFRGLGNKGT
+                     LPWKCNSVDMKYFSSVTTYVDESKYEKLKWKRERYLRMEASQGGGDNTSGGDNTHGGD
+                     NADKLQNVVVMGRSSWESIPKQYKPLPNRINVVLSKTLTKEDVKEKVFIIDSIDDLLL
+                     LLKKLKYYKCFIIGGAQVYRECLSRNLIKQIYFTRINGAYPCDVFFPEFDESQFRVTS
+                     VSEVYNSKGTTLDFLVYSKVGGGVDGGASNGSTADSASENCNALNCNAPKCSAPNCRS
+                     PNGGTAQQGEWGKGPAACPWQKNNAEAEEDDLVYFSFNNKVGEKNPEHLQDFKIYNSL
+                     KIKQHPEYQYLGIIYDIIMNGNKQGDRTGVGVMSKFGYMMKFNLSEYFPLLTTKKLFL
+                     RGIIEELLWFIRGETNGNTLLNKNVRIWEANGTREFLDNRKLFHREVNDLGPIYGFQW
+                     RHFGAEYTNMHDNYEDKGVDQLKNVIHLIKNEPTSRRIILCAWNVKDLDQMALPPCHI
+                     LCQFYVFDGKLSCIMYQRSCDLGLGVPFNIASYSIFTHMIAQVCNLQPAQFIHILGNA
+                     HVYNNHVDSLKVQLNRIPYPFPTLKLNPEVKNIEDFTISDFTIENYVHHDKIAMEMAA
+                     "
+ORIGIN
+        1 atggaggacc tttcagatgt atttgacatt tacgccatct gcgcatgctg caaggtcgcc
+       61 cccaccagtg aagggacaaa gaatgaaccg ttcagcccgc ggacctttag gggtctgggc
+      121 aataagggga ctctcccatg gaaatgcaac tccgtcgata tgaagtactt cagctcggtg
+      181 acgacctacg tggatgagtc aaagtatgag aagctaaagt ggaagaggga gaggtaccta
+      241 cgaatggaag cctcacaggg ggggggtgac aacacaagcg gtggtgacaa cacacacggt
+      301 ggtgacaacg ccgacaagct gcaaaacgtc gtggtcatgg ggagaagcag ctgggagagc
+      361 atccccaagc agtacaagcc gctcccaaac agaatcaacg tcgtgctttc caagacgcta
+      421 acaaaggaag acgtgaagga aaaggtcttc ataattgaca gcatagatga cctactgctg
+      481 ctcttaaaga agctgaagta ctacaaatgc ttcatcattg ggggagcaca agtttatagg
+      541 gaatgcctaa gtagaaactt aatcaagcag atctacttca cgaggatcaa cggcgcctac
+      601 ccgtgtgacg tcttcttccc cgagtttgac gaaagccagt ttcgggtgac gtccgtcagt
+      661 gaggtgtaca acagcaaggg caccactctg gactttttgg tttacagcaa ggtggggggg
+      721 ggagttgacg ggggcgcctc caacgggagc actgcggaca gcgcttcgga gaactgcaat
+      781 gcgttgaact gcaatgcgcc gaaatgtagc gccccgaact gccgctcccc caatgggggg
+      841 accgcacagc agggcgaatg gggaaagggc cccgccgcgt gcccgtggca gaagaacaac
+      901 gccgaggcag aggaagacga cctcgtgtac ttcagcttta acaacaaagt gggggagaaa
+      961 aacccggagc acctgcaaga ttttaaaatt tacaacagcc tgaagattaa gcagcaccca
+     1021 gagtaccaat acctaggcat catatacgac atcatcatga atggaaacaa acaaggagac
+     1081 agaacaggtg tgggagtgat gagcaaattt ggctacatga tgaaatttaa tttaagtgaa
+     1141 tacttccccc tattaacaac aaagaagtta tttttgaggg gaataattga ggaactgctt
+     1201 tggttcattc gaggagaaac aaacggaaac actttgttaa ataaaaacgt gaggatatgg
+     1261 gaagcaaatg gaacgaggga gttcctcgac aacaggaaat tattccacag agaagtgaat
+     1321 gacttggggc ccatttatgg cttccagtgg agacacttcg gtgctgaata cacaaatatg
+     1381 catgacaatt acgaagataa aggtgtagac caattaaaaa atgttattca tttaataaaa
+     1441 aatgaaccaa caagtaggag aattattttg tgtgcatgga atgtaaaaga tttggatcaa
+     1501 atggctttac ctccttgtca tattttatgc caattttacg ttttcgatgg gaaactatca
+     1561 tgcattatgt accagaggtc ttgtgacttg ggtcttgggg tccccttcaa catcgcttcg
+     1621 tattccatat tcacacacat gattgcgcag gtgtgcaatt tgcagcctgc acagttcata
+     1681 cacattttgg gcaacgcgca cgtctacaac aaccatgttg acagcttgaa agtgcagctg
+     1741 aacaggatcc cctacccgtt cccaacgctt aaactgaacc cggaggtgaa gaacattgag
+     1801 gattttacca tttcggattt cacaatagag aattacgtgc accacgataa aatcgccatg
+     1861 gagatggccg cctaggctcg
+//
+LOCUS       NC_009915               4606 bp    DNA     linear   CON 17-APR-2018
+DEFINITION  Plasmodium vivax chromosome 10, whole genome shotgun sequence.
+ACCESSION   NC_009915 REGION: complement(361490..366095)
+VERSION     NC_009915.1
+DBLINK      BioProject: PRJNA20431
+            BioSample: SAMN02953638
+            Assembly: GCF_000002415.2
+KEYWORDS    WGS; RefSeq.
+SOURCE      Plasmodium vivax (malaria parasite P. vivax)
+  ORGANISM  Plasmodium vivax
+            Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;
+            Plasmodiidae; Plasmodium; Plasmodium (Plasmodium).
+REFERENCE   1  (bases 1 to 4606)
+  AUTHORS   Carlton,J.M., Adams,J.H., Silva,J.C., Bidwell,S.L., Lorenzi,H.,
+            Caler,E., Crabtree,J., Angiuoli,S.V., Merino,E.F., Amedeo,P.,
+            Cheng,Q., Coulson,R.M., Crabb,B.S., Del Portillo,H.A., Essien,K.,
+            Feldblyum,T.V., Fernandez-Becerra,C., Gilson,P.R., Gueye,A.H.,
+            Guo,X., Kang'a,S., Kooij,T.W., Korsinczky,M., Meyer,E.V., Nene,V.,
+            Paulsen,I., White,O., Ralph,S.A., Ren,Q., Sargeant,T.J.,
+            Salzberg,S.L., Stoeckert,C.J., Sullivan,S.A., Yamamoto,M.M.,
+            Hoffman,S.L., Wortman,J.R., Gardner,M.J., Galinski,M.R.,
+            Barnwell,J.W. and Fraser-Liggett,C.M.
+  TITLE     Comparative genomics of the neglected human malaria parasite
+            Plasmodium vivax
+  JOURNAL   Nature 455 (7214), 757-763 (2008)
+   PUBMED   18843361
+REFERENCE   2  (bases 1 to 4606)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-APR-2018) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 4606)
+  AUTHORS   Amedeo,P., Wortman,J. and Carlton,J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2006) The Institute for Genomic Research, 9712
+            Medical Center Drive, Rockville, MD 20850, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to CM000451.
+
+            ##Genome-Annotation-Data-START##
+            Annotation Provider :: INSDC submitter
+            Annotation Status   :: Full annotation
+            Annotation Pipeline :: Eukaryotic Annotation Propagation Pipeline
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..4606
+                     /organism="Plasmodium vivax"
+                     /mol_type="genomic DNA"
+                     /strain="Salvador I"
+                     /db_xref="taxon:5855"
+                     /chromosome="10"
+     gene            <1..4606
+                     /locus_tag="PVX_080100"
+                     /db_xref="GeneID:5473000"
+     mRNA            <1..4606
+                     /locus_tag="PVX_080100"
+                     /product="multidrug resistance protein (mdr1)"
+                     /note="transcript PVX_080100A"
+                     /transcript_id="XM_001613678.1"
+                     /db_xref="GeneID:5473000"
+     CDS             1..4395
+                     /locus_tag="PVX_080100"
+                     /note="encoded by transcript PVX_080100A"
+                     /codon_start=1
+                     /product="multidrug resistance protein (mdr1)"
+                     /protein_id="XP_001613728.1"
+                     /db_xref="GeneID:5473000"
+                     /translation="MKKDQRQPRDNSNSSNNLSIKDEVEKELNKKGTFELYKKIKTQK
+                     IPFFLPFKCLPSSHRKLLGVSFVCATISGGTLPFFVSVFGVIMKNMNLGENVNDIIFS
+                     LVLIGIFQFILSFISSFCMDVVTTKILKTLKIEFLKSVFYQDGQFHDNNPGSKLTSDL
+                     DFYLEQVNAGIGTKFITIFTYASAFLGLYIWSLFKNARLTLCITCVFPLIYICGVICN
+                     KKVKINKKTSLLYNNNTMSIIEEALVGIRTVVSYCGENTILKKFNLSEKLYSKYTLKA
+                     NLMESLHIGMINGFILASYAFGFWYGTRIIISDLSNQQPNNDFHGGSVISILLGVLIS
+                     MFMLTIILPNITEYMKSLEATNNLYEIINRKPLVENNQDGKKLKDIKKIQFKNVRFHY
+                     DTRKDVEIYKDLNFTLTEGKTYAFVGESGCGKSTILKLIERLYDPTEGDVIINDSHNL
+                     KDVNLKWWRSKIGVVSQDPLLFSNSIKNNIKYSLYSLKDLEALSEESNEDGFSSQSDS
+                     NSRNSCRAKCAGDLNDMIQTTDSTELIQVRKNYETIEDSEVVSVSKKVLIHDFVSALP
+                     DKYETLVGSNASKLSGGQKQRISIARAIIRNPKILILDEATSSLDNKSEYLVQKTINN
+                     LKGNENRITIIIAHRLSTIRYANTIFVLSNRENGSTVDVDVLGEDPTKDSNEKNEKHD
+                     KQEKGGKNSSANQKIGNAGSYIIEQGTHDALMKNKNGIYYTMINNQKVSSKSSSNNDN
+                     DKDSDMKSSIYKDSERGYDPDEANGNAKNESASAKKSEKMSDAKASNTNAGGRLAFLR
+                     NLFKRKPKAPNNLRVVYREIFSYKKDIAIIALSIMVAGGLYPLFALLYAKYVGTLFDF
+                     ANLEANSNKYSLYILVIAIAMFISETLKNYYNNVIGEKVEKTMKLRLFENIMYQEISF
+                     FDQDSHAPGLLSAHINRDVHLLKTGLVNNIVIFTHFIVLFLVSTVMSFYFCPIVAAVL
+                     TGTYFIFMRVFAIRARIAANKDVEKKRVNQPGTAFVYNSDDEIFKDPSFLIQEAFYNM
+                     NTVIIYGLEDYFCTLIEKAIDYSNKGQKRKTLINSMLWGFSQSAQFFINSFAYWFGSF
+                     LIRRGTIQVDDFMKSLFTFLFTGSYAGKLMSLKGDSENAKLSFERYYPLITRKSLIDV
+                     RDNGGIKIKNSNDIKGKIEIMDVNFRYLSRPNVPIYKDLTFSCESKKTTAIVGETGSG
+                     KSTVMSLLMRFYDLKNDHHIVFKNEQTGESSKEQMQQGDEEQNVGMKNANEFSSSKEG
+                     ADGQSSTLFKNSGKILLDGVDICDYNLKDLRNLFSIVSQEPMLFNMSIYENIKFGKEN
+                     ATREDVKRACKFAAIDEFIESLPNQYDTNVGPYGKSLSGGQKQRIAIARALLREPKIL
+                     LLDEATSSLDSNSEKLIEKTIVDIKDKADKTIITIAHRIASIKRSDKIVVFNNPDRTG
+                     SFVQAQGTHEELLSVQDGVYKKYVKLAK"
+     repeat_region   complement(3579..3606)
+                     /rpt_type=tandem
+                     /rpt_unit_seq="a"
+                     /satellite="microsatellite"
+     repeat_region   complement(3660..3694)
+                     /rpt_type=tandem
+                     /rpt_unit_seq="a"
+                     /satellite="microsatellite"
+ORIGIN
+        1 atgaaaaagg atcaaaggca acccagggac aatagcaaca gcagtaacaa cctgagcatt
+       61 aaagatgaag tggaaaagga attgaacaag aaggggacgt ttgaattgta taagaagata
+      121 aagacccaga agattccctt ctttctcccg tttaaatgtt tgccgtcaag tcataggaag
+      181 ctgttggggg tgtccttcgt gtgcgccacc atatcaggtg gcaccttgcc cttcttcgta
+      241 tccgtttttg gggtcattat gaagaatatg aacttgggag aaaatgtaaa tgatattata
+      301 ttttcgctag tcctcatcgg aatattccag ttcattctgt ccttcatttc gagcttctgc
+      361 atggatgtgg tgaccaccaa aattttgaag acgctcaaga tagaattttt aaaaagtgta
+      421 ttttatcaag atggccaatt tcatgataac aatcccggct caaaattgac gtccgatttg
+      481 gatttttact tagaacaggt gaatgcagga attggcacca aatttattac catatttacg
+      541 tacgcaagtg catttttggg tctatacata tggtcgctat ttaagaacgc tagactcacc
+      601 ctctgcatca cgtgtgtatt ccccttgatt tacatctgcg gtgttatttg caacaagaag
+      661 gtgaagatta ataagaagac gtctctcctg tataataaca acaccatgtc catcatcgaa
+      721 gaagcgttgg taggcatccg aaccgtcgtc agctactgtg gtgaaaatac tattttgaaa
+      781 aaatttaacc tttcagaaaa gctgtacagt aagtacacgc tgaaggcaaa cttaatggag
+      841 tctttacaca ttggtatgat taacgggttc attttagcat cttacgcgtt tggtttttgg
+      901 tacggaacga gaatcatcat ctcagatttg agcaaccagc aaccaaacaa tgacttccac
+      961 ggaggctcag tcatctccat ccttctagga gtactcatca gtatgttcat gctgaccatc
+     1021 attttgccaa acataacaga gtatatgaaa tcgttggaag ctacgaataa cctgtacgag
+     1081 attatcaaca gaaagcccct agtcgagaat aaccaggacg ggaagaaatt aaaagatata
+     1141 aaaaaaatac agtttaagaa tgtgcgtttt cactatgata ctagaaagga tgtagaaatt
+     1201 tacaaggacc tcaattttac cctcacggaa ggaaaaacat acgcatttgt tggtgaatct
+     1261 ggttgtggaa aatccaccat tttgaagtta atagaaaggt tgtatgaccc caccgaggga
+     1321 gatgtcatca tcaacgattc gcataatttg aaagatgtaa atctcaaatg gtggagatcc
+     1381 aaaattggag tcgtcagtca agacccactt ctctttagca actccataaa gaacaacatc
+     1441 aagtatagtt tgtacagcct gaaagattta gaagccttat cggaggagtc gaacgaagat
+     1501 ggtttttctt ctcaaagtga ttccaacagc cgcaacagtt gtagggctaa atgtgctggt
+     1561 gatctaaacg acatgatcca aacgacagat tcgactgaac tgatacaagt gaggaagaac
+     1621 tacgaaacga ttgaagattc cgaagttgtt agtgtttcga agaaggtgct gatccacgat
+     1681 tttgtatctg ctctcccaga taagtacgaa acgctggtgg gttctaatgc atctaagttg
+     1741 tcaggtggac agaagcagag aatctccatc gctagagcca ttattagaaa ccccaaaatt
+     1801 ttgattctcg atgaagccac ctcatcttta gacaacaaat cggagtacct ggtgcagaag
+     1861 acgatcaata atttgaaggg caacgaaaac agaattacga tcatcatcgc ccacaggctg
+     1921 agcaccatca ggtacgccaa caccattttt gtgctgtcca accgggaaaa cggttccact
+     1981 gtggacgtgg atgtgctggg cgaggacccc accaaggaca gcaatgagaa gaatgagaag
+     2041 catgataagc aggagaaggg cggaaaaaat agcagcgcga accaaaaaat tggcaacgcg
+     2101 ggaagctaca tcatcgagca gggcacgcac gacgcgctca tgaagaacaa aaacggaatc
+     2161 tactacacca tgattaacaa ccaaaaggtg tcgtccaaaa gctccagcaa caacgataat
+     2221 gacaaagact cagatatgaa gagcagcatt tataaggact ccgaacgggg ctacgaccca
+     2281 gacgaagcga acggcaatgc gaaaaatgaa agtgcatccg ccaaaaagag cgaaaaaatg
+     2341 agtgacgcca aagcaagtaa caccaatgca ggaggaaggt tagccttttt gagaaacctc
+     2401 tttaagagga aacccaaagc gccaaacaac ctccgcgttg tgtacagaga aatcttttca
+     2461 tacaaaaagg acatcgccat tatagccctg agcattatgg tcgccggagg gttgtacccc
+     2521 ctgtttgcgc tcctctatgc taagtacgtg ggcaccctat tcgattttgc aaacctggag
+     2581 gcgaactcga ataagtactc cctctacatc ttagtcatcg cgattgccat gttcatttct
+     2641 gagacgctga aaaattatta caacaatgtg ataggagaga aagtagagaa gaccatgaaa
+     2701 cttagactgt tcgaaaatat tatgtaccaa gaaattagct tttttgacca ggatagtcat
+     2761 gccccaggat tgctgtcagc acatattaac agagatgttc atttgttaaa aaccggttta
+     2821 gtaaataaca ttgtcatttt tactcacttt atagtgctct tccttgtgag tacggtcatg
+     2881 tcattttatt tctgccctat cgtggcggct gtactgaccg gaacgtactt catttttatg
+     2941 agagtgtttg ccatcagagc gaggatagca gccaacaagg atgtagagaa gaagcgagtc
+     3001 aaccaaccag gcacagcatt tgtctacaac agtgatgatg aaatatttaa agacccaagt
+     3061 ttcctaattc aggaggcatt ttacaatatg aacacggtca ttatttacgg gctggaggat
+     3121 tacttctgca cactgattga gaaggctatt gattattcga ataaaggaca aaagagaaag
+     3181 acgctaataa attcgatgct ctgggggttc agtcagagtg cccaattttt cattaacagt
+     3241 tttgcctact ggtttggttc cttcctaatt agaagaggta caatacaagt ggatgacttt
+     3301 atgaaatccc tctttacctt tttatttacg ggaagctacg ccgggaagtt gatgtcccta
+     3361 aagggagact cagaaaatgc aaagctgtcc ttcgaaaggt actacccact gatcacgagg
+     3421 aagtccctca tcgacgtgag agataatgga ggcattaaaa ttaagaacag caacgatatt
+     3481 aagggaaaaa tcgaaatcat ggatgtcaat tttagatact tgtccagacc aaacgtcccc
+     3541 atttacaaag atttgacctt ctcctgtgag agcaagaaaa cgacagctat tgttggcgaa
+     3601 acgggtagtg gcaaatctac cgtgatgagc ctgctgatgc gattctacga tttgaaaaat
+     3661 gaccaccaca ttgtttttaa aaatgagcaa actggtgaga gcagtaagga gcagatgcag
+     3721 cagggggacg aggagcaaaa cgtgggaatg aaaaatgcaa acgagtttag ttcctccaag
+     3781 gaaggggcag atgggcaaag tagtaccctc tttaagaaca gtggaaagat actgctcgac
+     3841 ggggtagaca tctgcgatta caacttaaag gatttgagaa acttattttc cattgttagc
+     3901 caagaaccca tgctctttaa catgtccatt tatgaaaata tcaaatttgg aaaagaaaat
+     3961 gccaccagag aggacgtcaa acgtgcttgc aaatttgccg caattgatga gtttatagaa
+     4021 tccctaccga atcagtacga caccaacgtg ggaccctatg gaaaaagctt atccggtgga
+     4081 cagaaacaaa ggattgccat tgccagggcg ttgctgagag agccaaagat tttgttgtta
+     4141 gacgaagcta cttcatctct cgactccaat tcggagaagc tcattgagaa gaccatcgtt
+     4201 gatattaagg acaaggcgga caagaccatc atcaccattg cgcacagaat tgcgtccatt
+     4261 aagaggtccg acaaaattgt cgtttttaac aacccggacc gaaccggctc ctttgtacag
+     4321 gcccagggaa cgcacgagga gctcctctcg gtgcaggacg gcgtatataa gaagtacgtc
+     4381 aagctggcta agtagacgcg ccagggggaa gcgcacatgt gtatgcacgt gcacagatca
+     4441 tatgtatata cgtgcacatg cacgtgtgca tatctacatt tacttatata ttttttttcc
+     4501 cttttttttt tatgtatata tgcttgttta actgaatttt ttttcaaatt tgagaatttg
+     4561 ccaatataca acaattttgt acacactaat ttttggacca ctgtgc
+//
+LOCUS       NC_009919               2881 bp    DNA     linear   CON 17-APR-2018
+DEFINITION  Plasmodium vivax chromosome 14, whole genome shotgun sequence.
+ACCESSION   NC_009919 REGION: complement(1256701..1259581)
+VERSION     NC_009919.1
+DBLINK      BioProject: PRJNA20431
+            BioSample: SAMN02953638
+            Assembly: GCF_000002415.2
+KEYWORDS    WGS; RefSeq.
+SOURCE      Plasmodium vivax (malaria parasite P. vivax)
+  ORGANISM  Plasmodium vivax
+            Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;
+            Plasmodiidae; Plasmodium; Plasmodium (Plasmodium).
+REFERENCE   1  (bases 1 to 2881)
+  AUTHORS   Carlton,J.M., Adams,J.H., Silva,J.C., Bidwell,S.L., Lorenzi,H.,
+            Caler,E., Crabtree,J., Angiuoli,S.V., Merino,E.F., Amedeo,P.,
+            Cheng,Q., Coulson,R.M., Crabb,B.S., Del Portillo,H.A., Essien,K.,
+            Feldblyum,T.V., Fernandez-Becerra,C., Gilson,P.R., Gueye,A.H.,
+            Guo,X., Kang'a,S., Kooij,T.W., Korsinczky,M., Meyer,E.V., Nene,V.,
+            Paulsen,I., White,O., Ralph,S.A., Ren,Q., Sargeant,T.J.,
+            Salzberg,S.L., Stoeckert,C.J., Sullivan,S.A., Yamamoto,M.M.,
+            Hoffman,S.L., Wortman,J.R., Gardner,M.J., Galinski,M.R.,
+            Barnwell,J.W. and Fraser-Liggett,C.M.
+  TITLE     Comparative genomics of the neglected human malaria parasite
+            Plasmodium vivax
+  JOURNAL   Nature 455 (7214), 757-763 (2008)
+   PUBMED   18843361
+REFERENCE   2  (bases 1 to 2881)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-APR-2018) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 2881)
+  AUTHORS   Amedeo,P., Wortman,J. and Carlton,J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2006) The Institute for Genomic Research, 9712
+            Medical Center Drive, Rockville, MD 20850, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to CM000455.
+
+            ##Genome-Annotation-Data-START##
+            Annotation Provider :: INSDC submitter
+            Annotation Status   :: Full annotation
+            Annotation Pipeline :: Eukaryotic Annotation Propagation Pipeline
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..2881
+                     /organism="Plasmodium vivax"
+                     /mol_type="genomic DNA"
+                     /strain="Salvador I"
+                     /db_xref="taxon:5855"
+                     /chromosome="14"
+     gene            1..>2881
+                     /locus_tag="PVX_123230"
+                     /db_xref="GeneID:5476518"
+     mRNA            join(1..459,706..2616,2766..>2881)
+                     /locus_tag="PVX_123230"
+                     /product="hydroxymethylpterin
+                     pyrophosphokinase-dihydropteroate synthetase, putative"
+                     /note="transcript PVX_123230A"
+                     /transcript_id="XM_001617159.1"
+                     /db_xref="GeneID:5476518"
+     CDS             join(333..459,706..2616,2766..2881)
+                     /locus_tag="PVX_123230"
+                     /note="encoded by transcript PVX_123230A"
+                     /codon_start=1
+                     /product="hydroxymethylpterin
+                     pyrophosphokinase-dihydropteroate synthetase, putative"
+                     /protein_id="XP_001617209.1"
+                     /db_xref="GeneID:5476518"
+                     /translation="MEDSNTGGTTPRNIAVLNFGTNDKKNCVTILETALYLTEKYLGK
+                     IINSSYIYETVPEYIVLDEENKIGEVTEGEPPRDISWIGDLIPTVENSRYEESEDLIY
+                     ECKELEVFLKNEKINESIIREVSVEDYENEARRIIKRNDEIMKKNLEQSKDKYYTSYF
+                     FNLTVVVRTFVEDPLAMLVILKYIEQIMKRRESKKGQGEIFQNRMIDIDILFFNNYTI
+                     FEKSISLKGEDIYKIITKYIHINHTSDQNRLDIIQNLGDKIEFLCIPHVYTKYRYSIL
+                     LCLNDIIPEYKHSTFEEAIRSTYNSYVESFEEKYHINIRKNNKRLYVLKDKVSYLKER
+                     THIVGILNVNYDSFSDGGLFVDPVKAVERMFEMASDGASVIDIGGESSAPYVVPNPSV
+                     TERDLVMPVLKLFKEEWHKLECEVGGGAVCCAAASDARKNAQSSLQGKLQKVRDAKPI
+                     ISIDTVNYDLFKECVEGELVDILNDISACTHNPEIIKLLRRKNKFYSVVLMHKRGNPH
+                     TMDKLTNYDDLISDIKRYLEDRLHFLVLNGVPRYRVLFDVGLGFAKKHDQSIKLLQHI
+                     HVYDEYPLFLGYSRKRFIVHCMGKGGAAIGECRLMSGEAKLTNGEGKLTNGEAKLTNG
+                     EGKLTNGDAKLTNGDSKLTNGEAKLTNGDPSQLWRFKMSHMRQDKDQLLYQKNICGGL
+                     AIASYSFYKKVDLIRVHDVLETKAVLDVLTRIHQP"
+     repeat_region   complement(624..646)
+                     /rpt_type=tandem
+                     /rpt_unit_seq="a"
+                     /satellite="microsatellite"
+     repeat_region   complement(1859..1897)
+                     /rpt_type=tandem
+                     /rpt_unit_seq="tgg"
+                     /satellite="microsatellite"
+     repeat_region   complement(2416..2454)
+                     /rpt_type=tandem
+                     /rpt_unit_seq="tatg"
+                     /satellite="microsatellite"
+     repeat_region   complement(2593..2615)
+                     /rpt_type=tandem
+                     /rpt_unit_seq="tttg"
+                     /satellite="microsatellite"
+     repeat_region   complement(2739..2767)
+                     /rpt_type=tandem
+                     /rpt_unit_seq="t"
+                     /satellite="microsatellite"
+ORIGIN
+        1 gcgccaataa gcatgagaaa atatacagca atgtcccacg ttttaaccca catcttccac
+       61 aaataggttc acaccagggt acatattgaa acgttttaag gaaaccctca atacatgtgt
+      121 tttctaaacc taagaggagg aggccaggaa ttacacaaca agggaggggt caccgtaaaa
+      181 aaggtaagct tattaatagg gcataaaaat agggaaaaat tttggtgggt ataaataagc
+      241 tgtaaatagg atatatatag gaaaaaaaaa aaagcgtagc gacagaagaa cgcatataaa
+      301 cagaacagca gcagtaacga tagcggacca ccatggagga ttcaaacacg gggggcacta
+      361 ccccaaggaa tatcgccgtt ttaaacttcg gaacgaatga caaaaagaac tgcgtaacga
+      421 ttttagaaac ggcgctctat ctgacggaga agtaccttgg taagggcgaa aggaggggac
+      481 actttagggg aaatttacct tcctctttga aaaggggcaa catttaagaa gcgtgagagt
+      541 tccgctttgc ccatttcttc ctaccggctt atgtacattg aggggtgcat accatccccc
+      601 agtagtaaac acacacacgt gtagacacat aggtccaaat gccgccacga taggtgtgac
+      661 ccattaccca tttttttctc cccccttttt cctaaaacat ggtaggcaaa atcatcaaca
+      721 gttcgtacat ttacgaaacc gtcccggagt acatcgtcct ggatgaagaa aacaaaattg
+      781 gagaggtgac ggagggggag cccccgaggg acatctcttg gataggcgat ttgatcccaa
+      841 ctgtggaaaa ctccagatac gaagaaagtg aagatttaat ttatgagtgc aaagagttgg
+      901 aggtgttttt aaaaaatgaa aagataaacg aaagcattat tagggaagtc agcgtagagg
+      961 attacgaaaa tgaggcaaga aggataatca aacggaatga cgaaataatg aagaaaaatt
+     1021 tagaacagtc gaaagataaa tactacacca gttatttttt taacttaacg gttgtagtta
+     1081 ggacctttgt tgaagacccc ctcgccatgc tcgtaatttt aaagtacatt gagcaaatca
+     1141 tgaaaagaag ggaaagcaaa aagggtcagg gagaaatatt tcaaaatcgc atgatagaca
+     1201 ttgacatttt attttttaac aactacacaa tttttgaaaa gagcatatct ttaaaagggg
+     1261 aagatattta taaaatcatc acaaagtata ttcacataaa ccacacaagt gatcagaacc
+     1321 gtctagatat tatccaaaat ttgggagaca aaatagaatt cttatgtatc cctcatgtgt
+     1381 acacgaaata caggtatagt atcctcctct gcttaaatga tatcattcca gagtataagc
+     1441 acagcacatt tgaggaagcc attcgctcaa cttataacag ttatgttgaa agttttgagg
+     1501 agaagtatca cattaatatt aggaagaata ataagaggct atacgtattg aaagataaag
+     1561 tgtcatattt aaaagaaaga actcatattg tgggcatttt gaatgttaac tatgattcct
+     1621 tttcagatgg cggtttattt gtcgatcctg tgaaagctgt ggagaggatg ttcgaaatgg
+     1681 caagtgatgg ggcgagcgtg attgacatcg ggggggaatc gtccgcccct tatgtggtcc
+     1741 ccaatccgag cgtcactgaa cgggatttgg tcatgcctgt tttgaagctc tttaaggagg
+     1801 agtggcataa gttggagtgt gaggttggcg gtggtgccgt gtgctgcgct gcagcaagtg
+     1861 atgccaggaa aaacgcgcag agctccctac aggggaaact acaaaaagtg agggacgcaa
+     1921 aaccgatcat aagcatcgac acggtcaatt atgatctctt caaggagtgc gtggaaggcg
+     1981 agttggtgga catcctaaac gatatcagcg cgtgcacgca caacccagag attataaaat
+     2041 tgttgaggag gaaaaacaag ttctatagcg tcgttttaat gcacaagagg ggaaatccac
+     2101 acaccatgga taagttaaca aattacgatg accttataag tgacattaaa aggtatttag
+     2161 aagatcggct acattttctc gttctaaatg gggtaccacg ctaccgagtt ctctttgatg
+     2221 tcggcctggg gtttgccaaa aagcacgacc agtctattaa gctgttgcag catattcacg
+     2281 tttacgatga gtacccgctg tttcttggct actcgaggaa gcgctttatt gtccactgca
+     2341 tggggaaggg tggcgcggcc atcggggagt gcagactgat gagcggggag gccaaactga
+     2401 ccaacgggga gggtaaactg acgaatgggg aggccaaact gaccaacggg gagggtaaac
+     2461 tgacgaatgg tgacgccaaa ctgactaacg gtgactccaa actgactaac ggggaggcca
+     2521 agctgaccaa cggagaccca tcacaactgt ggaggttcaa aatgagccac atgcgtcaag
+     2581 acaaagatca gcttttgtac cagaaaaata tttgcggtag gaattcgtcc tttctctgat
+     2641 ttgcaaaacg tgcatgtaga gtgtccccta catgtgctgt acatttgttt atcctttcat
+     2701 caactctaag ttatgtatga gtccccatgt ttaacacctc cccctttttt ctcccttttt
+     2761 cctaggcggg ctagccattg cttcctacag cttttacaaa aaggtggacc ttatcagagt
+     2821 tcacgacgtg ttagaaacga aggccgttct ggatgtgctc acaaggatac atcaacctta
+     2881 g
+//
+LOCUS       NC_009906               4281 bp    DNA     linear   CON 17-APR-2018
+DEFINITION  Plasmodium vivax chromosome 1, whole genome shotgun sequence.
+ACCESSION   NC_009906 REGION: 330260..334540
+VERSION     NC_009906.1
+DBLINK      BioProject: PRJNA20431
+            BioSample: SAMN02953638
+            Assembly: GCF_000002415.2
+KEYWORDS    WGS; RefSeq.
+SOURCE      Plasmodium vivax (malaria parasite P. vivax)
+  ORGANISM  Plasmodium vivax
+            Eukaryota; Sar; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;
+            Plasmodiidae; Plasmodium; Plasmodium (Plasmodium).
+REFERENCE   1  (bases 1 to 4281)
+  AUTHORS   Carlton,J.M., Adams,J.H., Silva,J.C., Bidwell,S.L., Lorenzi,H.,
+            Caler,E., Crabtree,J., Angiuoli,S.V., Merino,E.F., Amedeo,P.,
+            Cheng,Q., Coulson,R.M., Crabb,B.S., Del Portillo,H.A., Essien,K.,
+            Feldblyum,T.V., Fernandez-Becerra,C., Gilson,P.R., Gueye,A.H.,
+            Guo,X., Kang'a,S., Kooij,T.W., Korsinczky,M., Meyer,E.V., Nene,V.,
+            Paulsen,I., White,O., Ralph,S.A., Ren,Q., Sargeant,T.J.,
+            Salzberg,S.L., Stoeckert,C.J., Sullivan,S.A., Yamamoto,M.M.,
+            Hoffman,S.L., Wortman,J.R., Gardner,M.J., Galinski,M.R.,
+            Barnwell,J.W. and Fraser-Liggett,C.M.
+  TITLE     Comparative genomics of the neglected human malaria parasite
+            Plasmodium vivax
+  JOURNAL   Nature 455 (7214), 757-763 (2008)
+   PUBMED   18843361
+REFERENCE   2  (bases 1 to 4281)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-APR-2018) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 4281)
+  AUTHORS   Amedeo,P., Wortman,J. and Carlton,J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (08-DEC-2006) The Institute for Genomic Research, 9712
+            Medical Center Drive, Rockville, MD 20850, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to CM000442.
+
+            ##Genome-Annotation-Data-START##
+            Annotation Provider :: INSDC submitter
+            Annotation Status   :: Full annotation
+            Annotation Pipeline :: Eukaryotic Annotation Propagation Pipeline
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..4281
+                     /organism="Plasmodium vivax"
+                     /mol_type="genomic DNA"
+                     /strain="Salvador I"
+                     /db_xref="taxon:5855"
+                     /chromosome="1"
+     gene            1..>4281
+                     /locus_tag="PVX_087980"
+                     /db_xref="GeneID:5472721"
+     mRNA            join(1..798,964..1229,1459..1537,1661..1754,1930..2062,
+                     2212..2283,2413..2488,2627..2709,2846..2896,3392..3448,
+                     3625..3717,3832..3876,4009..4063,4202..>4281)
+                     /locus_tag="PVX_087980"
+                     /product="chloroquine resistance transporter, putative"
+                     /note="transcript PVX_087980A"
+                     /transcript_id="XM_001613407.1"
+                     /db_xref="GeneID:5472721"
+     repeat_region   309..341
+                     /locus_tag="PVX_087980"
+                     /rpt_type=tandem
+                     /rpt_unit_seq="tatg"
+                     /satellite="microsatellite"
+     CDS             join(708..798,964..1229,1459..1537,1661..1754,1930..2062,
+                     2212..2283,2413..2488,2627..2709,2846..2896,3392..3448,
+                     3625..3717,3832..3876,4009..4063,4202..4281)
+                     /locus_tag="PVX_087980"
+                     /note="encoded by transcript PVX_087980A"
+                     /codon_start=1
+                     /product="chloroquine resistance transporter, putative"
+                     /protein_id="XP_001613457.1"
+                     /db_xref="GeneID:5472721"
+                     /translation="MTILKKKKKGSPQITPDERYRELDSHAQNESEIQEDVPISRKIA
+                     NFLKLAYNEIRENISIYLLIIVYLCVCVMNKLLAKRTLKKIGNYSFVTSETHNCICMV
+                     VFFALYFMFGRRVMSAKERHRNFGVQFLLISLLDACSVIIAFIGLTRTTGNIQSFVMQ
+                     LSIPINMFFCFLILRYRYHLFNYVGAFIIVVTIAVVEFMLSFETQEENSIVFNLVLIA
+                     SLIPLSFSNMTREIVFKKYKINILRLNAVVSFFQIFTSCLMLPMYTLPFLKQINLPFS
+                     EIGTNIKNGFRCLFLGQNTIVENCGLGMSKMCDDCEGAWKTFIAYSFFNICDNLITSF
+                     IIEKFSTMTYTIVSCIQGPAIAIAYYFKFLAGDAVMQPRMLDFVTLFGYLFGSIIYRI
+                     GNIILEKKRMMEAGNDDDSEGELTNADSIITH"
+ORIGIN
+        1 agtaacgaag taatgaagta acgaagtgac gagcaacaaa acatacgaca gggtagaaac
+       61 aaacggaatc aacccgaatc caaaccagtg gaatcaaaca gaacggcata ggataatttt
+      121 tttttgcccc ccaaattgtt atttgacaaa gtgacatgca cgcgaggagg gtagtttgag
+      181 gatttccgag aaatttgaga aatttgagaa attctgaaaa attcgagaaa ttctgcgaaa
+      241 tttgagaaat tctgaaaaat cctgcgaaat ttgagaaatt tttctagcgg agaattttgc
+      301 caacatttga gaattttttg gaggagaatt ttgcgaacat ttttggggaa cctttcaaat
+      361 caaacattgt ttgaagattc ttttcctttt tttattactc cttttttttt ttttcccact
+      421 cccgcttcac ttttccgccg ctccttgccg ctgattctac gcgtggcgct gcctgggctc
+      481 tgctccacca ccacgggacg aattctcccc gcgcagattc gcccgcgccc actcaggcgg
+      541 acggccgccc agtgagaagc ccctgttcgc aaccccccgc gcgaatgacg gattggcgac
+      601 gctgtcgaag agccgtctag ccatccgcgt cacgttatct gcatcacgtt atctgcatcc
+      661 cgtcatccgc ctcactccat ctgcgccacc gctaccccta acgcacaatg accatcctga
+      721 aaaagaagaa gaaggggagt ccccaaataa cccccgatga acgttaccgg gagttggata
+      781 gccacgcaca gaatgagagt aaggcaggcc cttagcgaag ggtccccctg accaccgtgc
+      841 aggagagtgg cgagacaacc cgctgcccct acccgcgagg ggtgttttac cttttacgtg
+      901 aggcactcca ttgatcaacc cccctaatca cttctctaat aaacaactgc tttcccccca
+      961 caggcgaaat acaagaggac gtccccatca gcagaaaaat cgccaatttt ttgaagctag
+     1021 cttataatga aattcgggaa aatatttcca tttatctgct gattatcgtt tacctgtgcg
+     1081 tatgtgtaat gaataaactg ctggcaaaga ggactctgaa gaagattggg aactacagct
+     1141 ttgtaacctc cgagacgcac aactgcatat gcatggtcgt tttctttgcc ttgtacttta
+     1201 tgtttggtcg ccgggtcatg tccgccaagg tgagcagcgc agcagatggg ttattcttta
+     1261 ataactacac catctaatcg ctccttctgc atgcgttatt ggaagggggg agagcatcct
+     1321 gcggagaggc agacatatcc ccgcagagtg cgttccactg gtggtggtgc ccccagtgca
+     1381 tccatcggga gtacctcctt ctatataccc cttcgccttt tatatatacc cctttaccgc
+     1441 tttaccttcc ccccgcagga gagacaccga aacttcggag ttcaattttt gctaatctcg
+     1501 ctgctggacg cctgctcagt tatcatcgcg tttataggta attcgcgcgg cgaagcggcg
+     1561 gctcgcccgg tagaagccgc gtcgatttta acccctcatc tgcttaacct ctcctttact
+     1621 tcacttccct ccttttcgcg cgtcttttcc cccccgtcag gcctcacaag aaccaccggg
+     1681 aacatccagt ccttcgtcat gcagctgagc attccgataa acatgttttt ctgctttttg
+     1741 attttgcgat acaggtaggg gagaggcggc ataatcgggt gtagagggaa actctcaccc
+     1801 caccccacgt tgcccttcct tattggctcc ttcccatagg tgtatagaac cccacttcac
+     1861 gcgcatactt cgcgtgcata tttcaagtgc acatttcccc tgcccatttc gctttccccc
+     1921 ctcccgcaga taccacctgt tcaattacgt cggcgcattc atcatcgtcg tgaccatcgc
+     1981 cgttgtggag tttatgctat ccttcgaaac gcaggaggag aattccatcg tgtttaacct
+     2041 cgtgttgatt gcctcgctga ttgtaggatt tggcgaccct tttggggagc cgcgagacga
+     2101 cccagcacta ctgacagggg tgcttgcctg accctgttta cccctcgctt cactcgccgc
+     2161 ttcgcacacc gcttcaccgc cgcttcactc acctgcaccc cccctctgca gccgctaagc
+     2221 ttctccaaca tgaccagaga aatcgtcttc aagaagtaca aaataaacat cctgcgcctg
+     2281 aacgtaagga catctcccca aaaaatggga tccgagctaa gggcacattt ccccatatgc
+     2341 gcacttgccc aaggggccat cccttttcac cccaacattg ttcctttttg ctgcatttcc
+     2401 ccccctgaac aggccgttgt ttccttcttc caaatattca cctcctgcct gatgcttccg
+     2461 atgtacaccc tcccattttt gaagcaaagt aggcatctac tgagagtcct ggagggactc
+     2521 accacgttgt gctttcccaa atctccatgt cgcctcacaa aaaagcggac ttagctacat
+     2581 gggtcaccaa ctttaactgc acctcttcac ttcgaccccc cctcagtcaa tttgcccttc
+     2641 tcggaaatcg gaacgaatat aaaaaacgga tttagatgtt tgttcctcgg acagaacacc
+     2701 atcgtggagg tatgcgaagg agggggatcc ttgtctgacg ttttttcttt tttcatttgc
+     2761 aggagcgagt taatcatttg tgtttcctcc ccccacggct gctttgcttc atttttttaa
+     2821 ttttcctttt ttttttcacc cccagaactg cgggttggga atgtccaaga tgtgcgacga
+     2881 ttgcgaagga gcatgggtaa ggctgcgcag cgagatgaag agaaaagcag cgagatgaag
+     2941 agaaaagcag cgagatgaag agaaaagcag cgagatgaag agaaaagcag cgagatgaag
+     3001 agaaaagcag cgagatgaag agaaaagcag cgagatgaag agaaaagcag cgagatgaag
+     3061 agaaaagcag cgagatgaag agaaaagcag cgagatgaag agaaaagcag cgagatgaag
+     3121 agaaaagcag cgagatgaag caaatcgcag caagatgaag caaatcgcag caagatgaag
+     3181 caaatcgcag caagatgaag caaatcgcag caagatgaag caaatcgcag caagatgaag
+     3241 caaatcgcaa caatatgaag caaatcgcaa caatatgagg caaatcgcag ctgctttaac
+     3301 tgaatgagct aaagggggta ccaccctgca gacgcttccc caacatttca ccattatgat
+     3361 aatttttttt ttttttttcc taaccccgca gaaaaccttc atagcctatt cctttttcaa
+     3421 catttgcgac aatttaatca ccagctttgt aagtacaaga ggggagagag ggagatgccc
+     3481 catggcgtgc tgttttttta ctccttttac agaagtgatg tgtgtctttt gaggactacc
+     3541 tgttcagtac ttagggttat taatgcggcg attttccatt taccattttc attttctctc
+     3601 tttttttttc cccccctact gcagataata gagaaattct caaccatgac ctacaccatc
+     3661 gtcagttgca tacagggacc agccatagcc atcgcctact actttaagtt ccttgcggta
+     3721 gggcccctcc tgctttgccc ccctgattgc actcctcctt tttttttccc ctaattgcac
+     3781 tccttttttt tgcccctatt acacccctct cttccctcca cccttttcca gggagacgcc
+     3841 gtcatgcaac cccgcatgtt ggactttgtc actttggtaa gggggagcca aatatgtagc
+     3901 gctgtcatgc atgcgcgccc attagcatgc caacgaggat tcatccatcc gtccattcat
+     3961 ttatttattt atttattttt tttttttttt tcttttcccc cccgtcagtt tggctacctc
+     4021 ttcggatcca tcatctaccg cataggaaac ataattcttg agagtaaggc agcgaacgtt
+     4081 tttccacgcg ggggtgaatt gcgccacgcg tgggttatat ggaacgtctc acatggcacc
+     4141 tgcttcgctc cccatgttgc atgtgcctca cccgcctacc cccatgcccc ttttaattta
+     4201 gaaaaaagaa tgatggaagc tggcaacgac gacgactccg aaggagagct gaccaatgca
+     4261 gactcgataa taacacactg a
+//

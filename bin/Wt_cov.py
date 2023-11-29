@@ -14,8 +14,8 @@ parser = argparse.ArgumentParser(description='find_COV')
 
 parser.add_argument('-R', '--referance', dest='Reference_fasta', type=str,
                         help='Ref file')
-parser.add_argument('-B', '--Bed_file', dest='Bed_file', type=str,
-                        help='Bed_file')
+parser.add_argument('-G', '--Gff file', dest='GFF_file', type=str,
+                        help='GFF_file')
 parser.add_argument('-N', '--cov', dest='sam_depth', type=str,
                         help='coverage file')
 parser.add_argument('-V', '--VOI_file', dest='VOI', type=str,
@@ -24,20 +24,24 @@ parser.add_argument('-V', '--VOI_file', dest='VOI', type=str,
 args = parser.parse_args()
 Cov_file = args.sam_depth
 ref = args.Reference_fasta
-Bed_file = args.Bed_file
+Gff_file = args.GFF_file
 VOI_file = args.VOI
-
 
 Sample_name = Cov_file.split("/")[-1].split("_")[0]
 Sample_out = ("_".join(Cov_file.split("/")[-1].split("_")[0:-1]))
 
 
 #### parse the bed file
-Bed = pd.read_csv(Bed_file, sep='\t', names=('chr', 'start', 'stop','Name','Phase', 'strand'), header=None)
-df2 = Bed.loc[Bed['Name'].str.contains('CDS')]
-#print(CDS)
+#### parse the bed file
 
-## Here we are first align the each base of fasta file to per base coverage position and create dataframe
+Bed = pd.read_csv(Gff_file, sep='\t', names=('chr','Source', 'type','start', 'stop','score','strand','Phase','attributes'), header=None)
+Bed = Bed.dropna()
+
+df2 = Bed.loc[Bed['type'].str.contains('CDS', na=False, case=False)]## Here we are first align the each base of fasta file to per base coverage position and create dataframe
+df2[['start', 'stop']] = df2[['start', 'stop']].astype(int)
+#df2['length'] = df2['stop'] - df2['start']
+
+
 
 new = []
 with Fasta(ref) as fasta:     ## fasta file with each genes
@@ -59,47 +63,38 @@ with Fasta(ref) as fasta:     ## fasta file with each genes
 Data = [i.split("\t") for i in new]
 
 df = pd.DataFrame(Data, columns=['chr', 'pos','seq','cov'])
+
 df[['pos','cov']] = df[['pos','cov']].astype(int)
-#print(df)
 
-df1 = df.loc[df['chr'].isin(['K13','DHFR','PfMDR1','mitochondrial_genome_-_CYTB_CDS'])]  ## find the rows with genes witout introns
-df1 = df1.reset_index(drop=True)
-#print(df1)
-df1[['pos','cov']] = df1[['pos','cov']].astype(str)
-df_ind1 = df1.groupby(df1.index // 3).agg(','.join)
-###### DHPS
-df3 = df.loc[df['chr'].isin(['DHPS_437Corrected'])]
 
-df4 = df2.loc[df2['chr'].isin(['DHPS_437Corrected'])]
 
-only_CDS = []
-for i,j in df3.iterrows():
-    for a,b in df4.iterrows():
-        if (b['start'] < j["pos"]) & (j['pos'] < b['stop']+1):
-            only_CDS.append(j['pos'])
+all =[]
+for i,j in df.iterrows():
+    for a,b in df2.iterrows():
+        only_CDS_CRT= {}
+        if (j['chr'] == b['chr']) & ((b['start'] <= j["pos"]) & (j['pos'] < b['stop']+1)):
+            key = j['chr']
+            value = j['pos']
+            only_CDS_CRT[key]=value
+            all.append(only_CDS_CRT)
 
-dhps = df3.loc[df3['pos'].isin(only_CDS)]
-dhps = dhps.reset_index(drop=True)
-dhps[['pos','cov']] = dhps[['pos','cov']].astype(str)
-df_ind2 = dhps.groupby(dhps.index // 3).agg(','.join)
-#########PFCRT
-df5 = df.loc[df['chr'].isin(['PfCRT'])]
-df6 = df2.loc[df2['chr'].isin(['PfCRT'])]
+all_keys =[i for s in [d.keys() for d in all] for i in s]
+all_val = [i for s in [d.values() for d in all] for i in s]
+df_new = pd.DataFrame()
+df_new["chr"] = all_keys
+df_new["pos"] = all_val
 
-only_CDS_CRT = []
-for i,j in df5.iterrows():
-    for a,b in df6.iterrows():
-        if (b['start'] < j["pos"]) & (j['pos'] < b['stop']+1):
-            only_CDS_CRT.append(j['pos'])
 
-CRT = df5.loc[df5['pos'].isin(only_CDS_CRT)]
-CRT = CRT.reset_index(drop=True)
-CRT[['pos','cov']] = CRT[['pos','cov']].astype(str)
-df_ind3 = CRT.groupby(CRT.index // 3).agg(','.join)
-########### COncatenate all the dataframe
+only_CDS = pd.merge(df_new, df, on=['chr','pos'])
 
-result = pd.concat([df_ind1,df_ind2, df_ind3], axis = 0)
-df_ind = result.reset_index(drop=True)
+only_CDS = only_CDS.reset_index(drop=True)
+only_CDS[['pos','cov']] = only_CDS[['pos','cov']].astype(str)
+df_ind3 = only_CDS.groupby(only_CDS.index // 3).agg(','.join)
+
+
+
+df_ind = df_ind3.reset_index(drop=True)
+
 
 df_ind['Chrom'] = df_ind['chr'].str.split(',', expand=True)[0]  # get gene name
 df_ind["Codon_position"] = 1 + df_ind.groupby("Chrom").cumcount()  # get each codon position (3 nuc = 1 codon)
@@ -135,17 +130,19 @@ df_ind['Sample_name'] = Sample_name
 df_ind['AA_change'] = df_ind['AA'] + df_ind['Codon_position'].astype(str)
 column_names = ['Sample_name',"Chrom", "Codon_position", "AVG_COV","triplet", 'AA', 'AA_change']
 df_ind = df_ind.reindex(columns=column_names)
-df_ind = df_ind.replace({'DHPS_437Corrected': 'DHPS'})
-df_ind = df_ind.rename({'Chrom': 'CHROM'}, axis=1)
 
+df_ind = df_ind.rename({'Chrom': 'CHROM'}, axis=1)
+df_ind.to_csv("1.csv")
 
 df_voi=pd.read_csv(VOI_file)
 df_voi["VOI"]=df_voi["RefAA"]+df_voi["AAPos"].astype(str)+df_voi["AltAA"]
 df_voi["AA_change"]=df_voi["RefAA"]+df_voi["AAPos"].astype(str)
-df_voi = df_voi.rename({'Gene':'CHROM'},axis=1)
+df_voi = df_voi.rename({'Chr':'CHROM'},axis=1)
 
 merge_df = pd.merge(df_ind, df_voi, on=['CHROM','AA_change'])
-merge_df.drop(['Chr', 'RefAA',  'AAPos', 'AltAA', 'Codon_position','AA' ], axis=1, inplace=True)
+
+
+merge_df = merge_df.drop(['Gene', 'RefAA',  'AAPos', 'AltAA', 'Codon_position','AA','snp_Report' ], axis=1)
 
 
 name = merge_df.to_csv(Sample_out+'_coverage.csv')

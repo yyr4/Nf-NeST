@@ -1,0 +1,1002 @@
+LOCUS       Pfk13                   2181 bp    DNA     linear   UNA 27-SEP-2023
+DEFINITION  Plasmodium falciparum 3D7.
+ACCESSION   Pfk13
+VERSION     Pfk13
+KEYWORDS    .
+SOURCE      Plasmodium falciparum
+  ORGANISM  Plasmodium falciparum
+            Eukaryota; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;
+            Plasmodium; Plasmodium (Laverania).
+FEATURES             Location/Qualifiers
+     CDS             1..2181
+                     /gene="K13"
+                     /codon_start=1
+                     /transl_table=1
+                     /product="kelch protein K13"
+                     /protein_id="ALA45008.1; ALA45010.1; ALA45022.1;
+                     ALA45024.1; ALA45025.1"
+                     /db_xref="GI:921028187; GI:921028191; GI:921028215;
+                     GI:921028219; GI:921028221"
+                     /Transferred_Translation="MEGEKVKTKANSISNFSMTYDRESGGNSNSDD
+                     KSGSSSENDSNSFMNLTSDKNEKTENNSFLLNNSSYGNVKDSLLESIDMSVLDSNFDS
+                     KKDFLPSNLSRTFNNMSKDNIGNKYLNKLLNKKKDTITNENNNINHNNNNNNLTANNI
+                     TNNLINNNMNSPSIMNTNKKENFLDAANLINDDSGLNNLKKFSTVNNVNDTYEKKIIE
+                     TELSDASDFENMVGDLRITFINWLKKTQMNFIREKDKLFKDKKELEMERVRLYKELEN
+                     RKNIEEQKLHDERKKLDIDISNGYKQIKKEKEEHRKRFDEERLRFLQEIDKIKLVLYL
+                     EKEKYYQEYKNFENDKKKIVDANIATETMIDINVGGAIFETSRHTLTQQKDSFIEKLL
+                     SGRHHVTRDKQGRIFLDRDSELFRIILNFLRNPLTIPIPKDLSESEALLKEAEFYGIK
+                     FLPFPLVFCIGGFDGVEYLNSMELLDISQQCWRMCTPMSTKKAYFGSAVLNNFLYVFG
+                     GNNYDYKALFETEVYDRLRDVWYVSSNLNIPRRNNCGVTSNGRIYCIGGYDGSSIIPN
+                     VEAYDHRMKAWVEVAPLNTPRSSAMCVAFDNKIYVIGGTNGERLNSIEVYEEKMNKWE
+                     QFPYALLEARSSGAAFNYLNQIYVVGGIDNEHNILDSVEQYQPFNKRWQFLNGVPEKK
+                     MNFGAATLSDSYIITGGENGEVLNSCHFFSPDTNEWQLGPSLLVPRFGHSVLIANI"
+                     /Transferred_From="KT328107, KT328109, KT328121, KT328123,
+                     KT328124"
+                     /Transferred_Similarity="100.00%"
+                     /modified_by="marko"
+                     /label="PfK13 CDS"
+     gene            <1..>2181
+                     /gene="K13"
+                     /note="PF3D7_1343700"
+                     /Transferred_From="KT328107, KT328109, KT328121, KT328123,
+                     KT328124"
+                     /Transferred_Similarity="100.00%"
+                     /modified_by="marko"
+                     /label="Pfk13 gene"
+     mRNA            <1..>2181
+                     /gene="K13"
+                     /product="kelch protein K13"
+                     /transcription="ATGGAAGGAGAAAAAGTAAAAACAAAAGCAAATAGTATCTCG
+                     AATTTTTCTATGACGTATGATAGGGAATCTGGTGGTAACAGCAATAGTGATGATAAAA
+                     GCGGAAGTAGTAGCGAGAATGATTCTAATTCATTTATGAATCTAACTAGTGATAAAAA
+                     TGAGAAAACGGAAAATAATAGTTTCCTTTTAAATAATAGTAGTTATGGAAATGTTAAA
+                     GATAGCCTATTAGAATCCATTGATATGAGTGTATTAGATTCGAACTTTGATAGTAAAA
+                     AAGATTTTTTACCAAGTAATTTATCAAGAACATTTAATAATATGTCTAAAGATAATAT
+                     AGGAAATAAATATTTAAATAAATTGTTAAATAAAAAAAAAGATACTATTACAAATGAA
+                     AATAATAATATTAATCATAATAATAATAATAATAATCTGACAGCAAATAATATAACTA
+                     ATAATCTTATTAATAATAATATGAATTCTCCATCAATTATGAATACCAACAAAAAAGA
+                     GAATTTTTTAGATGCAGCAAATCTTATAAATGATGATTCTGGATTAAACAATTTAAAA
+                     AAATTTTCAACTGTAAATAATGTAAATGATACTTATGAAAAGAAAATTATTGAAACGG
+                     AATTAAGTGATGCTAGTGATTTTGAAAATATGGTAGGTGATTTAAGAATTACATTTAT
+                     TAATTGGTTAAAAAAGACACAAATGAATTTTATTCGAGAAAAAGATAAATTATTTAAA
+                     GATAAGAAAGAACTAGAAATGGAAAGAGTACGATTGTACAAAGAATTAGAAAACCGTA
+                     AAAATATTGAAGAACAGAAATTACATGATGAAAGAAAGAAATTAGATATTGATATATC
+                     TAATGGTTATAAACAAATAAAAAAAGAAAAAGAAGAACATAGGAAACGATTTGATGAA
+                     GAAAGATTAAGATTTTTACAAGAAATCGATAAAATTAAATTAGTATTATATTTAGAAA
+                     AAGAAAAATATTATCAAGAATATAAAAATTTTGAGAATGATAAAAAAAAAATTGTTGA
+                     TGCAAATATTGCTACTGAAACTATGATTGATATTAATGTTGGTGGAGCTATTTTTGAA
+                     ACATCTAGACATACCTTAACACAACAAAAAGATTCATTTATAGAGAAATTATTAAGTG
+                     GAAGACATCATGTAACCAGAGATAAACAAGGAAGAATATTCTTAGATAGGGATAGTGA
+                     GTTATTTAGAATTATACTTAACTTCTTAAGAAATCCGTTAACTATACCCATACCAAAA
+                     GATTTAAGTGAAAGTGAAGCCTTGTTGAAAGAAGCAGAATTTTATGGTATTAAATTTT
+                     TACCATTCCCATTAGTATTTTGTATAGGTGGATTTGATGGTGTAGAATATTTAAATTC
+                     GATGGAATTATTAGATATTAGTCAACAATGCTGGCGTATGTGTACACCTATGTCTACC
+                     AAAAAAGCTTATTTTGGAAGTGCTGTATTGAATAATTTCTTATACGTTTTTGGTGGTA
+                     ATAACTATGATTATAAGGCTTTATTTGAAACTGAGGTGTATGATCGTTTAAGAGATGT
+                     ATGGTATGTTTCAAGTAATTTAAATATACCTAGAAGAAATAATTGTGGTGTTACGTCA
+                     AATGGTAGAATTTATTGTATTGGGGGATATGATGGCTCTTCTATTATACCGAATGTAG
+                     AAGCATATGATCATCGTATGAAAGCATGGGTAGAGGTGGCACCTTTGAATACCCCTAG
+                     ATCATCAGCTATGTGTGTTGCTTTTGATAATAAAATTTATGTCATTGGTGGAACTAAT
+                     GGTGAGAGATTAAATTCTATTGAAGTATATGAAGAAAAAATGAATAAATGGGAACAAT
+                     TTCCATATGCCTTATTAGAAGCTAGAAGTTCAGGAGCAGCTTTTAATTACCTTAATCA
+                     AATATATGTTGTTGGAGGTATTGATAATGAACATAACATATTAGATTCCGTTGAACAA
+                     TATCAACCATTTAATAAAAGATGGCAATTTCTAAATGGTGTACCAGAGAAAAAAATGA
+                     ATTTTGGAGCTGCCACATTGTCAGATTCTTATATAATTACAGGAGGAGAAAATGGCGA
+                     AGTTCTAAATTCATGTCATTTCTTTTCACCAGATACAAATGAATGGCAGCTTGGCCCA
+                     TCTTTATTAGTTCCCAGATTTGGTCACTCCGTTTTAATAGCAAATATATAA"
+                     /Transferred_From="KT328107, KT328109, KT328121, KT328123,
+                     KT328124"
+                     /Transferred_Similarity="100.00%"
+                     /modified_by="marko"
+                     /label="PfK13 mRNA"
+     source          1..2181
+                     /organism="Plasmodium falciparum"
+                     /mol_type="genomic DNA"
+                     /isolate="N21; N23; N24; N7; N9"
+                     /db_xref="taxon:5833"
+                     /Transferred_From="KT328107, KT328109, KT328121, KT328123,
+                     KT328124"
+                     /Transferred_Similarity="100.00%"
+                     /label="source Plasmodium falciparum"
+     TrackerSNP      1321..1323
+                     /created_by="adminuser"
+                     /label="P441L"
+     TrackerSNP      1336..1338
+                     /created_by="eldintalundzic"
+                     /modified_by="eldintalundzic"
+                     /label="F446I"
+     TrackerSNP      1345..1347
+                     /created_by="adminuser"
+                     /label="G449A"
+     TrackerSNP      1372..1374
+                     /created_by="eldintalundzic"
+                     /modified_by="eldintalundzic"
+                     /label="N458Y"
+     TrackerSNP      1405..1407
+                     /created_by="adminuser"
+                     /label="C469F"
+     TrackerSNP      1405..1407
+                     /created_by="adminuser"
+                     /modified_by="adminuser"
+                     /label="C469Y"
+     TrackerSNP      1426..1428
+                     /created_by="eldintalundzic"
+                     /label="M476I"
+     TrackerSNP      1441..1443
+                     /created_by="adminuser"
+                     /label="A481V"
+     TrackerSNP      1477..1479
+                     /created_by="User"
+                     /label="Y493H"
+     TrackerSNP      1543..1545
+                     /created_by="adminuser"
+                     /modified_by="adminuser"
+                     /label="R515K"
+     TrackerSNP      1579..1581
+                     /created_by="adminuser"
+                     /label="P527H"
+     TrackerSNP      1609..1611
+                     /created_by="adminuser"
+                     /label="N537I"
+     TrackerSNP      1612..1614
+                     /created_by="adminuser"
+                     /label="G538V"
+     TrackerSNP      1615..1617
+                     /created_by="User"
+                     /label="R539T"
+     TrackerSNP      1627..1629
+                     /created_by="User"
+                     /label="I543T"
+     TrackerSNP      1657..1659
+                     /created_by="eldintalundzic"
+                     /label="P553L"
+     TrackerSNP      1681..1683
+                     /created_by="User"
+                     /label="R561H"
+     TrackerSNP      1702..1704
+                     /created_by="adminuser"
+                     /label="V568G"
+     TrackerSNP      1720..1722
+                     /created_by="adminuser"
+                     /modified_by="adminuser"
+                     /label="P574L"
+     TrackerSNP      1732..1734
+                     /created_by="adminuser"
+                     /label="A578S"
+     TrackerSNP      1738..1740
+                     /created_by="User"
+                     /label="C580Y"
+     TrackerSNP      1750..1752
+                     /created_by="adminuser"
+                     /label="D584V"
+     TrackerSNP      1864..1866
+                     /created_by="adminuser"
+                     /modified_by="adminuser"
+                     /label="R622I"
+     TrackerSNP      2023..2025
+                     /created_by="adminuser"
+                     /label="A675V"
+ORIGIN
+        1 atggaaggag aaaaagtaaa aacaaaagca aatagtatct cgaatttttc tatgacgtat
+       61 gatagggaat ctggtggtaa cagcaatagt gatgataaaa gcggaagtag tagcgagaat
+      121 gattctaatt catttatgaa tctaactagt gataaaaatg agaaaacgga aaataatagt
+      181 ttccttttaa ataatagtag ttatggaaat gttaaagata gcctattaga atccattgat
+      241 atgagtgtat tagattcgaa ctttgatagt aaaaaagatt ttttaccaag taatttatca
+      301 agaacattta ataatatgtc taaagataat ataggaaata aatatttaaa taaattgtta
+      361 aataaaaaaa aagatactat tacaaatgaa aataataata ttaatcataa taataataat
+      421 aataatctga cagcaaataa tataactaat aatcttatta ataataatat gaattctcca
+      481 tcaattatga ataccaacaa aaaagagaat tttttagatg cagcaaatct tataaatgat
+      541 gattctggat taaacaattt aaaaaaattt tcaactgtaa ataatgtaaa tgatacttat
+      601 gaaaagaaaa ttattgaaac ggaattaagt gatgctagtg attttgaaaa tatggtaggt
+      661 gatttaagaa ttacatttat taattggtta aaaaagacac aaatgaattt tattcgagaa
+      721 aaagataaat tatttaaaga taagaaagaa ctagaaatgg aaagagtacg attgtacaaa
+      781 gaattagaaa accgtaaaaa tattgaagaa cagaaattac atgatgaaag aaagaaatta
+      841 gatattgata tatctaatgg ttataaacaa ataaaaaaag aaaaagaaga acataggaaa
+      901 cgatttgatg aagaaagatt aagattttta caagaaatcg ataaaattaa attagtatta
+      961 tatttagaaa aagaaaaata ttatcaagaa tataaaaatt ttgagaatga taaaaaaaaa
+     1021 attgttgatg caaatattgc tactgaaact atgattgata ttaatgttgg tggagctatt
+     1081 tttgaaacat ctagacatac cttaacacaa caaaaagatt catttataga gaaattatta
+     1141 agtggaagac atcatgtaac cagagataaa caaggaagaa tattcttaga tagggatagt
+     1201 gagttattta gaattatact taacttctta agaaatccgt taactatacc cataccaaaa
+     1261 gatttaagtg aaagtgaagc cttgttgaaa gaagcagaat tttatggtat taaattttta
+     1321 ccattcccat tagtattttg tataggtgga tttgatggtg tagaatattt aaattcgatg
+     1381 gaattattag atattagtca acaatgctgg cgtatgtgta cacctatgtc taccaaaaaa
+     1441 gcttattttg gaagtgctgt attgaataat ttcttatacg tttttggtgg taataactat
+     1501 gattataagg ctttatttga aactgaggtg tatgatcgtt taagagatgt atggtatgtt
+     1561 tcaagtaatt taaatatacc tagaagaaat aattgtggtg ttacgtcaaa tggtagaatt
+     1621 tattgtattg ggggatatga tggctcttct attataccga atgtagaagc atatgatcat
+     1681 cgtatgaaag catgggtaga ggtggcacct ttgaataccc ctagatcatc agctatgtgt
+     1741 gttgcttttg ataataaaat ttatgtcatt ggtggaacta atggtgagag attaaattct
+     1801 attgaagtat atgaagaaaa aatgaataaa tgggaacaat ttccatatgc cttattagaa
+     1861 gctagaagtt caggagcagc ttttaattac cttaatcaaa tatatgttgt tggaggtatt
+     1921 gataatgaac ataacatatt agattccgtt gaacaatatc aaccatttaa taaaagatgg
+     1981 caatttctaa atggtgtacc agagaaaaaa atgaattttg gagctgccac attgtcagat
+     2041 tcttatataa ttacaggagg agaaaatggc gaagttctaa attcatgtca tttcttttca
+     2101 ccagatacaa atgaatggca gcttggccca tctttattag ttcccagatt tggtcactcc
+     2161 gttttaatag caaatatata a
+//
+LOCUS       Pfcytb                  1131 bp    DNA     linear   UNA 27-SEP-2023
+DEFINITION  Plasmodium falciparum mitochondrion, complete genome.
+ACCESSION   Pfcytb
+KEYWORDS    .
+SOURCE      Plasmodium falciparum (malaria parasite P. falciparum)
+  ORGANISM  Plasmodium falciparum
+            Eukaryota; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;
+            Plasmodiidae; Plasmodium; Plasmodium (Laverania).
+FEATURES             Location/Qualifiers
+     CDS             1..1131
+                     /gene="CYTB"
+                     /locus_tag="PlfaoMp3"
+                     /codon_start=1
+                     /transl_table=4
+                     /product="cytochrome b"
+                     /protein_id="NP_059668.1"
+                     /db_xref="GI:11466247"
+                     /db_xref="GeneID:2655541"
+                     /translation="MNFYSINLVKAHLINYPCPLNINFLWNYGFLLGIIFFIQIITGV
+                     FLASRYTPDVSYAYYSIQHILRELWSGWCFRYMHATGASLVFLLTYLHILRGLNYSYM
+                     YLPLSWISGLILFMIFIVTAFVGYVLPWGQMSYWGATVITNLLSSIPVAVIWICGGYT
+                     VSDPTIKRFFVLHFILPFIGLCIVFIHIFFLHLHGSTNPLGYDTALKIPFYPNLLSLD
+                     VKGFNNVIILFLIQSLFGIIPLSHPDNAIVVNTYVTPSQIVPEWYFLPFYAMLKTVPS
+                     KPAGLVIVLLSLQLLFLLAEQRSLTTIIQFKMIFGARDYSVPIIWFMCAFYALLWIGC
+                     QLPQDIFILYGRLFIVLFFCSGLFVLVHYRRTHYDYSSQANI"
+                     /modified_by="marko"
+                     /label="PfCytb CDS"
+     gene            1..1131
+                     /gene="CYTB"
+                     /locus_tag="PlfaoMp3"
+                     /db_xref="GeneID:2655541"
+                     /modified_by="marko"
+                     /label="Pfcytb gene"
+     source          <1..>1131
+                     /organism="Plasmodium falciparum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /strain="NF54"
+                     /db_xref="taxon:5833"
+                     /label="source Plasmodium falciparum"
+     TrackerSNP      772..774
+                     /created_by="User"
+                     /label="I258M"
+     TrackerSNP      802..804
+                     /created_by="User"
+                     /modified_by="adminuser"
+                     /label="Y268N"
+ORIGIN
+        1 atgaactttt actctattaa tttagttaaa gcacacttaa taaattaccc atgtccattg
+       61 aacataaact ttttatggaa ttacggattc cttttaggaa taatattttt tattcaaatt
+      121 ataacaggtg tatttttagc aagtcgatat acaccagatg tttcatatgc atattatagt
+      181 atacaacaca ttttaagaga attatggagt ggatggtgtt ttagatacat gcacgcaaca
+      241 ggtgcttctc ttgtattttt attaacatat cttcatattt taagaggatt aaattactca
+      301 tatatgtatt taccattatc atggatatct ggattgattt tatttatgat atttattgta
+      361 actgctttcg ttggttatgt cttaccatgg ggtcaaatga gttattgggg tgcaactgta
+      421 attactaact tgttatcctc tattccagta gcagtaattt ggatatgtgg aggatatact
+      481 gtgagtgatc ctacaataaa acgatttttt gtactacatt ttatcttacc atttattgga
+      541 ttatgtattg tatttataca tatatttttc ttacatttac atggtagcac aaatccttta
+      601 gggtatgata cagcattaaa aatacccttt tatccaaatc tattaagtct tgatgttaaa
+      661 ggatttaata atgttataat tttatttcta atacaaagtt tatttggaat tataccttta
+      721 tcacatcctg ataatgctat cgtagtaaat acatatgtta ctccatctca aattgtacct
+      781 gaatggtact ttctaccatt ttatgcaatg ttaaaaactg ttccaagtaa accagctggt
+      841 ttagtaattg tattattatc attacaatta ttattcttat tagcagaaca aagaagttta
+      901 acaactataa ttcaatttaa aatgattttt ggtgctagag attattctgt tcctattata
+      961 tggtttatgt gtgcattcta tgctttatta tggattggat gtcaattacc acaagatata
+     1021 ttcattttat atggtcgatt atttattgta ttatttttct gtagtggttt atttgtactt
+     1081 gttcattata gacgaacaca ttatgattac agctcccaag caaacatata a
+//
+LOCUS       Pfdhfr                  1827 bp    DNA     linear   UNA 27-SEP-2023
+DEFINITION  DHFR-TS: bifunctional dihydrofolate reductase-thymidylate synthase.
+ACCESSION   Pfdhfr
+KEYWORDS    .
+SOURCE      Plasmodium falciparum 3D7
+  ORGANISM  Plasmodium falciparum 3D7
+            Eukaryota; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;
+            Plasmodiidae; Plasmodium; Plasmodium (Laverania).
+FEATURES             Location/Qualifiers
+     CDS             1..1827
+                     /gene="DHFR-TS"
+                     /locus_tag="PFD0830w"
+                     /EC_number="1.5.1.3"
+                     /EC_number="2.1.1.45"
+                     /codon_start=1
+                     /transl_table=1
+                     /product="bifunctional dihydrofolate reductase-thymidylate
+                     synthase"
+                     /protein_id="XP_001351479.1"
+                     /db_xref="GI:124505475"
+                     /db_xref="GeneID:9221804"
+                     /translation="MMEQVCDVFDIYAICACCKVESKNEGKKNEVFNNYTFRGLGNKG
+                     VLPWKCNSLDMKYFCAVTTYVNESKYEKLKYKRCKYLNKETVDNVNDMPNSKKLQNVV
+                     VMGRTSWESIPKKFKPLSNRINVILSRTLKKEDFDEDVYIINKVEDLIVLLGKLNYYK
+                     CFIIGGSVVYQEFLEKKLIKKIYFTRINSTYECDVFFPEINENEYQIISVSDVYTSNN
+                     TTLDFIIYKKTNNKMLNEQNCIKGEEKNNDMPLKNDDKDTCHMKKLTEFYKNVDKYKI
+                     NYENDDDDEEEDDFVYFNFNKEKEEKNKNSIHPNDFQIYNSLKYKYHPEYQYLNIIYD
+                     IMMNGNKQSDRTGVGVLSKFGYIMKFDLSQYFPLLTTKKLFLRGIIEELLWFIRGETN
+                     GNTLLNKNVRIWEANGTREFLDNRKLFHREVNDLGPIYGFQWRHFGAEYTNMYDNYEN
+                     KGVDQLKNIINLIKNDPTSRRILLCAWNVKDLDQMALPPCHILCQFYVFDGKLSCIMY
+                     QRSCDLGLGVPFNIASYSIFTHMIAQVCNLQPAQFIHVLGNAHVYNNHIDSLKIQLNR
+                     IPYPFPTLKLNPDIKNIEDFTISDFTIQNYVHHEKISMDMAA"
+                     /modified_by="marko"
+                     /label="PfDhfr CDS"
+     gene            1..1827
+                     /gene="DHFR-TS"
+                     /locus_tag="PFD0830w"
+                     /db_xref="GeneID:9221804"
+                     /modified_by="marko"
+                     /label="Pfdhfr gene"
+     mRNA            <1..>1827
+                     /gene="DHFR-TS"
+                     /locus_tag="PFD0830w"
+                     /transcript_id="XM_001351443.1"
+                     /db_xref="GI:124505474"
+                     /db_xref="GeneID:9221804"
+                     /transcription="ATGATGGAACAAGTCTGCGACGTTTTCGATATTTATGCCATA
+                     TGTGCATGTTGTAAGGTTGAAAGCAAAAATGAGGGGAAAAAAAATGAGGTTTTTAATA
+                     ACTACACATTTAGAGGTCTAGGAAATAAAGGAGTATTACCATGGAAATGTAATTCCCT
+                     AGATATGAAATATTTTTGTGCAGTTACAACATATGTGAATGAATCAAAATATGAAAAA
+                     TTGAAATATAAGAGATGTAAATATTTAAACAAAGAAACTGTGGATAATGTAAATGATA
+                     TGCCTAATTCTAAAAAATTACAAAATGTTGTAGTTATGGGAAGAACAAGCTGGGAAAG
+                     CATTCCAAAAAAATTTAAACCTTTAAGCAATAGGATAAATGTTATATTGTCTAGAACC
+                     TTAAAAAAAGAAGATTTTGATGAAGATGTTTATATCATTAACAAAGTTGAAGATCTAA
+                     TAGTTTTACTTGGGAAATTAAATTACTATAAATGTTTTATTATAGGAGGTTCCGTTGT
+                     TTATCAAGAATTTTTAGAAAAGAAATTAATAAAAAAAATATATTTTACTAGAATAAAT
+                     AGTACATATGAATGTGATGTATTTTTTCCAGAAATAAATGAAAATGAGTATCAAATTA
+                     TTTCTGTTAGCGATGTATATACTAGTAACAATACAACATTGGATTTTATCATTTATAA
+                     GAAAACGAATAATAAAATGTTAAATGAACAAAATTGTATAAAAGGAGAAGAAAAAAAT
+                     AATGATATGCCTTTAAAGAATGATGACAAAGATACATGTCATATGAAAAAATTAACAG
+                     AATTTTACAAAAATGTAGACAAATATAAAATTAATTATGAAAATGATGATGATGATGA
+                     AGAAGAAGATGATTTTGTTTATTTTAATTTTAATAAAGAAAAAGAAGAGAAAAATAAA
+                     AATTCTATACATCCAAATGATTTTCAAATATATAATAGCTTGAAATATAAATATCATC
+                     CTGAATACCAATATTTAAATATTATTTATGATATTATGATGAATGGAAATAAACAAAG
+                     TGATCGAACGGGAGTAGGTGTTTTAAGTAAATTCGGATATATTATGAAATTTGATTTA
+                     AGTCAATATTTCCCATTATTAACTACGAAGAAATTATTTTTAAGAGGAATTATTGAAG
+                     AATTGCTTTGGTTTATTAGAGGAGAAACAAATGGTAATACGTTGTTAAATAAGAATGT
+                     AAGGATATGGGAAGCTAATGGTACTAGGGAATTTTTAGATAATAGAAAATTATTTCAT
+                     AGAGAAGTTAACGATTTAGGACCTATTTATGGTTTTCAATGGAGACATTTCGGTGCTG
+                     AATATACAAATATGTATGATAATTATGAAAATAAAGGAGTGGATCAATTAAAAAATAT
+                     AATAAATTTAATTAAAAATGATCCTACAAGTAGAAGAATTCTTTTGTGTGCATGGAAT
+                     GTAAAAGATCTTGACCAAATGGCATTACCTCCTTGTCATATTTTATGTCAGTTTTATG
+                     TTTTCGATGGGAAATTATCATGTATTATGTATCAAAGATCATGTGATTTAGGGCTAGG
+                     AGTACCTTTTAATATTGCTTCTTATTCTATTTTTACTCATATGATTGCACAAGTCTGT
+                     AATTTGCAACCTGCGCAGTTCATACACGTTTTAGGAAATGCACATGTTTATAATAATC
+                     ACATTGATAGTTTAAAAATTCAACTTAACAGAATACCCTATCCATTCCCAACACTTAA
+                     ATTAAATCCAGATATTAAAAATATTGAAGATTTTACAATTTCGGATTTTACAATACAA
+                     AATTATGTTCATCATGAAAAAATTTCAATGGATATGGCTGCTTAA"
+                     /modified_by="marko"
+                     /label="PfDhfr mRNA"
+     source          1..1827
+                     /organism="Plasmodium falciparum 3D7"
+                     /mol_type="genomic DNA"
+                     /isolate="3D7"
+                     /db_xref="taxon:36329"
+                     /chromosome=Pfdhfr
+                     /label="source Plasmodium falciparum 3D7"
+     TrackerSNP      46..48
+                     /created_by="adminuser"
+                     /label="A16V"
+     TrackerSNP      151..153
+                     /created_by="User"
+                     /modified_by="User"
+                     /label="N51I"
+     TrackerSNP      175..177
+                     /created_by="User"
+                     /modified_by="adminuser"
+                     /label="C59R"
+     TrackerSNP      322..324
+                     /created_by="User"
+                     /label="S108N"
+     TrackerSNP      490..492
+                     /created_by="adminuser"
+                     /label="I164L"
+ORIGIN
+        1 atgatggaac aagtctgcga cgttttcgat atttatgcca tatgtgcatg ttgtaaggtt
+       61 gaaagcaaaa atgaggggaa aaaaaatgag gtttttaata actacacatt tagaggtcta
+      121 ggaaataaag gagtattacc atggaaatgt aattccctag atatgaaata tttttgtgca
+      181 gttacaacat atgtgaatga atcaaaatat gaaaaattga aatataagag atgtaaatat
+      241 ttaaacaaag aaactgtgga taatgtaaat gatatgccta attctaaaaa attacaaaat
+      301 gttgtagtta tgggaagaac aagctgggaa agcattccaa aaaaatttaa acctttaagc
+      361 aataggataa atgttatatt gtctagaacc ttaaaaaaag aagattttga tgaagatgtt
+      421 tatatcatta acaaagttga agatctaata gttttacttg ggaaattaaa ttactataaa
+      481 tgttttatta taggaggttc cgttgtttat caagaatttt tagaaaagaa attaataaaa
+      541 aaaatatatt ttactagaat aaatagtaca tatgaatgtg atgtattttt tccagaaata
+      601 aatgaaaatg agtatcaaat tatttctgtt agcgatgtat atactagtaa caatacaaca
+      661 ttggatttta tcatttataa gaaaacgaat aataaaatgt taaatgaaca aaattgtata
+      721 aaaggagaag aaaaaaataa tgatatgcct ttaaagaatg atgacaaaga tacatgtcat
+      781 atgaaaaaat taacagaatt ttacaaaaat gtagacaaat ataaaattaa ttatgaaaat
+      841 gatgatgatg atgaagaaga agatgatttt gtttatttta attttaataa agaaaaagaa
+      901 gagaaaaata aaaattctat acatccaaat gattttcaaa tatataatag cttgaaatat
+      961 aaatatcatc ctgaatacca atatttaaat attatttatg atattatgat gaatggaaat
+     1021 aaacaaagtg atcgaacggg agtaggtgtt ttaagtaaat tcggatatat tatgaaattt
+     1081 gatttaagtc aatatttccc attattaact acgaagaaat tatttttaag aggaattatt
+     1141 gaagaattgc tttggtttat tagaggagaa acaaatggta atacgttgtt aaataagaat
+     1201 gtaaggatat gggaagctaa tggtactagg gaatttttag ataatagaaa attatttcat
+     1261 agagaagtta acgatttagg acctatttat ggttttcaat ggagacattt cggtgctgaa
+     1321 tatacaaata tgtatgataa ttatgaaaat aaaggagtgg atcaattaaa aaatataata
+     1381 aatttaatta aaaatgatcc tacaagtaga agaattcttt tgtgtgcatg gaatgtaaaa
+     1441 gatcttgacc aaatggcatt acctccttgt catattttat gtcagtttta tgttttcgat
+     1501 gggaaattat catgtattat gtatcaaaga tcatgtgatt tagggctagg agtacctttt
+     1561 aatattgctt cttattctat ttttactcat atgattgcac aagtctgtaa tttgcaacct
+     1621 gcgcagttca tacacgtttt aggaaatgca catgtttata ataatcacat tgatagttta
+     1681 aaaattcaac ttaacagaat accctatcca ttcccaacac ttaaattaaa tccagatatt
+     1741 aaaaatattg aagattttac aatttcggat tttacaatac aaaattatgt tcatcatgaa
+     1801 aaaatttcaa tggatatggc tgcttaa
+//
+LOCUS       Pfdhps                  2417 bp    DNA     linear   UNA 27-SEP-2023
+DEFINITION  .
+ACCESSION   Pfdhps
+VERSION     Pfdhps
+KEYWORDS    .
+SOURCE
+  ORGANISM  .
+FEATURES             Location/Qualifiers
+     CDS             join(1..136,313..2181,2302..2417)
+                     /gene="DHPS"
+                     /locus_tag="PF08_0095"
+                     /gene_synonym="PPPK"
+                     /EC_number="2.5.1.15"
+                     /codon_start=1
+                     /transl_table=1
+                     /product="dihydropteroate synthetase"
+                     /protein_id="XP_001349418.1"
+                     /db_xref="GI:124512570"
+                     /db_xref="GOA:Q8IAU3"
+                     /db_xref="HSSP:1EYE"
+                     /db_xref="InterPro:IPR006390"
+                     /db_xref="UniProtKB/TrEMBL:Q8IAU3"
+                     /db_xref="GeneID:2655294"
+                     /Original_Translation="METIQELILSEENKTNIAVLNLGTNDRRNAVLILE
+                     TALHLVEKYLGKIINTSYLYETVPEYIVLDKKESCEKINKDCRIYDVNYINELMQNLE
+                     ESKYEENKELIDKCEEYETFLKNGKVDNSILKEVNVENYLLECNNIIVKNDEIMKNNL
+                     SKYKDKYYTSYFYNLTVVVKTFVNDPLSMLVVIKYIEELMKRENVKEKEKFENRIIDI
+                     DILFFNDFTIFMKNIKLEKNMIYKILSKYIHLERDIKNGNDNMSKVNMDKDINLNNNN
+                     NIKKKNNNDIDCDCVDQKMNNHVNNKNYINSFRDPQEIINNMVDNIEFLSIPHVYTTH
+                     RYSILLCLNDMIPEYKHNVLNNTIRCLYNKYVSRMKEQYNINIKENNKRIYVLKDRIS
+                     YLKEKTNIVGILNVNYDSFSDGGIFVEPKRAVQRMFEMINEGASVIDIGGESSGPFVI
+                     PNPKISERDLVVPVLQLFQKEWNDIKNKIVKCDAKPIISIDTINYNVFKECVDNDLVD
+                     ILNDISACTNNPEIIKLLKKKNKFYSVVLMHKRGNPHTMDKLTNYDNLVYDIKNYLEQ
+                     RLNFLVLNGIPRYRILFDIGLGFAKKHDQSIKLLQNIHVYDEYPLFIGYSRKRFIAHC
+                     MNDQNVVINTQQKLHDEQQNENKNIVDKSHNWMFQMNYMRKDKDQLLYQKNICGGLAI
+                     ASYSYYKKVDLIRVHDVLETKSVLDVLTKIDQV"
+                     /modified_by="marko"
+                     /label="PfDhps CDS"
+     gene            1..2417
+                     /gene="DHPS"
+                     /locus_tag="PF08_0095"
+                     /gene_synonym="PPPK"
+                     /db_xref="GeneID:2655294"
+                     /modified_by="marko"
+                     /label="Pfdhps gene"
+     mRNA            join(<1..136,313..2181,2302..>2417)
+                     /gene="DHPS"
+                     /locus_tag="PF08_0095"
+                     /gene_synonym="PPPK"
+                     /transcript_id="XM_001349382.1"
+                     /db_xref="GI:124512569"
+                     /db_xref="GeneID:2655294"
+                     /transcription="ATGGAAACTATACAAGAACTAATACTTTCTGAGGAAAATAAA
+                     ACTAATATTGCCGTATTAAACTTAGGAACAAATGATAGAAGAAACGCTGTGTTGATTC
+                     TAGAAACTGCTCTGCACCTTGTCGAAAAATATTTAGGAAAAATTATTAATACGTCCTA
+                     CTTGTATGAAACCGTTCCAGAATACATTGTATTAGATAAAAAGGAAAGTTGCGAAAAA
+                     ATAAACAAGGATTGTCGTATATATGATGTTAATTATATAAACGAATTGATGCAAAATT
+                     TAGAAGAATCTAAATATGAAGAGAATAAAGAATTAATTGATAAATGTGAAGAATATGA
+                     AACATTTTTGAAAAATGGAAAAGTTGATAATAGTATTCTAAAGGAAGTAAATGTAGAA
+                     AATTATTTATTAGAATGTAATAATATAATAGTAAAGAATGACGAAATAATGAAAAATA
+                     ATTTAAGCAAATATAAAGATAAATATTATACTAGCTACTTTTATAATTTGACAGTTGT
+                     AGTTAAAACTTTTGTAAATGATCCTCTTAGTATGTTGGTAGTTATAAAATATATTGAA
+                     GAATTAATGAAAAGGGAAAATGTAAAAGAGAAAGAAAAATTTGAAAATCGTATAATAG
+                     ATATAGATATTCTATTTTTTAATGATTTTACAATCTTTATGAAAAACATAAAATTGGA
+                     AAAAAATATGATTTATAAAATACTCTCAAAATATATTCATTTGGAAAGAGATATAAAA
+                     AATGGAAATGACAATATGTCTAAAGTAAATATGGATAAAGATATAAATCTTAATAATA
+                     ACAATAATATAAAAAAAAAAAATAATAATGATATTGATTGTGATTGTGTGGATCAGAA
+                     GATGAATAATCATGTGAATAATAAAAATTATATAAATTCTTTTAGAGATCCACAAGAA
+                     ATAATAAACAATATGGTAGATAATATTGAATTTTTATCCATTCCTCATGTGTATACAA
+                     CACACAGATATAGCATACTTTTATGCTTAAATGATATGATACCCGAATATAAGCATAA
+                     TGTTTTAAATAATACCATCAGATGTTTATATAACAAATATGTGAGTAGGATGAAAGAA
+                     CAATATAATATAAATATTAAAGAAAATAATAAAAGGATATATGTATTAAAAGATAGAA
+                     TTTCTTATTTAAAAGAAAAAACAAATATTGTTGGAATATTAAATGTTAATTATGATTC
+                     TTTTTCAGATGGAGGTATTTTTGTTGAACCTAAACGTGCTGTTCAAAGAATGTTTGAA
+                     ATGATAAATGAAGGTGCTAGTGTTATAGATATAGGTGGAGAATCCTCTGGTCCTTTTG
+                     TTATACCTAATCCAAAAATTAGTGAAAGAGATTTAGTAGTACCTGTATTACAATTATT
+                     TCAAAAAGAATGGAATGATATAAAAAATAAAATTGTTAAATGTGATGCGAAACCAATT
+                     ATAAGTATTGATACAATTAACTATAATGTTTTTAAAGAATGTGTTGATAATGATTTAG
+                     TTGATATATTAAATGATATTAGTGCTTGTACAAATAATCCAGAAATTATAAAATTATT
+                     AAAAAAAAAAAACAAATTCTATAGTGTAGTTCTAATGCATAAAAGAGGAAATCCACAT
+                     ACAATGGATAAACTAACAAATTATGATAATCTAGTTTATGATATAAAAAATTATTTAG
+                     AACAAAGATTAAATTTTCTTGTATTAAATGGAATACCTCGTTATAGGATACTATTTGA
+                     TATTGGATTAGGATTTGCGAAGAAACATGATCAATCTATTAAACTCTTACAAAATATA
+                     CATGTATATGATGAGTATCCACTTTTTATTGGATATTCAAGAAAAAGATTTATTGCCC
+                     ATTGCATGAATGATCAAAATGTTGTAATAAATACACAACAAAAATTACATGATGAACA
+                     ACAAAATGAAAATAAAAATATTGTGGACAAATCACACAATTGGATGTTTCAGATGAAT
+                     TACATGAGGAAAGACAAGGATCAACTTTTATATCAAAAAAATATATGTGGTGGATTAG
+                     CAATTGCTTCCTACAGCTATTATAAAAAGGTAGATCTAATAAGAGTTCATGACGTTTT
+                     AGAAACAAAATCGGTTTTGGATGTTTTAACAAAAATAGACCAAGTGTAA"
+                     /modified_by="marko"
+                     /label="PfDhps mRNA"
+     source          1..2417
+                     /organism="Plasmodium falciparum 3D7"
+                     /mol_type="genomic DNA"
+                     /isolate="3D7"
+                     /db_xref="taxon:36329"
+                     /chromosome=8
+                     /label="source Plasmodium falciparum 3D7"
+     TrackerSNP      1467..1469
+                     /created_by="dhruvipatel"
+                     /label="I431V"
+     TrackerSNP      1482..1484
+                     /created_by="eldintalundzic"
+                     /modified_by="adminuser"
+                     /label="S436A"
+     TrackerSNP      1482..1484
+                     /created_by="dhruviben"
+                     /label="S436H"
+     TrackerSNP      1485..1487
+                     /created_by="eldintalundzic"
+                     /modified_by="eldintalundzic"
+                     /label="A437G"
+     misc_feature    1486
+                     /Original_Bases="G"
+                     /label="G"
+                     /note="Geneious type: Editing History Replacement"
+     TrackerSNP      1794..1796
+                     /created_by="User"
+                     /modified_by="adminuser"
+                     /label="K540E"
+     TrackerSNP      1917..1919
+                     /created_by="User"
+                     /label="A581G"
+     TrackerSNP      2013..2015
+                     /created_by="User"
+                     /modified_by="adminuser"
+                     /label="A613S"
+     TrackerSNP      2013..2015
+                     /created_by="dhruviben"
+                     /label="A613T"
+ORIGIN
+        1 atggaaacta tacaagaact aatactttct gaggaaaata aaactaatat tgccgtatta
+       61 aacttaggaa caaatgatag aagaaacgct gtgttgattc tagaaactgc tctgcacctt
+      121 gtcgaaaaat atttaggtaa gaaaaaagta taataaataa ataaataaat acacaaacaa
+      181 agaaatatat atatatatat atatatatat atatatgtgt atatacatac ttttatatac
+      241 atacctttat atacatactt ttatatacat atcactcttt gattctatat atttttattt
+      301 ttcactttgt aggaaaaatt attaatacgt cctacttgta tgaaaccgtt ccagaataca
+      361 ttgtattaga taaaaaggaa agttgcgaaa aaataaacaa ggattgtcgt atatatgatg
+      421 ttaattatat aaacgaattg atgcaaaatt tagaagaatc taaatatgaa gagaataaag
+      481 aattaattga taaatgtgaa gaatatgaaa catttttgaa aaatggaaaa gttgataata
+      541 gtattctaaa ggaagtaaat gtagaaaatt atttattaga atgtaataat ataatagtaa
+      601 agaatgacga aataatgaaa aataatttaa gcaaatataa agataaatat tatactagct
+      661 acttttataa tttgacagtt gtagttaaaa cttttgtaaa tgatcctctt agtatgttgg
+      721 tagttataaa atatattgaa gaattaatga aaagggaaaa tgtaaaagag aaagaaaaat
+      781 ttgaaaatcg tataatagat atagatattc tattttttaa tgattttaca atctttatga
+      841 aaaacataaa attggaaaaa aatatgattt ataaaatact ctcaaaatat attcatttgg
+      901 aaagagatat aaaaaatgga aatgacaata tgtctaaagt aaatatggat aaagatataa
+      961 atcttaataa taacaataat ataaaaaaaa aaaataataa tgatattgat tgtgattgtg
+     1021 tggatcagaa gatgaataat catgtgaata ataaaaatta tataaattct tttagagatc
+     1081 cacaagaaat aataaacaat atggtagata atattgaatt tttatccatt cctcatgtgt
+     1141 atacaacaca cagatatagc atacttttat gcttaaatga tatgataccc gaatataagc
+     1201 ataatgtttt aaataatacc atcagatgtt tatataacaa atatgtgagt aggatgaaag
+     1261 aacaatataa tataaatatt aaagaaaata ataaaaggat atatgtatta aaagatagaa
+     1321 tttcttattt aaaagaaaaa acaaatattg ttggaatatt aaatgttaat tatgattctt
+     1381 tttcagatgg aggtattttt gttgaaccta aacgtgctgt tcaaagaatg tttgaaatga
+     1441 taaatgaagg tgctagtgtt atagatatag gtggagaatc ctctgctcct tttgttatac
+     1501 ctaatccaaa aattagtgaa agagatttag tagtacctgt attacaatta tttcaaaaag
+     1561 aatggaatga tataaaaaat aaaattgtta aatgtgatgc gaaaccaatt ataagtattg
+     1621 atacaattaa ctataatgtt tttaaagaat gtgttgataa tgatttagtt gatatattaa
+     1681 atgatattag tgcttgtaca aataatccag aaattataaa attattaaaa aaaaaaaaca
+     1741 aattctatag tgtagttcta atgcataaaa gaggaaatcc acatacaatg gataaactaa
+     1801 caaattatga taatctagtt tatgatataa aaaattattt agaacaaaga ttaaattttc
+     1861 ttgtattaaa tggaatacct cgttatagga tactatttga tattggatta ggatttgcga
+     1921 agaaacatga tcaatctatt aaactcttac aaaatataca tgtatatgat gagtatccac
+     1981 tttttattgg atattcaaga aaaagattta ttgcccattg catgaatgat caaaatgttg
+     2041 taataaatac acaacaaaaa ttacatgatg aacaacaaaa tgaaaataaa aatattgtgg
+     2101 acaaatcaca caattggatg tttcagatga attacatgag gaaagacaag gatcaacttt
+     2161 tatatcaaaa aaatatatgt ggtgtgttta aaaaaaaaaa aaaattcaaa tgagtataca
+     2221 aaagtaacaa ttctatatat gttacatata aaatataaat aatatatatt catgtatatg
+     2281 tatttatgta tttcttttca ggtggattag caattgcttc ctacagctat tataaaaagg
+     2341 tagatctaat aagagttcat gacgttttag aaacaaaatc ggttttggat gttttaacaa
+     2401 aaatagacca agtgtaa
+//
+LOCUS       Pfcrt                   3399 bp    DNA     linear   UNA 27-SEP-2023
+DEFINITION  Plasmodium falciparum 3D7 chromosome 7.
+ACCESSION   Pfcrt
+VERSION     Pfcrt
+KEYWORDS    .
+SOURCE      Plasmodium falciparum 3D7
+  ORGANISM  Plasmodium falciparum 3D7
+            Eukaryota; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;
+            Plasmodiidae; Plasmodium; Plasmodium (Laverania).
+FEATURES             Location/Qualifiers
+     source          <1..>3399
+                     /organism="Plasmodium falciparum 3D7"
+                     /mol_type="genomic DNA"
+                     /isolate="3D7"
+                     /db_xref="taxon:36329"
+                     /chromosome=7
+                     /label="source Plasmodium falciparum 3D7"
+     gene            96..3191
+                     /gene="PfCRT"
+                     /locus_tag="MAL7P1.27"
+                     /gene_synonym="CRT; digestive vacuole transmembrane
+                     protein"
+                     /db_xref="GeneID:2655199"
+                     /modified_by="marko"
+                     /label="Pfcrt gene"
+     mRNA            join(<96..186,364..632,812..984,1157..1289,1443..1514,
+                     1638..1713,1810..1892,2020..2070,2208..2264,2413..2505,
+                     2699..2743,2891..2945,3115..>3191)
+                     /gene="PfCRT"
+                     /locus_tag="MAL7P1.27"
+                     /gene_synonym="CRT; digestive vacuole transmembrane
+                     protein"
+                     /transcript_id="XM_001348968.1"
+                     /db_xref="GI:124511741"
+                     /db_xref="GeneID:2655199"
+                     /label="PfCRT mRNA"
+     CDS             join(96..186,364..632,812..984,1157..1289,1443..1514,
+                     1638..1713,1810..1892,2020..2070,2208..2264,2413..2505,
+                     2699..2743,2891..2945,3115..3191)
+                     /gene="PfCRT"
+                     /locus_tag="MAL7P1.27"
+                     /gene_synonym="CRT; digestive vacuole transmembrane
+                     protein"
+                     /codon_start=1
+                     /product="chloroquine resistance transporter"
+                     /protein_id="XP_001349004.1"
+                     /db_xref="GI:124511742"
+                     /db_xref="InterPro:IPR017258"
+                     /db_xref="UniProtKB/TrEMBL:Q8IBZ9"
+                     /db_xref="GeneID:2655199"
+                     /translation="MKFASKKNNQKNSSKNDERYRELDNLVQEGNGSRLGGGSCLGKC
+                     AHVFKLIFKEIKDNIFIYILSIIYLSVCVMNKIFAKRTLNKIGNYSFVTSETHNFICM
+                     IMFFIVYSLFGNKKGNSKERHRSFNLQFFAISMLDACSVILAFIGLTRTTGNIQSFVL
+                     QLSIPINMFFCFLILRYRYHLYNYLGAVIIVVTIALVEMKLSFETQEENSIIFNLVLI
+                     SALIPVCFSNMTREIVFKKYKIDILRLNAMVSFFQLFTSCLILPVYTLPFLKQLHLPY
+                     NEIWTNIKNGFACLFLGRNTVVENCGLGMAKLCDDCDGAWKTFALFSFFNICDNLITS
+                     YIIDKFSTMTYTIVSCIQGPAIAIAYYFKFLAGDVVREPRLLDFVTLFGYLFGSIIYR
+                     VGNIILERKKMRNEENEDSEGELTNVDSIITQ"
+                     /label="PfCRT CDS"
+     CDS             248..317
+                     /created_by="User"
+                     /label="MS1"
+     TrackerSNP      486..488
+                     /created_by="User"
+                     /label="C72S"
+     TrackerSNP      489..491
+                     /created_by="adminuser"
+                     /label="V73V"
+     TrackerSNP      492..494
+                     /created_by="User"
+                     /label="M74I"
+     TrackerSNP      495..497
+                     /created_by="User"
+                     /modified_by="User"
+                     /label="N75E"
+     TrackerSNP      498..500
+                     /created_by="User"
+                     /label="K76T"
+     TrackerSNP      549..551
+                     /created_by="adminuser"
+                     /modified_by="adminuser"
+                     /label="T93S"
+     TrackerSNP      561..563
+                     /created_by="adminuser"
+                     /label="H97Y"
+     TrackerSNP      884..886
+                     /created_by="adminuser"
+                     /label="F145I"
+     TrackerSNP      1275..1277
+                     /created_by="adminuser"
+                     /label="I218F"
+     TrackerSNP      1281..1283
+                     /created_by="User"
+                     /label="A220S"
+     TrackerSNP      1710..1712
+                     /created_by="User"
+                     /label="Q271E"
+     TrackerSNP      2235..2237
+                     /created_by="User"
+                     /label="N326S"
+     TrackerSNP      2434..2436
+                     /created_by="adminuser"
+                     /label="M343L"
+     TrackerSNP      2455..2457
+                     /created_by="User"
+                     /modified_by="adminuser"
+                     /label="C350R"
+     TrackerSNP      2464..2466
+                     /created_by="adminuser"
+                     /label="G353V"
+     TrackerSNP      2473..2475
+                     /created_by="User"
+                     /label="I356T"
+     TrackerSNP      2711..2713
+                     /created_by="User"
+                     /label="R371I"
+ORIGIN
+        1 ctataatatc cgttaataat aaatacacgc agtcatatta tttattatac attcatttat
+       61 tattttgttt tttttaattt cttacatata acaaaatgaa attcgcaagt aaaaaaaata
+      121 atcaaaaaaa ttcaagcaaa aatgacgagc gttatagaga attagataat ttagtacaag
+      181 aaggaagtaa gtatccaaaa atggaaatat ggaatgatat aaatgaatag ataaatcaac
+      241 ctattggata tatatatata tatatatata tatatatata tatatatgta tacccatatg
+      301 tattaatttt tttttttttt tttttttttt tttttttttt ttttcccttg tcgaccttaa
+      361 cagatggctc acgtttaggt ggaggttctt gtcttggtaa atgtgctcat gtgtttaaac
+      421 ttatttttaa agagattaag gataatattt ttatttatat tttaagtatt atttatttaa
+      481 gtgtatgtgt aatgaataaa atttttgcta aaagaacttt aaacaaaatt ggtaactata
+      541 gttttgtaac atccgaaact cacaacttta tttgtatgat tatgttcttt attgtttatt
+      601 ccttatttgg aaataaaaag ggaaattcaa aagtaagata aatcaatata ttaaaatgat
+      661 ggatttataa gagaatctat tccacctacc aatataaaac attacacata tatatatata
+      721 tatatatata tatatatata tatatatata tatgtatgta tgttgattaa tttgtttata
+      781 tatttatatt tatttcttat gaccttttta ggaacgacac cgaagcttta atttacaatt
+      841 ttttgctata tccatgttag atgcctgttc agtcattttg gccttcatag gtcttacaag
+      901 aactactgga aatatccaat catttgttct tcaattaagt attcctatta atatgttctt
+      961 ctgcttttta atattaagat ataggtaagt atactatttt aaattacaaa aaaaaaaaaa
+     1021 aaaaaaaaaa aaaaaaaaaa aaaaaaaata taaaatatat atatatattt atatatattt
+     1081 atttatatat ttatatatat ttatttatat atttatatat ttatttattt atatttattt
+     1141 atttactcct ttttagatat cacttataca attatctcgg agcagttatt attgttgtaa
+     1201 caatagctct tgtagaaatg aaattatctt ttgaaacaca agaagaaaat tctatcatat
+     1261 ttaatcttgt cttaattagt gccttaattg taagaaaaca aaatatataa ataaataaat
+     1321 atatatatat atatatatat attgtaatat ttaatatata ttaacactta aactttgttt
+     1381 ttattatatt aatttatatt ctttatcatt tttttttttt tttttccttc tttttttttt
+     1441 agcctgtatg cttttcaaac atgacaaggg aaatagtttt taaaaaatat aagattgaca
+     1501 ttttaagatt aaatgtaaga agaaaaatat aataataata atatatatat tatatatata
+     1561 tttccttttt taccactttt ttttttttta ttcctataac gcattataat tatttctgtt
+     1621 atttttattt cttataggct atggtatcct ttttccaatt gttcacttct tgtcttatat
+     1681 tacctgtata cacccttcca tttttaaaac aacgtaagaa ttaattagga aagaaaaaat
+     1741 aaaataaaat gaaatgtgcc catatatata tatatatata tgtatgtatg tataattttc
+     1801 cctttttagt tcatttacca tataatgaaa tatggacaaa tataaaaaat ggtttcgcat
+     1861 gtttattctt gggaagaaac acagtcgtag aggtaaaata ggattttcat tatatattaa
+     1921 aaattactac ttattatgtt aataaaaaaa tatgtttttt aatgttcaat ttgttttatt
+     1981 ttaattattt tttttttttt tgttttgttt cctcttcaga attgtggtct tggtatggct
+     2041 aagttatgtg atgattgtga cggagcatgg gtaagaagct tataataaaa tttcaaaatt
+     2101 ataagagaca tttatatata ttttaacaat aataattaaa taaaacaata ttatatatat
+     2161 tatatatatt attattttat ttattatttt ttattttttt tttttagaaa accttcgcat
+     2221 tgttttcctt ctttaacatt tgtgataatt taataaccag ctatgtaaga ataaaaagga
+     2281 tgaaaaacgt tgatacatac aagaggaaat aaatatggga atgtttaatt gaattaagat
+     2341 atatatatat atatatatat atatatatat atatgtaacc atataatttt tcattttcta
+     2401 tgctttttat agattatcga caaattttct accatgacat atactattgt tagttgtata
+     2461 caaggtccag caatagcaat tgcttattac tttaaattct tagccgtaag aattaaaaag
+     2521 atataaatat ataaatatat atgtgaaata tatgatatat atgatatata ttttttatat
+     2581 gtaatgtttt tttttttttt cacaatatac atttaaatgt ttatgatggt acaacgtatc
+     2641 atattttata ataattttat gcattcatgt atattatttt tactttttaa ttttataggg
+     2701 tgatgttgta agagaaccaa gattattaga tttcgtaact ttggtaagtg tgaaattaaa
+     2761 aaatgaattt tttttttttt tttttatgaa caaaataatg tgtatataat atgtgtgtaa
+     2821 tatcaaatgg cttgttcgtt cataaatatt tatatttttt tttttttttt tttttttttt
+     2881 ttttttacag tttggctacc tatttggttc tataatttac cgtgtaggaa atattatctt
+     2941 agaaagtaat acaaaaataa gataaaaaaa tataatatat aaaatatgta tattgttctt
+     3001 atatattttg ttcatatata tatatatata tatatatatt tttatatttc catctgtctt
+     3061 tttattctat tgttataatt tatcataaat tttttttaaa tttgcttaca ttaggaaaaa
+     3121 aaatgagaaa tgaagaaaat gaagattccg aaggagaatt aaccaacgtc gattcaatta
+     3181 ttacacaata aaattatatc atttattttt ttatattttt tatatttttt ttatttttca
+     3241 tgtttttttc tttatttttt tttttttttt tttccttttt ttttttaata aatcattttc
+     3301 ctaatattta tatttgctat cgcattacac tttataagga ataatgttga aggtatagag
+     3361 atctctttat tattattaag atgtaaattt tttatgaaa
+//
+LOCUS       Pfmdr1                  4260 bp    DNA     linear   UNA 27-SEP-2023
+DEFINITION  PfMDR1: Plasmodium falciparum 3D7.
+ACCESSION   Pfmdr1
+KEYWORDS    .
+SOURCE      Plasmodium falciparum 3D7
+  ORGANISM  Plasmodium falciparum 3D7
+            Eukaryota; Alveolata; Apicomplexa; Aconoidasida; Haemosporida;
+            Plasmodiidae; Plasmodium; Plasmodium (Laverania).
+FEATURES             Location/Qualifiers
+     CDS             1..4260
+                     /gene="PfMDR1"
+                     /locus_tag="PFE1150w"
+                     /gene_synonym="Pgh-1"
+                     /codon_start=1
+                     /transl_table=1
+                     /product="multidrug resistance protein"
+                     /protein_id="XP_001351787.1"
+                     /db_xref="GI:124506379"
+                     /db_xref="GeneID:813045"
+                     /translation="MGKEQKEKKDGNLSIKEEVEKELNKKSTAELFRKIKNEKISFFL
+                     PFKCLPAQHRKLLFISFVCAVLSGGTLPFFISVFGVILKNMNLGDDINPIILSLVSIG
+                     LVQFILSMISSYCMDVITSKILKTLKLEYLRSVFYQDGQFHDNNPGSKLRSDLDFYLE
+                     QVSSGIGTKFITIFTYASSFLGLYIWSLIKNARLTLCITCVFPLIYVCGVICNKKVKL
+                     NKKTSLLYNNNTMSIIEEALMGIRTVASYCGEKTILNKFNLSETFYSKYILKANFVEA
+                     LHIGLINGLILVSYAFGFWYGTRIIINSATNQYPNNDFNGASVISILLGVLISMFMLT
+                     IILPNITEYMKALEATNSLYEIINRKPLVENNDDGETLPNIKKIEFKNVRFHYDTRKD
+                     VEIYKDLSFTLKEGKTYAFVGESGCGKSTILKLIERLYDPTEGDIIVNDSHNLKDINL
+                     KWWRSKIGVVSQDPLLFSNSIKNNIKYSLYSLKDLEAMENYYEENTNDTYENKNFSLI
+                     SNSMTSNELLEMKKEYQTIKDSDVVDVSKKVLIHDFVSSLPDKYDTLVGSNASKLSGG
+                     QKQRISIARAIMRNPKILILDEATSSLDNKSEYLVQKTINNLKGNENRITIIIAHRLS
+                     TIRYANTIFVLSNRERSDNNNNNNNDDNNNNNNNNNNKINNEGSYIIEQGTHDSLMKN
+                     KNGIYHLMINNQKISSNKSSNNGNDNGSDNKSSAYKDSDTGNDADNMNSLSIHENENI
+                     SNNRNCKNTAENEKEEKVPFFKRMFRRKKKAPNNLRIIYKEIFSYKKDVTIIFFSILV
+                     AGGLYPVFALLYARYVSTLFDFANLEYNSNKYSIYILLIAIAMFISETLKNYYNNKIG
+                     EKVEKTMKRRLFENILYQEMSFFDQDKNTPGVLSAHINRDVHLLKTGLVNNIVIFSHF
+                     IMLFLVSMVMSFYFCPIVAAVLTFIYFINMRVFAVRARLTKSKEIEKKENMSSGVFAF
+                     SSDDEMFKDPSFLIQEAFYNMHTVINYGLEDYFCNLIEKAIDYKNKGQKRRIIVNAAL
+                     WGFSQSAQLFINSFAYWFGSFLIKRGTILVDDFMKSLFTFIFTGSYAGKLMSLKGDSE
+                     NAKLSFEKYYPLMIRKSNIDVRDDGGIRINKNLIKGKVDIKDVNFRYISRPNVPIYKN
+                     LSFTCDSKKTTAIVGETGSGKSTFMNLLLRFYDLKNDHIILKNDMTNFQDYQNNNNNS
+                     LVLKNVNEFSNQSGSAEDYTVFNNNGEILLDDINICDYNLRDLRNLFSIVSQEPMLFN
+                     MSIYENIKFGREDATLEDVKRVSKFAAIDEFIESLPNKYDTNVGPYGKSLSGGQKQRI
+                     AIARALLREPKILLLDEATSSLDSNSEKLIEKTIVDIKDKADKTIITIAHRIASIKRS
+                     DKIVVFNNPDRNGTFVQSHGTHDELLSAQDGIYKKYVKLAK"
+                     /modified_by="marko"
+                     /label="PfMdr1 CDS"
+     gene            1..4260
+                     /gene="PfMDR1"
+                     /locus_tag="PFE1150w"
+                     /gene_synonym="Pgh-1"
+                     /db_xref="GeneID:813045"
+                     /modified_by="marko"
+                     /label="Pfmdr1 gene"
+     mRNA            <1..>4260
+                     /gene="PfMDR1"
+                     /locus_tag="PFE1150w"
+                     /gene_synonym="Pgh-1"
+                     /transcript_id="XM_001351751.1"
+                     /db_xref="GI:124506378"
+                     /db_xref="GeneID:813045"
+                     /transcription="ATGGGTAAAGAGCAGAAAGAGAAAAAAGATGGTAACCTCAGT
+                     ATCAAAGAAGAGGTTGAAAAAGAGTTGAACAAAAAGAGTACCGCTGAATTATTTAGAA
+                     AAATAAAGAATGAGAAAATATCATTTTTTTTACCGTTTAAATGTTTACCTGCACAACA
+                     TAGAAAATTATTATTTATATCATTTGTATGTGCTGTATTATCAGGAGGAACATTACCT
+                     TTTTTTATATCTGTGTTTGGTGTAATATTAAAGAACATGAATTTAGGTGATGATATTA
+                     ATCCTATAATATTATCATTAGTATCTATAGGTTTAGTACAATTTATATTATCAATGAT
+                     ATCAAGTTATTGTATGGATGTAATTACATCAAAAATATTAAAAACTTTAAAGCTTGAA
+                     TATTTAAGAAGTGTTTTTTATCAAGATGGACAATTTCATGATAATAATCCTGGATCTA
+                     AATTAAGATCTGATTTAGATTTTTATTTAGAACAAGTGAGTTCAGGAATTGGTACGAA
+                     ATTTATAACAATTTTTACATATGCCAGTTCCTTTTTAGGTTTATATATTTGGTCATTA
+                     ATAAAAAATGCACGTTTGACTTTATGTATTACTTGCGTTTTTCCGTTAATTTATGTTT
+                     GTGGTGTCATATGTAATAAGAAAGTAAAATTAAATAAAAAAACATCTTTGTTATATAA
+                     TAACAATACCATGTCCATTATAGAAGAGGCTTTAATGGGAATAAGAACTGTTGCAAGT
+                     TATTGTGGAGAAAAGACTATATTAAACAAATTTAATTTGTCCGAAACTTTTTATAGTA
+                     AATATATTTTAAAAGCTAATTTTGTAGAAGCATTACATATAGGTTTAATAAATGGTTT
+                     AATTTTAGTTTCTTATGCATTCGGTTTTTGGTATGGTACAAGAATTATTATAAATAGT
+                     GCAACGAATCAATACCCCAATAATGATTTTAATGGTGCCTCAGTTATATCCATTTTAT
+                     TAGGTGTACTTATTAGTATGTTTATGTTAACAATTATCTTACCAAATATAACAGAATA
+                     TATGAAAGCTTTAGAAGCAACAAATAGTTTATATGAAATAATAAATCGAAAACCATTA
+                     GTTGAAAATAATGATGATGGAGAAACATTACCAAATATTAAAAAAATTGAATTTAAAA
+                     ATGTAAGATTTCATTATGATACTAGAAAAGATGTTGAAATTTATAAAGATTTAAGTTT
+                     TACTCTAAAAGAAGGGAAAACATATGCATTTGTGGGAGAATCAGGTTGTGGGAAATCA
+                     ACCATACTAAAATTAATTGAAAGACTTTATGATCCAACCGAAGGAGATATTATTGTAA
+                     ATGATTCTCATAATTTAAAAGATATTAATTTGAAATGGTGGAGATCAAAAATTGGAGT
+                     TGTTAGTCAAGATCCATTATTATTTAGTAATTCAATTAAAAATAATATTAAATATAGT
+                     TTATATAGTTTAAAAGATTTAGAAGCAATGGAAAATTATTATGAAGAAAATACTAATG
+                     ATACATATGAAAATAAAAATTTTTCTTTAATTTCGAATTCTATGACATCAAATGAATT
+                     ATTAGAAATGAAAAAAGAATATCAAACTATTAAAGATTCTGATGTTGTTGATGTGTCC
+                     AAAAAAGTACTTATACATGATTTTGTATCATCATTACCAGATAAATATGATACCTTAG
+                     TAGGTTCCAATGCATCCAAATTATCAGGTGGACAAAAACAAAGAATATCCATTGCAAG
+                     AGCAATTATGAGAAATCCTAAAATTCTAATTCTTGATGAAGCTACATCTTCTTTAGAT
+                     AATAAATCTGAGTATTTAGTACAAAAAACAATTAATAATTTGAAAGGAAATGAAAATA
+                     GAATAACTATTATTATAGCACATAGATTAAGTACTATAAGATATGCCAATACAATTTT
+                     TGTTTTATCAAATAGAGAAAGAAGTGATAATAATAATAATAATAATAATGATGATAAT
+                     AATAATAATAATAATAATAATAATAACAAAATTAATAATGAGGGTAGCTATATTATTG
+                     AACAAGGTACACATGATAGTCTTATGAAAAATAAAAATGGTATTTATCATCTTATGAT
+                     AAATAATCAAAAGATTTCATCAAATAAATCTTCAAATAATGGAAATGATAATGGATCG
+                     GATAACAAAAGTAGCGCTTATAAAGACTCAGATACAGGTAATGATGCAGATAATATGA
+                     ATAGTTTATCAATACATGAAAATGAAAATATATCAAATAATCGTAATTGTAAAAATAC
+                     AGCAGAAAATGAAAAAGAAGAGAAAGTTCCATTTTTCAAAAGAATGTTTAGAAGAAAA
+                     AAGAAAGCACCAAACAATTTACGTATCATTTATAAAGAAATATTTTCATATAAAAAAG
+                     ATGTTACTATAATTTTCTTTAGTATTTTAGTAGCTGGAGGATTATATCCCGTATTTGC
+                     TTTATTATATGCTAGATATGTATCTACATTATTTGATTTTGCAAATCTAGAATATAAC
+                     TCAAATAAATATTCTATATATATTCTACTTATTGCTATTGCTATGTTCATTTCAGAAA
+                     CACTCAAAAACTATTATAACAACAAAATAGGAGAAAAAGTCGAAAAGACTATGAAACG
+                     TAGATTATTTGAAAATATATTATATCAAGAAATGAGTTTCTTTGATCAAGATAAAAAT
+                     ACCCCAGGTGTTTTATCTGCACATATTAATAGAGATGTACATTTATTAAAAACGGGTT
+                     TAGTAAATAATATTGTTATTTTCTCTCATTTCATAATGCTCTTTCTGGTTAGCATGGT
+                     TATGTCCTTTTATTTTTGTCCAATTGTTGCAGCTGTATTAACTTTTATATATTTTATT
+                     AATATGCGTGTATTTGCTGTAAGAGCTAGATTAACCAAAAGTAAAGAAATTGAGAAAA
+                     AAGAAAATATGTCAAGCGGAGTTTTTGCATTTAGTTCAGATGATGAAATGTTTAAAGA
+                     TCCAAGTTTTTTAATACAGGAAGCATTTTATAATATGCATACTGTTATTAATTATGGT
+                     TTAGAAGATTATTTCTGTAATTTGATAGAAAAAGCTATTGATTATAAAAATAAAGGAC
+                     AAAAAAGAAGAATTATTGTAAATGCAGCTTTATGGGGATTCAGTCAAAGCGCTCAATT
+                     ATTTATTAATAGTTTTGCCTATTGGTTTGGATCCTTCTTAATTAAAAGAGGTACTATA
+                     TTAGTTGATGACTTTATGAAATCCTTATTTACTTTTATATTTACTGGTAGTTATGCTG
+                     GAAAATTAATGTCCTTAAAAGGAGATTCAGAAAATGCAAAATTATCATTTGAGAAATA
+                     TTATCCATTAATGATTAGAAAATCAAATATTGATGTAAGAGATGATGGTGGAATAAGA
+                     ATAAATAAAAATTTAATAAAAGGTAAAGTTGATATTAAAGATGTAAATTTCCGTTATA
+                     TTTCAAGACCAAATGTACCTATTTATAAAAATTTATCTTTTACATGTGATAGTAAAAA
+                     AACTACAGCAATCGTTGGAGAAACAGGTAGTGGAAAATCAACTTTTATGAATCTCTTA
+                     TTAAGATTTTATGACTTGAAAAATGATCACATTATATTAAAAAATGATATGACAAATT
+                     TTCAAGATTATCAAAATAATAATAATAATTCATTGGTTTTAAAAAATGTAAATGAATT
+                     TTCAAACCAATCTGGATCTGCAGAAGATTATACTGTATTTAATAATAATGGAGAAATA
+                     TTATTAGATGATATTAATATATGTGATTATAACTTAAGAGATCTTAGAAACTTATTTT
+                     CAATAGTTAGTCAAGAACCCATGTTATTTAATATGTCCATATATGAAAATATCAAATT
+                     TGGAAGAGAAGATGCAACATTGGAAGATGTTAAACGTGTTAGTAAGTTTGCTGCTATA
+                     GATGAATTTATCGAATCATTACCAAATAAATATGATACAAATGTTGGACCATATGGTA
+                     AAAGCTTATCAGGTGGACAAAAACAGAGAATAGCTATAGCTAGAGCATTATTAAGAGA
+                     ACCTAAAATATTATTATTAGATGAAGCAACATCATCACTTGATTCCAATTCTGAGAAA
+                     TTAATTGAAAAAACTATTGTAGATATTAAAGATAAAGCTGACAAAACTATTATTACTA
+                     TTGCCCACAGAATTGCATCTATAAAACGATCAGACAAAATTGTGGTATTTAATAACCC
+                     TGATCGAAATGGAACCTTTGTACAGTCACATGGAACACACGATGAATTATTATCAGCA
+                     CAAGATGGAATATATAAAAAATATGTAAAATTAGCTAAATGA"
+                     /modified_by="marko"
+                     /label="PfMdr1 mRNA"
+     source          1..4260
+                     /organism="Plasmodium falciparum 3D7"
+                     /mol_type="genomic DNA"
+                     /isolate="3D7"
+                     /db_xref="taxon:36329"
+                     /chromosome=Pfmdr1
+                     /label="source Plasmodium falciparum 3D7"
+     TrackerSNP      256..258
+                     /created_by="User"
+                     /label="N86Y"
+     TrackerSNP      550..552
+                     /created_by="User"
+                     /modified_by="User"
+                     /label="Y184F"
+     TrackerSNP      3100..3102
+                     /created_by="User"
+                     /label="S1034C"
+     TrackerSNP      3124..3126
+                     /created_by="User"
+                     /label="N1042D"
+     TrackerSNP      3736..3738
+                     /created_by="User"
+                     /label="D1246Y"
+ORIGIN
+        1 atgggtaaag agcagaaaga gaaaaaagat ggtaacctca gtatcaaaga agaggttgaa
+       61 aaagagttga acaaaaagag taccgctgaa ttatttagaa aaataaagaa tgagaaaata
+      121 tcattttttt taccgtttaa atgtttacct gcacaacata gaaaattatt atttatatca
+      181 tttgtatgtg ctgtattatc aggaggaaca ttaccttttt ttatatctgt gtttggtgta
+      241 atattaaaga acatgaattt aggtgatgat attaatccta taatattatc attagtatct
+      301 ataggtttag tacaatttat attatcaatg atatcaagtt attgtatgga tgtaattaca
+      361 tcaaaaatat taaaaacttt aaagcttgaa tatttaagaa gtgtttttta tcaagatgga
+      421 caatttcatg ataataatcc tggatctaaa ttaagatctg atttagattt ttatttagaa
+      481 caagtgagtt caggaattgg tacgaaattt ataacaattt ttacatatgc cagttccttt
+      541 ttaggtttat atatttggtc attaataaaa aatgcacgtt tgactttatg tattacttgc
+      601 gtttttccgt taatttatgt ttgtggtgtc atatgtaata agaaagtaaa attaaataaa
+      661 aaaacatctt tgttatataa taacaatacc atgtccatta tagaagaggc tttaatggga
+      721 ataagaactg ttgcaagtta ttgtggagaa aagactatat taaacaaatt taatttgtcc
+      781 gaaacttttt atagtaaata tattttaaaa gctaattttg tagaagcatt acatataggt
+      841 ttaataaatg gtttaatttt agtttcttat gcattcggtt tttggtatgg tacaagaatt
+      901 attataaata gtgcaacgaa tcaatacccc aataatgatt ttaatggtgc ctcagttata
+      961 tccattttat taggtgtact tattagtatg tttatgttaa caattatctt accaaatata
+     1021 acagaatata tgaaagcttt agaagcaaca aatagtttat atgaaataat aaatcgaaaa
+     1081 ccattagttg aaaataatga tgatggagaa acattaccaa atattaaaaa aattgaattt
+     1141 aaaaatgtaa gatttcatta tgatactaga aaagatgttg aaatttataa agatttaagt
+     1201 tttactctaa aagaagggaa aacatatgca tttgtgggag aatcaggttg tgggaaatca
+     1261 accatactaa aattaattga aagactttat gatccaaccg aaggagatat tattgtaaat
+     1321 gattctcata atttaaaaga tattaatttg aaatggtgga gatcaaaaat tggagttgtt
+     1381 agtcaagatc cattattatt tagtaattca attaaaaata atattaaata tagtttatat
+     1441 agtttaaaag atttagaagc aatggaaaat tattatgaag aaaatactaa tgatacatat
+     1501 gaaaataaaa atttttcttt aatttcgaat tctatgacat caaatgaatt attagaaatg
+     1561 aaaaaagaat atcaaactat taaagattct gatgttgttg atgtgtccaa aaaagtactt
+     1621 atacatgatt ttgtatcatc attaccagat aaatatgata ccttagtagg ttccaatgca
+     1681 tccaaattat caggtggaca aaaacaaaga atatccattg caagagcaat tatgagaaat
+     1741 cctaaaattc taattcttga tgaagctaca tcttctttag ataataaatc tgagtattta
+     1801 gtacaaaaaa caattaataa tttgaaagga aatgaaaata gaataactat tattatagca
+     1861 catagattaa gtactataag atatgccaat acaatttttg ttttatcaaa tagagaaaga
+     1921 agtgataata ataataataa taataatgat gataataata ataataataa taataataat
+     1981 aacaaaatta ataatgaggg tagctatatt attgaacaag gtacacatga tagtcttatg
+     2041 aaaaataaaa atggtattta tcatcttatg ataaataatc aaaagatttc atcaaataaa
+     2101 tcttcaaata atggaaatga taatggatcg gataacaaaa gtagcgctta taaagactca
+     2161 gatacaggta atgatgcaga taatatgaat agtttatcaa tacatgaaaa tgaaaatata
+     2221 tcaaataatc gtaattgtaa aaatacagca gaaaatgaaa aagaagagaa agttccattt
+     2281 ttcaaaagaa tgtttagaag aaaaaagaaa gcaccaaaca atttacgtat catttataaa
+     2341 gaaatatttt catataaaaa agatgttact ataattttct ttagtatttt agtagctgga
+     2401 ggattatatc ccgtatttgc tttattatat gctagatatg tatctacatt atttgatttt
+     2461 gcaaatctag aatataactc aaataaatat tctatatata ttctacttat tgctattgct
+     2521 atgttcattt cagaaacact caaaaactat tataacaaca aaataggaga aaaagtcgaa
+     2581 aagactatga aacgtagatt atttgaaaat atattatatc aagaaatgag tttctttgat
+     2641 caagataaaa ataccccagg tgttttatct gcacatatta atagagatgt acatttatta
+     2701 aaaacgggtt tagtaaataa tattgttatt ttctctcatt tcataatgct ctttctggtt
+     2761 agcatggtta tgtcctttta tttttgtcca attgttgcag ctgtattaac ttttatatat
+     2821 tttattaata tgcgtgtatt tgctgtaaga gctagattaa ccaaaagtaa agaaattgag
+     2881 aaaaaagaaa atatgtcaag cggagttttt gcatttagtt cagatgatga aatgtttaaa
+     2941 gatccaagtt ttttaataca ggaagcattt tataatatgc atactgttat taattatggt
+     3001 ttagaagatt atttctgtaa tttgatagaa aaagctattg attataaaaa taaaggacaa
+     3061 aaaagaagaa ttattgtaaa tgcagcttta tggggattca gtcaaagcgc tcaattattt
+     3121 attaatagtt ttgcctattg gtttggatcc ttcttaatta aaagaggtac tatattagtt
+     3181 gatgacttta tgaaatcctt atttactttt atatttactg gtagttatgc tggaaaatta
+     3241 atgtccttaa aaggagattc agaaaatgca aaattatcat ttgagaaata ttatccatta
+     3301 atgattagaa aatcaaatat tgatgtaaga gatgatggtg gaataagaat aaataaaaat
+     3361 ttaataaaag gtaaagttga tattaaagat gtaaatttcc gttatatttc aagaccaaat
+     3421 gtacctattt ataaaaattt atcttttaca tgtgatagta aaaaaactac agcaatcgtt
+     3481 ggagaaacag gtagtggaaa atcaactttt atgaatctct tattaagatt ttatgacttg
+     3541 aaaaatgatc acattatatt aaaaaatgat atgacaaatt ttcaagatta tcaaaataat
+     3601 aataataatt cattggtttt aaaaaatgta aatgaatttt caaaccaatc tggatctgca
+     3661 gaagattata ctgtatttaa taataatgga gaaatattat tagatgatat taatatatgt
+     3721 gattataact taagagatct tagaaactta ttttcaatag ttagtcaaga acccatgtta
+     3781 tttaatatgt ccatatatga aaatatcaaa tttggaagag aagatgcaac attggaagat
+     3841 gttaaacgtg ttagtaagtt tgctgctata gatgaattta tcgaatcatt accaaataaa
+     3901 tatgatacaa atgttggacc atatggtaaa agcttatcag gtggacaaaa acagagaata
+     3961 gctatagcta gagcattatt aagagaacct aaaatattat tattagatga agcaacatca
+     4021 tcacttgatt ccaattctga gaaattaatt gaaaaaacta ttgtagatat taaagataaa
+     4081 gctgacaaaa ctattattac tattgcccac agaattgcat ctataaaacg atcagacaaa
+     4141 attgtggtat ttaataaccc tgatcgaaat ggaacctttg tacagtcaca tggaacacac
+     4201 gatgaattat tatcagcaca agatggaata tataaaaaat atgtaaaatt agctaaatga
+//
