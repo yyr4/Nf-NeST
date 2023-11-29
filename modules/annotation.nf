@@ -1,8 +1,9 @@
 process buildsnpeff_db{
       output:
-      // path "PV_db_ref", type: 'dir', emit: buildDB
-      path "6Genes_ref", type: 'dir', emit: buildDB
-    
+
+      path "pf_3D7_snpEff_db", type: 'dir', emit: buildDB
+      //path "pv_sal_snpEff_db", type: 'dir', emit: buildDB
+
       script:
       """
 

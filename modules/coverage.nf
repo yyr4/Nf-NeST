@@ -15,7 +15,7 @@ process getcoverage {
     """
     samtools index ${sample_id}_picard_readgroup.bam
     samtools coverage ${sample_id}_picard_readgroup.bam -o ${sample_id}_coverage.txt
-    samtools depth ${sample_id}_picard_readgroup.bam -a -o ${sample_id}_depth.txt
+    samtools depth ${sample_id}_picard_readgroup.bam -aa -o ${sample_id}_depth.txt
 
     cat *coverage.txt > ${sample_id}_finalcoverageall.txt
 
@@ -29,7 +29,7 @@ process WT_cov {
     errorStrategy 'ignore'
     input:
 
-      tuple path(ref),path(bed), path(voi), val(sample_id), path("${sample_id}_depth.txt")
+      tuple path(ref),path(gff), path(voi), val(sample_id), path("${sample_id}_depth.txt")
 
 
 
@@ -39,7 +39,7 @@ process WT_cov {
     script:
 
         """
-        Wt_cov.py -R ${ref} -B ${bed} -N '${sample_id}_depth.txt' -V ${voi} > ${sample_id}_coverage.csv
+        Wt_cov.py -R ${ref} -G ${gff} -N '${sample_id}_depth.txt' -V ${voi} > ${sample_id}_coverage.csv
 
         """
 }
