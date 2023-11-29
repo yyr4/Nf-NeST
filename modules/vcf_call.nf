@@ -1,7 +1,7 @@
 process Sam_sort {
 
     tag { "Sam_sort ${sample_id}"}
-    publishDir "${params.out}/bam_out", mode:'copy'
+    // publishDir "${params.out}/bam_out", mode:'copy'
 
     // input is reads and refenace
     input:
@@ -26,7 +26,7 @@ process Sam_sort {
 process Picard_add_read{
 
     tag { "Picard_add_read${sample_id}"}
-    publishDir "${params.out}/picard_out", mode:'copy'
+    // publishDir "${params.out}/picard_out", mode:'copy'
 
 
     input:
@@ -51,6 +51,25 @@ process Picard_add_read{
 
 }
 
+process Get_Bed {
+publishDir "${params.out}/BED", mode:'copy'
+
+ input:
+  path(gff)
+
+ output:
+  file ('mars_genes.bed')
+
+
+ script:
+
+  """
+
+   awk 'BEGIN { OFS="\t" } {if (\$3=="gene") {print \$1,\$4-1,\$5,\$10,\$16,\$7}}' ${gff}  > mars_genes.bed
+
+  """
+}
+
 process VCF_call {
   tag  { "VCF_call ${sample_id }"}
   publishDir "${params.out}/vcf_files", mode:'copy'
@@ -59,7 +78,7 @@ process VCF_call {
 
 
   input:
-    tuple path(ref), path("*"), path(bed), val (sample_id), path("${sample_id}_picard_readgroup.bam")
+    tuple path(ref), path("*"), path ("mars_genes.bed"), val (sample_id), path("${sample_id}_picard_readgroup.bam")
 
   output:
     //tuple val (sample_id) ,path("${sample_id}.mpileup"),      emit: BCF_out
@@ -74,7 +93,6 @@ process VCF_call {
 
     samtools index ${sample_id}_picard_readgroup.bam
 
-    
 
     # Samtools
     bcftools mpileup -O b -o ${sample_id}.mpileup -f ${ref} ${sample_id}_picard_readgroup.bam
@@ -89,7 +107,7 @@ process VCF_call {
     gatk HaplotypeCaller --native-pair-hmm-threads 8 -R ${ref} -I ${sample_id}_picard_readgroup.bam  --min-base-quality-score 0 -O ${sample_id}_gatk.vcf
 
     # vardict
-    vardict -G ${ref}  -f 0.05 -N ${sample_id} -b ${sample_id}_picard_readgroup.bam -c 1 -S 2 -E 3 -g 4 ${bed} | var2vcf_valid.pl -N ${sample_id} -E -f 0.05 >  ${sample_id}_vardict.vcf
+    vardict -G ${ref}  -f 0.05 -N ${sample_id} -b ${sample_id}_picard_readgroup.bam -c 1 -S 2 -E 3 -g 4 'mars_genes.bed'| var2vcf_valid.pl -N ${sample_id} -E -f 0.05 >  ${sample_id}_vardict.vcf
 
 
     """
