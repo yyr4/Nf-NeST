@@ -7,6 +7,7 @@ import numpy as np
 import argparse
 import sys
 from pyfaidx import Fasta
+import re
 
 
 
@@ -27,9 +28,12 @@ ref = args.Reference_fasta
 Gff_file = args.GFF_file
 VOI_file = args.VOI
 
-Sample_name = Cov_file.split("/")[-1].split("_")[0]
+#Sample_name = Cov_file.split("/")[-1].split("_")[0]
+#Sample_name =("_".join(Cov_file.split("/")[-1].split("_")[0]))
 Sample_out = ("_".join(Cov_file.split("/")[-1].split("_")[0:-1]))
 
+Sample_1 = (re.split("/", Cov_file)[-1])
+Sample_name = (re.split("_S[0-9]+_", Sample_1)[0])
 
 #### parse the bed file
 #### parse the bed file

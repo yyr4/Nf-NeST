@@ -58,9 +58,11 @@ for l in lines:
         Source = "Samtools"
 
 ## get sample name from filename
-Sample_name = filename.split("/")[-1].split("_")[0]
-Sample_out = ("_".join(filename.split("/")[-1].split("_vartype.vcf")[0:-1]))
 
+#Sample_name = ("_".join(filename.split("/")[-1].split("_")[0:4]))
+Sample_out = ("_".join(filename.split("/")[-1].split("_vartype.vcf")[0:-1]))
+Sample_1 = (re.split("/", filename)[-1])
+Sample_name = (re.split("_S[0-9]+_", Sample_1)[0])
 
 vcf = pd.DataFrame(informations, columns=header)                            # create a dataframe called vcf with information and header
 vcf.columns = [*vcf.columns[:-1], 'Genotype']                               # rename last column name to Genotype
@@ -72,7 +74,7 @@ df_col = vcf.loc[:,['#CHROM', 'POS', 'REF', 'ALT', 'QUAL', 'INFO', 'FORMAT', 'Ge
 vartype = ["VARTYPE=SNP"]
 df_rows = df_col[df_col['INFO'].str.contains('|'.join(vartype))]            # filter datafrma based on vartype = snp, MNP
 df_rows = df_rows.reset_index(drop=True)                                    # reindex dataframe
-df_rows['Sample_name'] = filename.split("/")[-1].split("_")[0]  # add column name sample name
+df_rows['Sample_name'] = Sample_name  # add column name sample name
 df_rows['Source'] = Source            # add column name as Source
 
 ## Check for Empty File
@@ -184,8 +186,10 @@ result = result[(result.POS != 497) & (result.AA_change != 'N75K')  ]
 result = result[(result.POS != 495) & (result.AA_change != 'N75D')  ]
 result = result.reset_index(drop=True)
 
+#result = result[result["Annotation"].str.contains("downstream_gene_variant") == False]
 
 # COncat two df to get final dataframe and sort the POS value based on chrom and POS
 dat1 = pd.concat([result, df_1], axis=0)
 dat1.sort_values(by=['#CHROM','POS'],inplace=True)
+#dat1 = dat1[dat1["Annotation"].str.contains("downstream_gene_variant") == False]
 dat1.to_csv(Sample_out+'.csv')

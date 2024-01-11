@@ -29,7 +29,7 @@ for i in samp_files:
     i = "_".join(i.split("/")[-1].split("_")[0:-1])
     if i not in sample_name:
         sample_name.append(i)
-#print(sample_name)
+
 Sample_name = sample_name[0]
 
 # joining files with concat and read_csv
@@ -37,8 +37,6 @@ Merge_df = pd.concat(map(pd.read_csv, files), ignore_index=True)
 Merge_df = Merge_df.reset_index(drop=True)
 
 df = Merge_df.replace(r'^\s*$', np.nan, regex=True)
-#df.to_csv('file_merge.csv')
-#print(df.columns)
 
 Merge_df['Source'].str.strip()
 ####################
@@ -63,7 +61,6 @@ Merge_df_3 = Merge_df_3.drop_duplicates()
 result_1 = pd.merge(Merge_df_2, Merge_df_3,how='left',  on=["#CHROM","POS",'AA_change'])
 result_1 = result_1.rename({'#CHROM' : 'CHROM'}, axis=1)
 
-
 ################################
 # drop duplicates while caling mnps and snps
 #add new confidence
@@ -73,7 +70,6 @@ result_1.AVG_VAF = result_1.AVG_VAF.round(2)
 df1 = result_1[result_1.duplicated(subset=['Sample_name','CHROM','POS','AVG_VAF'],keep=False)]
 
 df_snps = df1.loc[df1["VARTYPE"] == 'SNP']
-
 
 res = pd.merge(result_1,df_snps, indicator=True, how='outer').query('_merge=="left_only"').drop('_merge', axis=1)
 

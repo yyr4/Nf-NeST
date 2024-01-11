@@ -6,7 +6,7 @@ import sys                    ##Import sys library for maximizing the csv limit 
 import csv                    ##Import csv module to input the csv file to dataframe
 import argparse
 min_cov = 5
-min_VAF = 5
+min_VAF = 10
 
 parser = argparse.ArgumentParser(description='merged_csv')
 parser.add_argument('-f', dest='merged_csv', type=str, help="snpfilter output")
@@ -25,8 +25,7 @@ DF_1.to_csv('All_final_snp.csv',index=False)
 
 ###### Repportable SNP
 Reportable = DF_1.loc[DF_1['SNP_REPORT'] != "Novel SNP"]
-
-Reportable.drop(Reportable[Reportable.AVG_COV < min_cov ].index)
+Reportable = Reportable.drop(Reportable[Reportable.AVG_COV < min_cov ].index)
 Reportable.to_csv("Reportable_snps.csv", index=False)
 
 ######
@@ -34,6 +33,7 @@ Reportable.to_csv("Reportable_snps.csv", index=False)
 Novel = DF_1.loc[DF_1['SNP_REPORT'] == "Novel SNP"]
 
 Novel = Novel.drop(Novel[Novel.AVG_COV < min_cov ].index)
-Novel = Novel.drop(Novel[Novel.Confidence < 2 ].index)
+Novel = Novel.drop(Novel[Novel.Confidence < 3 ].index)
+#Novel = Novel.drop(Novel[Novel.AVG_VAF < min_VAF ].index)
 
 Novel.to_csv("Novel_snps.csv", sep=',', index=False)

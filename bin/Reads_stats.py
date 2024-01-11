@@ -40,8 +40,7 @@ new_header = cov.iloc[0] #grab the first row for the header
 cov = cov[1:] #take the data less the header row
 cov.columns = new_header #set the header row as the df header
 
-#cov = cov.rename(columns={'DHPS_437Corrected': 'DHPS', 'mitochondrial_genome_-_CYTB_CDS': 'CYTB'})
-#cols = ['K13', 'DHPS', 'CYTB' ,'DHFR', 'PfCRT', 'PfMDR1']
+
 cols = cov.columns
 
 cov['Total_aligned_reads'] = cov[cols].sum(axis=1)
@@ -52,22 +51,12 @@ Sample_name = Cov_file.split("/")[-1].split("_")[0]
 Sample_out = ("_".join(Cov_file.split("/")[-1].split("_")[0:-1]))
 cov['Sample_name'] = Sample_name
 
-
-cov["Result"] = np.where(cov['Total_aligned_reads'] > 10, 'Pass', 'Fail')
+cov["Result"] = np.where(cov['Total_aligned_reads'] > 100, 'Pass', 'Fail')
 #cov["Result"] = np.where(cov['Sample_name'].str.contains('NTC').all() and cov['Total_aligned_reads'] > 3, 'Fail', 'pass')
-
-merge_df = pd.merge(Stats,cov, on='Sample_name')
-merge_df.to_csv(Sample_out+'_readcoverage.csv')
-
-'''
 # reorder columns
-cols = merge_df.columns.tolist()
-cols = [cols[2]]+cols[1:]
-merge_df = merge_df.reindex(columns=cols)
+merge_df = pd.merge(Stats,cov, on='Sample_name')
 
-#Drop duplicate columns Sample_name
-merge_df = merge_df.T.drop_duplicates().T
+merge_df = merge_df.reindex(sorted(merge_df.columns), axis=1)
 
 
 merge_df.to_csv(Sample_out+'_readcoverage.csv')
-'''
