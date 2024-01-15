@@ -123,7 +123,7 @@ merge_df = pd.merge(output1, df_voi, on=['CHROM','VOI'], how="outer")
 merge_df['SNP_REPORT'] = np.where(merge_df['snp_Report'].notnull(), merge_df['snp_Report'], merge_df['SNP_Status'])
 
 merge_df = merge_df.rename({'AA_change_x': 'AA_change'}, axis=1)
-
+merge_df['CHROM'] = merge_df['CHROM'].replace({'NC_009906.1': 'Pvcrt', 'NC_009910.1':'Pvdhfr', 'NC_009915.1': 'Pvmdr1', 'NC_009919.1': 'Pvdhps'})
 #Reorder the columns
 merge_df = merge_df[['Sample_name', 'CHROM', 'POS', 'AA_change', 'AVG_VAF', 'AVG_COV', 'REF', 'ALT','VARTYPE', 'Annotation', 'VarCal'
                     ,'Confidence', 'VOI', 'Type', 'SNP_REPORT']]

@@ -186,7 +186,7 @@ result = result[(result.POS != 497) & (result.AA_change != 'N75K')  ]
 result = result[(result.POS != 495) & (result.AA_change != 'N75D')  ]
 result = result.reset_index(drop=True)
 
-#result = result[result["Annotation"].str.contains("downstream_gene_variant") == False]
+#result = result[result["Annotation"].isin(["missense_variant","synonymous_variant","intron_variant"])]
 
 # COncat two df to get final dataframe and sort the POS value based on chrom and POS
 dat1 = pd.concat([result, df_1], axis=0)
