@@ -95,9 +95,10 @@ process VCF_call {
 
 
     # Samtools
-    bcftools mpileup -O b -o ${sample_id}.mpileup -f ${ref} ${sample_id}_picard_readgroup.bam
-    bcftools call --ploidy 1 -m -v -o ${sample_id}_bcf.vcf ${sample_id}.mpileup
-    vcfutils.pl varFilter ${sample_id}_bcf.vcf > ${sample_id}_samtools.vcf
+    
+    bcftools mpileup -O b -d 10000 -o ${sample_id}.mpileup -f ${ref} ${sample_id}_picard_readgroup.bam
+    bcftools call  -mv -P 0.05 -o ${sample_id}_samtools.vcf ${sample_id}.mpileup
+    #vcfutils.pl varFilter ${sample_id}_bcf.vcf > ${sample_id}_samtools.vcf
 
     # freebayes (calls mnps and snps)
     #freebayes -f  ${ref} -F 0.05 -E 3 --report-all-haplotype-alleles --haplotype-length -1 ${sample_id}_picard_readgroup.bam > ${sample_id}_Freebayes.vcf
