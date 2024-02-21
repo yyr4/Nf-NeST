@@ -25,8 +25,11 @@ DF_1.to_csv('All_final_snp.csv',index=False)
 
 ###### Repportable SNP
 Reportable = DF_1.loc[DF_1['SNP_REPORT'] != "Novel SNP"]
-Reportable = Reportable.drop(Reportable[Reportable.AVG_COV < min_cov ].index)
+
+Reportable = Reportable.drop(Reportable[(Reportable['Type'] != "No coverage") & (Reportable['AVG_COV'] < min_cov) ].index) 
+
 Reportable.to_csv("Reportable_snps.csv", index=False)
+
 
 ######
 
