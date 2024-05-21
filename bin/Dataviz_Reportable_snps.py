@@ -23,7 +23,6 @@ except pd.errors.EmptyDataError:
     sys.exit()
 
 #######################  DMS EPI Report:
-
 df_epi = DF[['Sample_name','CHROM','VOI','Type']]
 def func(row):
     if row['Type'] == 'Mutant':
@@ -70,12 +69,39 @@ Merge_pivot = (pd.merge(pivot_table_2, pivot_table_1, how="outer", on=["Sample_n
 
 )
 
-Merge_pivot.insert(loc=1, column='CaseID', value='NA' )
-Merge_pivot.insert(loc=2, column='Travel_History', value='NA')
-Merge_pivot = Merge_pivot.replace(['Wildtype', 'Mutant','Mixed','No coverage' ], ['WT', 'MT', 'MIX', 'NA'])
 
-Merge_pivot.to_csv("DMS_EPI_report.csv", sep=',')
+DMS_results = Merge_pivot.replace(['Wildtype', 'Mutant','Mixed','No coverage' ], ['WT', 'MT', 'MIX', 'NA'])
 
+DMS_results = DMS_results.rename(columns=lambda x: x.replace('_', ' '))
+DMS_results = DMS_results.rename(columns=lambda x: x.replace(': #', '! # '))
+DMS_results = DMS_results.rename(columns=lambda x: x.replace('Pfcytb','CytoB'))
+DMS_results = DMS_results.rename(columns=lambda x: x.replace('Pfk13','K13'))
+DMS_results = DMS_results.rename(columns=lambda x: x.replace('Pfcrt','CRT'))
+DMS_results = DMS_results.rename(columns=lambda x: x.replace('Pfdhfr','DHFR'))
+DMS_results = DMS_results.rename(columns=lambda x: x.replace('Pfmdr1' , 'MDR'))
+DMS_results = DMS_results.rename(columns=lambda x: x.replace('Pfdhps','DHPS'))
+
+# fill NAs
+DMS_results.fillna( 'NA', inplace = True)
+
+# rename samplename to LSDB sequnace ID
+DMS_results.rename({'Sample name': "LSDB_Sequence_ID"}, axis=1, inplace=True, errors='raise')
+
+
+cols = DMS_results.columns.values
+
+new_cols= [re.split(r'[:]',item)[-1] for item in cols]
+
+DMS_results.columns = new_cols
+DMS_results = DMS_results.rename(columns=lambda x: x.replace('! # ', ': # '))
+
+
+cols = DMS_results.columns.values
+#print(DMS_results)
+name_order = [ 'LSDB_Sequence_ID', 'DHPS: # Drug resistant mutations', 'I431V', 'S436A', 'A437G', 'K540E', 'A581G', 'A613S', 'A613T', 'DHFR: # Drug resistant mutations', 'N51I', 'C59R', 'S108N', 'CRT: # Drug resistant mutations', 'C72S', 'V73V', 'M74I', 'N75E', 'K76T', 'A220S', 'Q271E', 'N326S', 'C350R', 'R371I', 'I356T', 'MDR: # Drug resistant mutations', 'N86Y', 'Y184F', 'S1034C', 'N1042D', 'D1246Y', 'CytoB: # Drug resistant mutations', 'I258M', 'Y268C', 'Y268S', 'K13: # Drug resistant mutations', 'A481V', 'A578S', 'A675V', 'C469Y', 'C580Y', 'D584V', 'F446I', 'G449A', 'G538V', 'I543T', 'M476I', 'N458Y', 'N537I', 'P441L', 'P553L', 'P574L', 'R539T', 'R561H', 'V568G', 'Y493H']
+df = DMS_results[name_order]
+
+df.to_csv("DMS_EPI_report.csv", sep=',')
 
 ##########  Reportable_Per_SNP_depth
 df1 = DF[['CHROM', 'VOI', 'AVG_COV']]
